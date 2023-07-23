@@ -35,10 +35,10 @@ export default About;
 
 const Section = styled.div`
   background-color: #2c3333;
-  /* height: 100vh; */
+  /* min-height: 100vh; */
   display: flex;
   align-items: center;
-  /* gap: 200px; */
+  justify-content: center;
   @media screen and (max-width: 600px) {
     justify-content: center;
   }
@@ -46,11 +46,18 @@ const Section = styled.div`
 
 const Content = styled.div`
   padding: 40px 100px;
-  width: 600px;
+  width: 85%;
   color: white;
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 1200px) {
     padding: 40px 0;
     width: 80%;
+  }
+  @media screen and (min-width: 1921px) {
+    /* margin-right: 20px; */
+    padding: 40px 100px;
+
+    /* max-width: 1720px; */
+    /* font-size: 40px; */
   }
 `;
 
@@ -58,31 +65,25 @@ const Title = styled.h1`
   font-weight: 600;
   font-size: 40px;
   line-height: 1.1;
+  /* @media screen and (min-width: 1921px) {
+    font-size: 60px;
+  }
+  @media screen and (min-width: 2921px) {
+    font-size: 80px;
+  } */
 `;
 
 const Text = styled.p`
-  padding-top: 10px;
+  /* padding-top: 10px; */
   font-size: 20px;
+  width: 50%;
+  @media screen and (max-width: 1200px) {
+    width: 100%;
+  }
+  @media screen and (min-width: 1921px) {
+    width: 30%;
+  }
+  @media screen and (min-width: 2921px) {
+    width: 30%;
+  }
 `;
-
-// const Window = styled("div")({
-// width: "600px",
-// height: "400px",
-// backgroundImage: `url(${imageURL})`,
-// backgroundAttachment: "fixed",
-// backgroundPosition: "center",
-// backgroundSize: "100vw 100vh",
-// backgroundRepeat: "no-repeat",
-// });
-
-// const Hole = styled("h1")({
-// fontSize: "100px",
-// webkitBackgroundClip: "text",
-// backgroundClip: "text",
-// backgroundImage: `url(${imageURL})`,
-// color: "transparent",
-// backgroundAttachment: "fixed",
-// backgroundPosition: "center",
-// backgroundSize: "cover",
-// backgroundRepeat: "no-repeat",
-// });

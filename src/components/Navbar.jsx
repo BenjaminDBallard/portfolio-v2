@@ -25,13 +25,21 @@ const Wrapper = styled.div`
   gap: 5px;
   height: 40px;
   background-color: transparent;
+  padding-top: 10px;
 `;
 
 const NavButton = styled.button`
   color: white;
+  font-size: 20px;
   background-color: transparent;
   border: none;
   &:hover {
     background-color: #ffffff50;
   }
+  /* @media screen and (min-width: 1921px) {
+    font-size: 30px;
+  }
+  @media screen and (min-width: 2921px) {
+    font-size: 40px;
+  } */
 `;

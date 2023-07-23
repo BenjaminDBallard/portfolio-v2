@@ -6,11 +6,11 @@ import Job2 from "./Job2";
 import Job3 from "./Job3";
 
 const theme = {
-  primaryColor: "blue", // Replace 'blue' with your desired primary color
+  primaryColor: "#cbe4de", // Replace 'blue' with your desired primary color
 };
 
 const TabContainer = styled.div`
-  padding: 20px;
+  /* padding: 20px; */
 `;
 
 const WorkTabs = () => {
@@ -23,7 +23,7 @@ const WorkTabs = () => {
 
   const tabs = [
     { label: "ECPro" },
-    { label: "HackerClone" },
+    { label: "Hacker Clone" },
     { label: "Austin Coding Academy" },
     // Add more tabs as needed
   ];

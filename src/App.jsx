@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { styled } from "styled-components";
 // import useScrollSnap from "react-use-scroll-snap";
 import About from "./components/About";
 import Contact from "./components/Contact";
@@ -26,14 +27,18 @@ function App() {
   };
 
   return (
-    <section>
+    <Global>
       <Navbar handleLinkClick={handleLinkClick} />
       <Home ref={homeRef} handleLinkClick={handleLinkClick} />
       <About ref={aboutRef} />
       <Work ref={workRef} />
       <Contact ref={contactRef} />
-    </section>
+    </Global>
   );
 }
 
 export default App;
+
+const Global = styled.div`
+  font-family: Archivo;
+`;

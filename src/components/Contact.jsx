@@ -94,6 +94,7 @@ const Section = styled.div`
 const Content = styled.div`
   background-color: #2c3333;
   color: white;
+  width: 675px;
   margin: 100px;
   padding: 40px;
   display: flex;
@@ -101,14 +102,38 @@ const Content = styled.div`
   justify-content: center;
   align-items: center;
   @media screen and (max-width: 900px) {
-    margin: 100px 0;
+    justify-content: flex-start;
+    padding: 100px 0 0 0;
+    margin: 0;
     width: 100%;
+    height: calc(100% - 100px);
   }
+  @media screen and (min-width: 1921px) {
+    /* margin-right: 20px; */
+    /* padding: 0 100px; */
+
+    max-width: 1720px;
+    /* font-size: 40px; */
+  }
+  /* @media screen and (min-width: 1921px) {
+    width: 1012.5px;
+    padding: 60px;
+  }
+  @media screen and (min-width: 2921px) {
+    width: 1350px;
+    padding: 80px;
+  } */
 `;
 
 const Title = styled.h1`
   font-size: 40px;
   line-height: 1.1;
+  /* @media screen and (min-width: 1921px) {
+    font-size: 60px;
+  }
+  @media screen and (min-width: 2921px) {
+    font-size: 80px;
+  } */
 `;
 
 const FormWrapper = styled.form`
@@ -117,49 +142,104 @@ const FormWrapper = styled.form`
   width: 100%;
   gap: 10px;
   align-items: center;
+  @media screen and (max-width: 900px) {
+    gap: 15px;
+  }
+  /* @media screen and (min-width: 1921px) {
+    gap: 15px;
+  }
+  @media screen and (min-width: 2921px) {
+    gap: 20px;
+  } */
 `;
 
 const InputWrapper = styled.div`
   display: flex;
+  justify-content: center;
   gap: 10px;
   width: 100%;
   @media screen and (max-width: 900px) {
     flex-direction: column;
     align-items: center;
+    gap: 15px;
   }
+  /* @media screen and (min-width: 1921px) {
+    gap: 15px;
+  }
+  @media screen and (min-width: 2921px) {
+    gap: 20px;
+  } */
 `;
 
 const StyledInput = styled.input`
   width: 375px;
   padding: 10px;
   border: none;
-  font-size: 1rem;
-  /* @media screen and (max-width: 900px) {
-    flex-direction: column;
+  font-size: 20px;
+  font-family: Archivo;
+  @media screen and (max-width: 900px) {
+    width: calc(80% - 20px);
+  }
+  /* @media screen and (min-width: 1921px) {
+    padding: 15px;
+    width: 562.5px;
+    font-size: 30px;
+  }
+  @media screen and (min-width: 2921px) {
+    padding: 20px;
+    width: 750px;
+    font-size: 40px;
   } */
 `;
 
 const StyledTextArea = styled.textarea`
-  width: 780px;
+  width: 655px;
   padding: 10px;
   margin: 0;
-  font-size: 1rem;
+  font-size: 20px;
+  font-family: Archivo;
   resize: none;
   border: none;
   @media screen and (max-width: 900px) {
-    width: 375px;
+    width: calc(80% - 20px);
   }
+  /* @media screen and (max-width: 900px) {
+    width: 375px;
+  } */
+  /* @media screen and (min-width: 1921px) {
+    width: 982.5px;
+    padding: 15px;
+    font-size: 30px;
+  }
+  @media screen and (min-width: 2921px) {
+    width: 1310px;
+    padding: 20px;
+    font-size: 40px;
+  } */
 `;
 
 const StyledButton = styled.button`
   padding: 10px;
-  font-size: 1rem;
-  width: 800px;
+  font-size: 20px;
+  width: 675px;
   background-color: #0e8388;
   color: #fff;
   border: none;
   cursor: pointer;
   @media screen and (max-width: 900px) {
-    width: 395px;
+    width: 80%;
   }
+  /* @media screen and (max-width: 900px) {
+    width: 395px;
+  } */
+  /* @media screen and (min-width: 1921px) {
+    padding: 15px;
+    font-size: 30px;
+    width: 1012.5px;
+  }
+  @media screen and (min-width: 2921px) {
+    padding: 20px;
+    font-size: 40px;
+    width: 1350px;
+  } */
 `;
