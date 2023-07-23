@@ -9,8 +9,9 @@ const Home = forwardRef((props, homeRef) => {
           Hi, Im Ben. <br /> Front-End Web Developer
         </Title>
         <Text>
-          I like to design and develop intuitive, elegant online experiences.{" "}
-          <br />I specialize in coding web applications with React and
+          I thoroughly enjoy creating user-friendly and sophisticated online
+          experiences, <br />
+          specialising in developing web applications with React and
           StyledComponents.
         </Text>
         <NavButton onClick={() => props.handleLinkClick("about")}>
