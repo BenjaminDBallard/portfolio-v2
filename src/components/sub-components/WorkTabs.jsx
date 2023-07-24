@@ -6,7 +6,7 @@ import Job2 from "./Job2";
 import Job3 from "./Job3";
 
 const theme = {
-  primaryColor: "#cbe4de", // Replace 'blue' with your desired primary color
+  primaryColor: "#FC4F00", // Replace 'blue' with your desired primary color
 };
 
 const TabContainer = styled.div`

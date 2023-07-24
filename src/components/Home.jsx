@@ -11,17 +11,11 @@ const Home = forwardRef((props, homeRef) => {
         <Text>
           I thoroughly enjoy creating user-friendly and sophisticated online
           experiences, <br />
-          specialising in developing web applications with React and
+          specializing in developing web applications with React and
           StyledComponents.
         </Text>
-        <NavButton onClick={() => props.handleLinkClick("about")}>
-          about
-        </NavButton>
-        <NavButton onClick={() => props.handleLinkClick("work")}>
-          work
-        </NavButton>
         <NavButton onClick={() => props.handleLinkClick("contact")}>
-          contact
+          Get In Touch
         </NavButton>
       </Content>
     </Section>
@@ -34,17 +28,22 @@ export default Home;
 
 const Section = styled.div`
   height: 100vh;
+  width: 1720px;
   display: flex;
   align-items: center;
   justify-content: center;
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
   @media screen and (max-width: 900px) {
     justify-content: center;
+  }
+  @media screen and (max-width: 1720px) {
+    width: 100%;
   }
 `;
 
 const Content = styled.div`
   /* padding-left: 100px; */
-  color: white;
+  color: Black;
   width: 85%;
   @media screen and (max-width: 900px) {
     padding: 100px 0;
@@ -54,7 +53,7 @@ const Content = styled.div`
     /* margin-right: 20px; */
     padding: 0 100px;
 
-    /* max-width: 1720px; */
+    max-width: 1720px;
     /* font-size: 40px; */
   }
 `;
@@ -91,17 +90,21 @@ const Text = styled.p`
 `;
 
 const NavButton = styled.button`
-  background-color: #0e8388;
+  background-color: #fc4f00;
   color: #fff;
   margin-right: 10px;
   margin-top: 10px;
   font-size: 20px;
-  border: none;
+  border: 1px solid #fc4f00;
+  border-radius: 5px;
   cursor: pointer;
   font-weight: 600;
-  padding: 10px;
+  padding: 15px 40px;
+  transition: 500ms;
   &:hover {
-    background-color: #cbe4de;
+    background-color: transparent;
+    border: 1px solid #fc4f00;
+    color: #fc4f00;
   }
   /* @media screen and (min-width: 1921px) {
     margin-right: 15px;

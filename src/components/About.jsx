@@ -20,7 +20,7 @@ const About = forwardRef((props, aboutRef) => {
           projects.
         </Text>
         <Text>
-          From there I began develoment on An electrical bidding dashboard.
+          From there I began develoment on an electrical bidding dashboard.
           Allowing electricians to easily manage job status, labor, and
           materials with an easy to use UI.
         </Text>
@@ -34,20 +34,24 @@ About.displayName = "About";
 export default About;
 
 const Section = styled.div`
-  background-color: #2c3333;
-  /* min-height: 100vh; */
+  background-color: white;
+  width: 1720px;
+
   display: flex;
   align-items: center;
   justify-content: center;
   @media screen and (max-width: 600px) {
     justify-content: center;
   }
+  @media screen and (max-width: 1720px) {
+    width: 100%;
+  }
 `;
 
 const Content = styled.div`
   padding: 40px 100px;
   width: 85%;
-  color: white;
+  color: Black;
   @media screen and (max-width: 1200px) {
     padding: 40px 0;
     width: 80%;
@@ -56,7 +60,7 @@ const Content = styled.div`
     /* margin-right: 20px; */
     padding: 40px 100px;
 
-    /* max-width: 1720px; */
+    max-width: 1720px;
     /* font-size: 40px; */
   }
 `;
@@ -79,11 +83,5 @@ const Text = styled.p`
   width: 50%;
   @media screen and (max-width: 1200px) {
     width: 100%;
-  }
-  @media screen and (min-width: 1921px) {
-    width: 30%;
-  }
-  @media screen and (min-width: 2921px) {
-    width: 30%;
   }
 `;

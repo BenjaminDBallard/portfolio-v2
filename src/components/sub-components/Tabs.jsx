@@ -16,7 +16,7 @@ const TabItem = styled.div`
   cursor: pointer;
   font-size: 20px;
   text-align: center;
-  color: ${({ active, theme }) => (active ? theme.primaryColor : "#FFF")};
+  color: ${({ active, theme }) => (active ? theme.primaryColor : "black")};
   border-bottom: ${({ active, theme }) =>
     active ? `2px solid ${theme.primaryColor}` : "none"};
 

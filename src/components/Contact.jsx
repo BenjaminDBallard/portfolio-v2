@@ -89,10 +89,15 @@ const Section = styled.div`
   align-items: center;
   justify-content: center;
   height: 100vh;
+  width: 1720px;
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+  @media screen and (max-width: 1720px) {
+    width: 100%;
+  }
 `;
 
 const Content = styled.div`
-  background-color: #2c3333;
+  /* background-color: #371b58; */
   color: white;
   width: 675px;
   margin: 100px;
@@ -128,6 +133,7 @@ const Content = styled.div`
 const Title = styled.h1`
   font-size: 40px;
   line-height: 1.1;
+  color: black;
   /* @media screen and (min-width: 1921px) {
     font-size: 60px;
   }
@@ -175,6 +181,7 @@ const StyledInput = styled.input`
   width: 375px;
   padding: 10px;
   border: none;
+  border-bottom: 1px solid black;
   font-size: 20px;
   font-family: Archivo;
   @media screen and (max-width: 900px) {
@@ -200,6 +207,7 @@ const StyledTextArea = styled.textarea`
   font-family: Archivo;
   resize: none;
   border: none;
+  border-bottom: 1px solid black;
   @media screen and (max-width: 900px) {
     width: calc(80% - 20px);
   }
@@ -222,7 +230,7 @@ const StyledButton = styled.button`
   padding: 10px;
   font-size: 20px;
   width: 675px;
-  background-color: #0e8388;
+  background-color: #fc4f00;
   color: #fff;
   border: none;
   cursor: pointer;

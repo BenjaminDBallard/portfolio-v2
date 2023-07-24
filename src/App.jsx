@@ -28,11 +28,17 @@ function App() {
 
   return (
     <Global>
-      <Navbar handleLinkClick={handleLinkClick} />
-      <Home ref={homeRef} handleLinkClick={handleLinkClick} />
-      <About ref={aboutRef} />
-      <Work ref={workRef} />
-      <Contact ref={contactRef} />
+      <Webpage>
+        <Navbar handleLinkClick={handleLinkClick} />
+
+        <Home ref={homeRef} handleLinkClick={handleLinkClick} />
+        <hr />
+        <About ref={aboutRef} />
+        <hr />
+        <Work ref={workRef} />
+        <hr />
+        <Contact ref={contactRef} />
+      </Webpage>
     </Global>
   );
 }
@@ -41,4 +47,15 @@ export default App;
 
 const Global = styled.div`
   font-family: Archivo;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+const Webpage = styled.div`
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  hr {
+    border: none;
+    border-bottom: 1px solid black;
+    width: 85%;
+  }
 `;

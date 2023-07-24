@@ -18,15 +18,20 @@ Work.displayName = "Work";
 export default Work;
 
 const Section = styled.div`
-  background-color: #2e4f4f;
+  background-color: white;
+  width: 1720px;
   display: flex;
   align-items: center;
   justify-content: center;
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+  @media screen and (max-width: 1720px) {
+    width: 100%;
+  }
 `;
 
 const Content = styled.div`
   padding: 40px 100px;
-  color: white;
+  color: black;
   width: 100%;
   @media screen and (max-width: 900px) {
     padding: 100px 0;
@@ -49,6 +54,7 @@ const Content = styled.div`
 
 const Title = styled.h1`
   text-align: center;
+  color: black;
   margin: 0;
   font-size: 40px;
   font-weight: 600;

@@ -25,21 +25,19 @@ export default function Job1() {
             </ChipList>
             <List>
               <Text>
-                Spearheaded the design and development of a sophisticated online
-                dashboard facilitating streamlined electrical bidding and job
-                progress management. Implementing essential features, such as
-                authorization, data visualizations, and seamless client, job,
-                materials, and labor management capabilities.
+                Designed and developed an online dashboard facilitating
+                streamlined electrical bidding and job progress management.
+                Implementing data visualizations, and client, job, materials,
+                and labor management capabilities.
               </Text>
               <Text>
                 Crafted a responsive front-end solution utilizing React, while
                 also engineering custom React hooks to efficiently fetch and
-                update data from the back-end, which was fortified with robust
-                web security via JSON Web Tokens (JWT) through Auth0.
+                update data from the back-end, which was fortified with web
+                security via JSON Web Tokens (JWT) through Auth0.
               </Text>
               <Text>
-                Orchestrated the creation of a high-performance Express REST
-                API, expertly leveraging Node.js to facilitate seamless
+                designed an Express REST API, leveraging Node.js to facilitate
                 communication with a MySQL database, enabling efficient handling
                 of data retrieval, updates, and deletions based on user
                 requests.
@@ -61,22 +59,23 @@ const Content = styled.div`
   /* margin: 0 100px; */
   color: white;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 
   /* align-items: center; */
   gap: 40px;
-  /* @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1200px) {
     flex-direction: column;
     align-items: center;
     gap: 20px;
     margin: 0;
-  } */
+  }
 `;
 
 const ImgBox = styled.div`
-  width: 80%;
+  width: 50%;
+
   /* margin: 20px; */
   @media screen and (max-width: 1200px) {
     width: 100%;
@@ -97,6 +96,7 @@ const ImgBox = styled.div`
 const DisplayImg = styled.img`
   /* min-width: 600px; */
   width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   @media screen and (max-width: 1200px) {
     /* min-width: none; */
     width: 100%;
@@ -105,7 +105,7 @@ const DisplayImg = styled.img`
 
 const DisplayBox = styled.div`
   /* margin: 0 20px; */
-  width: 80%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -128,9 +128,10 @@ const Display = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 40px;
+  font-size: 30px;
   line-height: 1.1;
   margin: 0;
+  color: black;
   /* @media screen and (min-width: 1921px) {
     font-size: 60px;
   }
@@ -140,7 +141,7 @@ const Title = styled.h1`
 `;
 
 const Link = styled.a`
-  color: white;
+  color: black;
   text-decoration: none;
 `;
 
@@ -163,9 +164,9 @@ const FlatChip = styled.button`
   padding: 5px;
   background-color: transparent;
   border-radius: 999px;
-  border: 1px solid white;
+  border: 1px solid #fc4f00;
   font-size: 15px;
-  color: white;
+  color: #fc4f00;
   /* @media screen and (min-width: 1921px) {
     font-size: 30px;
     padding: 15px;
@@ -184,6 +185,7 @@ const List = styled.ul`
 const Text = styled.li`
   padding-top: 20px;
   font-size: 20px;
+  color: black;
   /* @media screen and (max-width: 900px) {
     width: 100%;
     margin: 20px 0;
