@@ -6,13 +6,13 @@ export default function Job1() {
     <Section>
       <Content>
         <ImgBox>
-          <Link href="">
+          <Link href="https://hacker-clone-d852c.web.app/">
             <DisplayImg src={Image} />
           </Link>
         </ImgBox>
         <DisplayBox>
           <Display>
-            <Link href="">
+            <Link href="https://hacker-clone-d852c.web.app/">
               <Title>Hacker Clone</Title>
             </Link>
             <ChipList>
@@ -45,7 +45,7 @@ const Content = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
 
   /* align-items: center; */
   gap: 40px;

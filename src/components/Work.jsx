@@ -30,7 +30,7 @@ const Section = styled.div`
 `;
 
 const Content = styled.div`
-  padding: 40px 100px;
+  padding: 100px 100px;
   color: black;
   width: 100%;
   @media screen and (max-width: 900px) {
@@ -39,7 +39,7 @@ const Content = styled.div`
   }
   @media screen and (min-width: 1921px) {
     /* margin-right: 20px; */
-    padding: 40px 100px;
+    padding: 100px 100px;
 
     max-width: 1720px;
     /* font-size: 40px; */
@@ -55,7 +55,7 @@ const Content = styled.div`
 const Title = styled.h1`
   text-align: center;
   color: black;
-  margin: 0;
+  margin-bottom: 20px;
   font-size: 40px;
   font-weight: 600;
   line-height: 1.1;

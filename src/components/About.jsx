@@ -1,29 +1,37 @@
 import { forwardRef } from "react";
 import styled from "styled-components";
+import cone from "../assets/cone.svg";
 
 const About = forwardRef((props, aboutRef) => {
   return (
     <Section ref={aboutRef}>
       <Content>
         <Title>About Me</Title>
-        <Text>
-          I&apos;m an electrician turned developer! My expirience running crews
-          and working on a larger scale coordinating with multiple trades has
-          given me critical teamwork skills under high pressure that continue to
-          aid me in this fast pased industry.
-        </Text>
-        <Text>
-          Web development began as a hobby that formed into a labor of love.
-          which lead to me getting a more formal education with Austin Coding
-          Academy. There, I improved my personal skills and worked in teams on
-          projects of all scopes from building API&apos;s to full fledged react
-          projects.
-        </Text>
-        <Text>
-          From there I began develoment on an electrical bidding dashboard.
-          Allowing electricians to easily manage job status, labor, and
-          materials with an easy to use UI.
-        </Text>
+        <Box>
+          <Subject>
+            <Text>
+              I&apos;m an electrician turned developer! My expirience running
+              crews and working on a larger scale coordinating with multiple
+              trades has given me critical teamwork skills under high pressure
+              that continue to aid me in this fast pased industry.
+            </Text>
+            <Text>
+              Web development began as a hobby that formed into a labor of love.
+              which lead to me getting a more formal education with Austin
+              Coding Academy. There, I improved my personal skills and worked in
+              teams on projects of all scopes from building API&apos;s to full
+              fledged react projects.
+            </Text>
+            <Text>
+              From there I began develoment on an electrical bidding dashboard.
+              Allowing electricians to easily manage job status, labor, and
+              materials with an easy to use UI.
+            </Text>
+          </Subject>
+          <ImgBox>
+            <img src={cone} />
+          </ImgBox>
+        </Box>
       </Content>
     </Section>
   );
@@ -34,7 +42,7 @@ About.displayName = "About";
 export default About;
 
 const Section = styled.div`
-  background-color: white;
+  background-color: #fff;
   width: 1720px;
 
   display: flex;
@@ -49,19 +57,37 @@ const Section = styled.div`
 `;
 
 const Content = styled.div`
-  padding: 40px 100px;
+  padding: 100px 100px;
   width: 85%;
   color: Black;
+  display: flex;
+  flex-direction: column;
   @media screen and (max-width: 1200px) {
-    padding: 40px 0;
+    padding: 100px 0;
     width: 80%;
   }
   @media screen and (min-width: 1921px) {
     /* margin-right: 20px; */
-    padding: 40px 100px;
+    padding: 100px 100px;
 
     max-width: 1720px;
     /* font-size: 40px; */
+  }
+`;
+const Subject = styled.div``;
+const Box = styled.div`
+  display: flex;
+`;
+
+const ImgBox = styled.div`
+  display: flex;
+  align-items: center;
+  img {
+    width: 350px;
+    margin: 0 100px;
+  }
+  @media screen and (max-width: 1200px) {
+    display: none;
   }
 `;
 
@@ -80,7 +106,7 @@ const Title = styled.h1`
 const Text = styled.p`
   /* padding-top: 10px; */
   font-size: 20px;
-  width: 50%;
+  /* width: 50%; */
   @media screen and (max-width: 1200px) {
     width: 100%;
   }

@@ -7,7 +7,7 @@ const Button = styled.button`
   color: black;
   font-size: 18px;
   background-color: transparent;
-  padding-bottom: 5px;
+  padding: 5px 10px;
   border: none;
   border-bottom: 2px solid transparent;
   transition: 500ms;

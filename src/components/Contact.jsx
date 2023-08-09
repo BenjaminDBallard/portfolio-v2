@@ -85,14 +85,17 @@ Contact.displayName = "Contact";
 export default Contact;
 
 const Section = styled.div`
+  background-color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
   width: 1720px;
   /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
   @media screen and (max-width: 1720px) {
     width: 100%;
+  }
+  @media screen and (max-width: 900px) {
+    height: 100vh;
   }
 `;
 
@@ -101,7 +104,7 @@ const Content = styled.div`
   color: white;
   width: 675px;
   margin: 100px;
-  padding: 40px;
+  /* padding: 40px; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -184,6 +187,9 @@ const StyledInput = styled.input`
   border-bottom: 1px solid black;
   font-size: 20px;
   font-family: Archivo;
+  :focus {
+    outline-color: #fc4f00;
+  }
   @media screen and (max-width: 900px) {
     width: calc(80% - 20px);
   }

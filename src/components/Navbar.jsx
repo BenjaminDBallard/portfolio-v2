@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import NavButton from "./sub-components/NavButton";
+// import NavButton from "./sub-components/NavButton";
 import bblogo from "../assets/bblogo.svg";
 
 export default function Navbar(props) {
@@ -8,22 +8,18 @@ export default function Navbar(props) {
       <Wrapper>
         <img src={bblogo} />
         <div>
-          <NavButton
-            value="Home"
-            onClick={() => props.handleLinkClick("home")}
-          />
-          <NavButton
-            value="About"
-            onClick={() => props.handleLinkClick("about")}
-          />
-          <NavButton
-            value="Work"
-            onClick={() => props.handleLinkClick("work")}
-          />
-          <NavButton
-            value="Contact"
-            onClick={() => props.handleLinkClick("contact")}
-          />
+          <NavButton onClick={() => props.handleLinkClick("home")}>
+            Home
+          </NavButton>
+          <NavButton onClick={() => props.handleLinkClick("about")}>
+            About
+          </NavButton>
+          <NavButton onClick={() => props.handleLinkClick("work")}>
+            Work
+          </NavButton>
+          <Button onClick={() => props.handleLinkClick("contact")}>
+            Contact
+          </Button>
         </div>
       </Wrapper>
     </Section>
@@ -50,8 +46,8 @@ const Section = styled.div`
 `;
 
 const Wrapper = styled.div`
-  padding: 10px 0;
-  width: 85%;
+  padding: 10px 20px;
+  width: 100%;
 
   display: flex;
   /* width: 100%; */
@@ -71,15 +67,40 @@ const Wrapper = styled.div`
     gap: 10px;
   }
   @media screen and (max-width: 1200px) {
-    padding: 10px 0;
-    width: 80%;
+    /* width: 80%; */
   }
   @media screen and (min-width: 1921px) {
     /* margin-right: 20px; */
-    padding: 10px 0px;
 
     max-width: 1720px;
     /* font-size: 40px; */
+  }
+`;
+const Button = styled.button`
+  color: #fc4f00;
+  font-size: 18px;
+  background-color: transparent;
+  padding: 5px 10px;
+  border: 2px solid #fc4f00;
+  border-radius: 5px;
+  /* border-bottom: 2px solid transparent; */
+  transition: 500ms;
+  &:hover {
+    color: white;
+    background-color: #fc4f00;
+  }
+`;
+const NavButton = styled.button`
+  color: black;
+  font-size: 18px;
+  background-color: transparent;
+  padding: 5px 10px;
+  border: none;
+  border-bottom: 2px solid transparent;
+  transition: 500ms;
+  &:hover {
+    color: #fc4f00;
+    border-bottom: 2px solid #fc4f00;
   }
 `;
 

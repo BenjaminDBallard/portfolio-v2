@@ -27,6 +27,7 @@ Home.displayName = "Home";
 export default Home;
 
 const Section = styled.div`
+  background-color: white;
   height: 100vh;
   width: 1720px;
   display: flex;

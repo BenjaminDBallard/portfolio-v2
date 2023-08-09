@@ -50,8 +50,10 @@ const Global = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #fca279;
 `;
 const Webpage = styled.div`
+  background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   hr {
     border: none;
