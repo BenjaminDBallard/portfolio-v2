@@ -10,12 +10,6 @@ const About = forwardRef((props, aboutRef) => {
         <Box>
           <Subject>
             <Text>
-              I&apos;m an electrician turned developer! My expirience running
-              crews and working on a larger scale coordinating with multiple
-              trades has given me critical teamwork skills under high pressure
-              that continue to aid me in this fast pased industry.
-            </Text>
-            <Text>
               Web development began as a hobby that formed into a labor of love.
               which lead to me getting a more formal education with Austin
               Coding Academy. There, I improved my personal skills and worked in
@@ -23,14 +17,20 @@ const About = forwardRef((props, aboutRef) => {
               fledged react projects.
             </Text>
             <Text>
-              From there I began develoment on an electrical bidding dashboard.
-              Allowing electricians to easily manage job status, labor, and
-              materials with an easy to use UI.
+              I Currently work for Ripple Learning LLC Working on several
+              applications to assist students in and out of school. an AI
+              powered chatbot to aid students online textbook understanding and
+              a Job Application Tracking Web Application. My primary focus is
+              frontend development, working on UI interface, Accessibility, and
+              Design.
+            </Text>
+            <Text>
+              Previously I worked in the electrical construction sector spanning
+              seven years. I have held roles in Quality Control and served as a
+              foreman before transitioning to Software Engineering.
             </Text>
           </Subject>
-          <ImgBox>
-            <img src={cone} />
-          </ImgBox>
+          <ImgBox>{/* <img src={cone} /> */}</ImgBox>
         </Box>
       </Content>
     </Section>
@@ -44,15 +44,18 @@ export default About;
 const Section = styled.div`
   background-color: #fff;
   width: 1720px;
-
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 2px 3px 20px black, 0 0 20px #a0784f inset;
   @media screen and (max-width: 600px) {
     justify-content: center;
   }
   @media screen and (max-width: 1720px) {
     width: 100%;
+    border-radius: 0;
+    box-shadow: none;
   }
 `;
 

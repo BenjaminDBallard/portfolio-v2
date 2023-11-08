@@ -1,30 +1,52 @@
 import { styled } from "styled-components";
-import Image from "../../assets/hackerClone.png";
+import Image from "../../assets/JAT.png";
 
 export default function Job1() {
   return (
     <Section>
       <Content>
         <ImgBox>
-          <Link href="https://hacker-clone-d852c.web.app/">
+          <Link href="">
             <DisplayImg src={Image} />
           </Link>
         </ImgBox>
         <DisplayBox>
           <Display>
-            <Link href="https://hacker-clone-d852c.web.app/">
-              <Title>Hacker Clone</Title>
+            <Link href="">
+              <Title>Job App Tracker @ Ripple Learning LLC</Title>
             </Link>
             <ChipList>
               <FlatChip>React.js</FlatChip>
-              <FlatChip>Material UI</FlatChip>
+              <FlatChip>Styled-components</FlatChip>
+              <FlatChip>Figma</FlatChip>
+              <FlatChip>Node.js</FlatChip>
+              <FlatChip>MySQL</FlatChip>
+              <FlatChip>Express</FlatChip>
+              <FlatChip>Rest API</FlatChip>
+              <FlatChip>OpenAI</FlatChip>
             </ChipList>
             <List>
-              <Text>Sophisticated Front-end Design Showcase</Text>
-              <Text>Utilizing React and Material-UI (MUI) technologies</Text>
               <Text>
-                Exemplifying seamless user experiences and captivating visuals,
-                setting new standards in modern web application design.
+                Comprehensive Job Application Tracking: The web page offers a
+                comprehensive solution for managing job applications, allowing
+                users to easily track their progress through different stages of
+                the hiring process.
+              </Text>
+              <Text>
+                AI-Powered Resume Review: An feature of this platform is the
+                AI-powered resume review, which leverages artificial
+                intelligence to cross-reference a user&apos;s resume with
+                specific job descriptions. This helps applicants identify
+                weaknesses in their application materials and make necessary
+                improvements.
+              </Text>
+              <Text>
+                Efficiency and Productivity: The Job Application Tracking Web
+                Page enhances efficiency and productivity in the job application
+                process, reducing the chances of missing application deadlines
+                or opportunities. It provides a centralized platform to organize
+                and monitor job applications, empowering users to stay organized
+                and focused on their career goals.
               </Text>
             </List>
           </Display>
@@ -49,7 +71,7 @@ const Content = styled.div`
 
   /* align-items: center; */
   gap: 40px;
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1720px) {
     flex-direction: column;
     align-items: center;
     gap: 20px;
@@ -58,8 +80,11 @@ const Content = styled.div`
 `;
 
 const ImgBox = styled.div`
-  width: 50%;
-
+  width: 740px;
+  height: 433px;
+  @media screen and (max-width: 1720px) {
+    height: fit-content;
+  }
   /* margin: 20px; */
   @media screen and (max-width: 1200px) {
     width: 100%;
@@ -89,7 +114,7 @@ const DisplayImg = styled.img`
 
 const DisplayBox = styled.div`
   /* margin: 0 20px; */
-  width: 50%;
+  width: 740px;
   display: flex;
   flex-direction: column;
   align-items: center;

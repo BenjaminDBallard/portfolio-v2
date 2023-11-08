@@ -23,9 +23,13 @@ const Section = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 10px;
+  box-shadow: 2px 3px 20px black, 0 0 20px #a0784f inset;
   /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
   @media screen and (max-width: 1720px) {
     width: 100%;
+    border-radius: 0;
+    box-shadow: none;
   }
 `;
 

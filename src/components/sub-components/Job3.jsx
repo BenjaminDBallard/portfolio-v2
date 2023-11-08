@@ -62,7 +62,7 @@ const Content = styled.div`
 
   /* align-items: center; */
   gap: 40px;
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1720px) {
     flex-direction: column;
     align-items: center;
     gap: 20px;
@@ -71,14 +71,16 @@ const Content = styled.div`
 `;
 
 const ImgBox = styled.div`
-  width: 600px;
-  height: 320px;
+  width: 740px;
+  height: 433px;
   padding: 20px 0;
-  background-color: white;
+  background-color: #034f8d;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   display: flex;
   justify-content: center;
-
+  @media screen and (max-width: 1720px) {
+    height: 100px;
+  }
   /* margin: 20px; */
   @media screen and (max-width: 1200px) {
     width: 100%;
@@ -108,7 +110,7 @@ const DisplayImg = styled.img`
 
 const DisplayBox = styled.div`
   /* margin: 0 20px; */
-  width: 50%;
+  width: 740px;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -1,46 +1,55 @@
 import { styled } from "styled-components";
-import Image from "../../assets/ecproDash.png";
+import Image from "../../assets/RLlogo.webp";
+import rain from "../../assets/rain2.jpg";
 
 export default function Job1() {
   return (
     <Section>
       <Content>
         <ImgBox>
-          <Link href="https://ecpro-e4a36.web.app">
-            <DisplayImg src={Image} />
-          </Link>
+          <Filter>
+            <Link href="">
+              <DisplayImg src={Image} />
+            </Link>
+          </Filter>
         </ImgBox>
         <DisplayBox>
           <Display>
-            <Link href="https://ecpro-e4a36.web.app">
-              <Title>ECPro</Title>
+            <Link href="">
+              <Title>
+                Front-End Web Developer @ Ripple Learning LLC | React Engineer |
+              </Title>
             </Link>
             <ChipList>
               <FlatChip>React.js</FlatChip>
+              <FlatChip>Styled-components</FlatChip>
+              <FlatChip>Figma</FlatChip>
               <FlatChip>Node.js</FlatChip>
               <FlatChip>MySQL</FlatChip>
               <FlatChip>Express</FlatChip>
               <FlatChip>Rest API</FlatChip>
-              <FlatChip>Material UI</FlatChip>
             </ChipList>
             <List>
               <Text>
-                Built an online dashboard facilitating electrical bidding and
-                job progress management, including: data visualizations, client,
-                job, materials, and labor management capabilities.
+                My primary responsibility lies in frontend development, with a
+                strong emphasis on enhancing the user interface, ensuring
+                accessibility, and optimizing overall design.
               </Text>
               <Text>
-                Crafted a responsive front-end solution utilizing React with
-                custom React hooks to efficiently fetch and update data from the
-                back-end through a RESTful API. I secured the front-end and
-                back-end with web security via JSON Web Tokens (JWT) through
-                Auth0.
+                Developed an artificial intelligence-driven chatbot designed to
+                assist students in comprehending online textbooks. Additionally,
+                headed development for the implementation of an administrative
+                dashboard to monitor the chatbot&apos;s usage and identify
+                weaknesses within the curriculum.
               </Text>
               <Text>
-                Developed an Express REST API, leveraging Node.js to facilitate
-                communication with a MySQL database, enabling efficient handling
-                of data retrieval, updates, and deletions based on user
-                requests.
+                Designed and implemented a comprehensive Job Application
+                Tracking Web Page to streamline the management of new and
+                ongoing job applications. This platform enables users to track
+                their progress through various stages of the hiring process and
+                offers an AI-powered resume review feature that cross references
+                that resume against specific job descriptions to identify
+                weakness.
               </Text>
             </List>
           </Display>
@@ -65,7 +74,7 @@ const Content = styled.div`
 
   /* align-items: center; */
   gap: 40px;
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1720px) {
     flex-direction: column;
     align-items: center;
     gap: 20px;
@@ -74,8 +83,18 @@ const Content = styled.div`
 `;
 
 const ImgBox = styled.div`
-  width: 50%;
-
+  width: 740px;
+  height: 433px;
+  background-image: url(${rain});
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  @media screen and (max-width: 1720px) {
+    height: 100px;
+  }
   /* margin: 20px; */
   @media screen and (max-width: 1200px) {
     width: 100%;
@@ -93,10 +112,19 @@ const ImgBox = styled.div`
   } */
 `;
 
+const Filter = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00000070;
+  height: 100%;
+  width: 100%;
+`;
+
 const DisplayImg = styled.img`
   /* min-width: 600px; */
   width: 100%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
   @media screen and (max-width: 1200px) {
     /* min-width: none; */
     width: 100%;
@@ -105,7 +133,7 @@ const DisplayImg = styled.img`
 
 const DisplayBox = styled.div`
   /* margin: 0 20px; */
-  width: 50%;
+  width: 740px;
   display: flex;
   flex-direction: column;
   align-items: center;

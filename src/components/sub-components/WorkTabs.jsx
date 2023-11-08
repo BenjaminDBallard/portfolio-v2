@@ -22,8 +22,8 @@ const WorkTabs = () => {
   };
 
   const tabs = [
-    { label: "ECPro" },
-    { label: "Hacker Clone" },
+    { label: "Ripple Learning LLC" },
+    { label: "Job App Tracker" },
     { label: "Austin Coding Academy" },
     // Add more tabs as needed
   ];
