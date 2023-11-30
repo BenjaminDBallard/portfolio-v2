@@ -85,21 +85,24 @@ Contact.displayName = "Contact";
 export default Contact;
 
 const Section = styled.div`
-  background-color: #fff;
+  background-color: #333338;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 1720px;
-  border-radius: 10px 10px 0 0px;
-  box-shadow: 2px 3px 20px black, 0 0 20px #a0784f inset;
-  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+  /* border-radius: 10px 10px 0 0px; */
+  border-right: 10px solid rgb(162, 241, 249);
+  border-top: 10px solid rgb(162, 241, 249);
+  margin-bottom: 30px;
+
   @media screen and (max-width: 1720px) {
-    width: 100%;
+    width: calc(100% - 10px);
     border-radius: 0;
     box-shadow: none;
   }
   @media screen and (max-width: 900px) {
-    height: 100vh;
+    height: calc(100vh - 70px);
+    margin-bottom: 0;
   }
 `;
 
@@ -140,7 +143,7 @@ const Content = styled.div`
 const Title = styled.h1`
   font-size: 40px;
   line-height: 1.1;
-  color: black;
+  color: rgb(162, 241, 249);
   /* @media screen and (min-width: 1921px) {
     font-size: 60px;
   }
@@ -188,12 +191,11 @@ const StyledInput = styled.input`
   width: 375px;
   padding: 10px;
   border: none;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #cfcfe7;
+  color: #cfcfe7;
+  background-color: transparent;
   font-size: 20px;
   font-family: Archivo;
-  :focus {
-    outline-color: #fc4f00;
-  }
   @media screen and (max-width: 900px) {
     width: calc(80% - 20px);
   }
@@ -217,7 +219,9 @@ const StyledTextArea = styled.textarea`
   font-family: Archivo;
   resize: none;
   border: none;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #cfcfe7;
+  color: #cfcfe7;
+  background-color: transparent;
   @media screen and (max-width: 900px) {
     width: calc(80% - 20px);
   }
@@ -240,10 +244,20 @@ const StyledButton = styled.button`
   padding: 10px;
   font-size: 20px;
   width: 675px;
-  background-color: #fc4f00;
+  background-color: rgb(119, 135, 249);
   color: #fff;
-  border: none;
+  border: 1px solid rgb(119, 135, 249);
   cursor: pointer;
+
+  border-radius: 5px;
+  font-weight: 600;
+  padding: 15px 40px;
+  transition: 500ms;
+  &:hover {
+    background-color: transparent;
+    border: 1px solid rgb(119, 135, 249);
+    color: rgb(119, 135, 249);
+  }
   @media screen and (max-width: 900px) {
     width: 80%;
   }

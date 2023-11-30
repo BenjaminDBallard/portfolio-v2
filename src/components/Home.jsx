@@ -9,8 +9,8 @@ const Home = forwardRef((props, homeRef) => {
           Hi, Im Ben. <br /> Front-End Web Developer
         </Title>
         <Text>
-          I thoroughly enjoy creating user-friendly and sophisticated online
-          experiences, <br />
+          I enjoy creating user-friendly and sophisticated online experiences,{" "}
+          <br />
           specializing in developing web applications with React and
           StyledComponents.
         </Text>
@@ -27,15 +27,13 @@ Home.displayName = "Home";
 export default Home;
 
 const Section = styled.div`
-  background-color: white;
+  background-color: #333338;
   height: 100vh;
   width: 1720px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
-  box-shadow: 2px 3px 20px black, 0 0 20px #a0784f inset;
-  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+  /* border-radius: 10px; */
   @media screen and (max-width: 900px) {
     justify-content: center;
   }
@@ -48,7 +46,7 @@ const Section = styled.div`
 
 const Content = styled.div`
   /* padding-left: 100px; */
-  color: Black;
+  color: #cfcfe7;
   width: 85%;
   @media screen and (max-width: 900px) {
     padding: 100px 0;
@@ -67,6 +65,7 @@ const Title = styled.h1`
   font-size: 60px;
   font-weight: 600;
   line-height: 1.1;
+  color: rgb(162, 241, 249);
   margin: 0;
   @media screen and (max-width: 900px) {
     font-size: 50px;
@@ -95,12 +94,12 @@ const Text = styled.p`
 `;
 
 const NavButton = styled.button`
-  background-color: #fc4f00;
+  background-color: rgb(119, 135, 249);
   color: #fff;
   margin-right: 10px;
   margin-top: 10px;
   font-size: 20px;
-  border: 1px solid #fc4f00;
+  border: 1px solid rgb(119, 135, 249);
   border-radius: 5px;
   cursor: pointer;
   font-weight: 600;
@@ -108,8 +107,8 @@ const NavButton = styled.button`
   transition: 500ms;
   &:hover {
     background-color: transparent;
-    border: 1px solid #fc4f00;
-    color: #fc4f00;
+    border: 1px solid rgb(119, 135, 249);
+    color: rgb(119, 135, 249);
   }
   /* @media screen and (min-width: 1921px) {
     margin-right: 15px;

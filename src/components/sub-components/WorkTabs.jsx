@@ -4,13 +4,15 @@ import Tabs from "./Tabs"; // Assuming the file containing the Tabs component is
 import Job1 from "./Job1";
 import Job2 from "./Job2";
 import Job3 from "./Job3";
+import Job4 from "./Job4";
+import "../../App.css";
 
 const theme = {
-  primaryColor: "#FC4F00", // Replace 'blue' with your desired primary color
+  primaryColor: "rgb(119, 135, 249)", // Replace 'blue' with your desired primary color
 };
 
 const TabContainer = styled.div`
-  /* padding: 20px; */
+  /* width: 100%; */
 `;
 
 const WorkTabs = () => {
@@ -24,6 +26,7 @@ const WorkTabs = () => {
   const tabs = [
     { label: "Ripple Learning LLC" },
     { label: "Job App Tracker" },
+    { label: "ChatBot Tutor" },
     { label: "Austin Coding Academy" },
     // Add more tabs as needed
   ];
@@ -39,7 +42,8 @@ const WorkTabs = () => {
         {/* Your content for each tab goes here */}
         {activeTab === 0 && <Job1 />}
         {activeTab === 1 && <Job2 />}
-        {activeTab === 2 && <Job3 />}
+        {activeTab === 2 && <Job4 />}
+        {activeTab === 3 && <Job3 />}
         {/* Add more content for additional tabs */}
       </TabContainer>
     </ThemeProvider>

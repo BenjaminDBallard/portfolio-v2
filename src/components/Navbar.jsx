@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 // import NavButton from "./sub-components/NavButton";
-import bblogo from "../assets/bblogo.svg";
+import bblogo from "../assets/bblogoWhite.svg";
 
 export default function Navbar(props) {
   return (
@@ -29,11 +29,11 @@ export default function Navbar(props) {
 const Section = styled.div`
   position: fixed;
   width: 1720px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
   display: flex;
   padding: 10px 0;
   height: 40px;
-  background-color: white;
+  background-color: #333338;
   align-items: center;
   justify-content: center;
 
@@ -77,21 +77,21 @@ const Wrapper = styled.div`
   }
 `;
 const Button = styled.button`
-  color: #fc4f00;
+  color: rgb(119, 135, 249);
   font-size: 18px;
   background-color: transparent;
   padding: 5px 10px;
-  border: 2px solid #fc4f00;
+  border: 1px solid rgb(119, 135, 249);
   border-radius: 5px;
   /* border-bottom: 2px solid transparent; */
   transition: 500ms;
   &:hover {
     color: white;
-    background-color: #fc4f00;
+    background-color: rgb(119, 135, 249);
   }
 `;
 const NavButton = styled.button`
-  color: black;
+  color: #cfcfe7;
   font-size: 18px;
   background-color: transparent;
   padding: 5px 10px;
@@ -99,8 +99,8 @@ const NavButton = styled.button`
   border-bottom: 2px solid transparent;
   transition: 500ms;
   &:hover {
-    color: #fc4f00;
-    border-bottom: 2px solid #fc4f00;
+    color: rgb(162, 241, 249);
+    border-bottom: 2px solid rgb(162, 241, 249);
   }
 `;
 

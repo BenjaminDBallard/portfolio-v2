@@ -32,11 +32,8 @@ function App() {
       <Webpage>
         <Navbar handleLinkClick={handleLinkClick} />
         <Home ref={homeRef} handleLinkClick={handleLinkClick} />
-        <hr />
         <About ref={aboutRef} />
-        <hr />
         <Work ref={workRef} />
-        <hr />
         <Contact ref={contactRef} />
       </Webpage>
     </Global>
@@ -50,32 +47,22 @@ const Global = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* background-color: #fca279; */
-  background-image: url(${table});
+  background-color: #333338;
+  /* background-image: url(${table});
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
   @media screen and (max-width: 1720px) {
     background-image: none;
-  }
+  } */
 `;
 const Webpage = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  hr {
-    display: none;
-    border: none;
-    border-bottom: 5px dotted gray;
-    width: 20px;
-    @media screen and (max-width: 1720px) {
-      display: block;
-    }
-  }
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+  /* gap: 30px; */
   @media screen and (max-width: 1720px) {
-    gap: 0;
-    background-color: white;
+    background-color: #333338;
   }
 `;
 

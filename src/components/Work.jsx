@@ -18,14 +18,12 @@ Work.displayName = "Work";
 export default Work;
 
 const Section = styled.div`
-  background-color: white;
+  /* background-color: rgb(39, 87, 94); */
+  background-color: transparent;
   width: 1720px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
-  box-shadow: 2px 3px 20px black, 0 0 20px #a0784f inset;
-  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
   @media screen and (max-width: 1720px) {
     width: 100%;
     border-radius: 0;
@@ -35,7 +33,7 @@ const Section = styled.div`
 
 const Content = styled.div`
   padding: 100px 100px;
-  color: black;
+  color: white;
   width: 100%;
   @media screen and (max-width: 900px) {
     padding: 100px 0;
@@ -58,7 +56,7 @@ const Content = styled.div`
 
 const Title = styled.h1`
   text-align: center;
-  color: black;
+  color: rgb(162, 241, 249);
   margin-bottom: 20px;
   font-size: 40px;
   font-weight: 600;

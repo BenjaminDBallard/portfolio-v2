@@ -1,44 +1,51 @@
 import { styled } from "styled-components";
-import Image from "../../assets/acalogo.webp";
+import Image from "../../assets/admin.png";
 
-export default function Job1() {
+export default function Job4() {
   return (
     <Section>
       <Content>
         <ImgBox>
-          <Link href="https://austincodingacademy.com/">
+          <Link href="">
             <DisplayImg src={Image} />
           </Link>
         </ImgBox>
         <DisplayBox>
           <Display>
-            <Link href="https://austincodingacademy.com/">
-              <Title>Austin Coding Academy</Title>
+            <Link>
+              <Title>ChatBot Tutuor</Title>
             </Link>
             <ChipList>
-              <FlatChip>HTML5</FlatChip>
-              <FlatChip>CSS3</FlatChip>
-              <FlatChip>Javascript</FlatChip>
               <FlatChip>React.js</FlatChip>
+              <FlatChip>Styled-components</FlatChip>
+              <FlatChip>Figma</FlatChip>
               <FlatChip>Node.js</FlatChip>
               <FlatChip>MySQL</FlatChip>
+              <FlatChip>Express</FlatChip>
+              <FlatChip>Rest API</FlatChip>
+              <FlatChip>OpenAI</FlatChip>
             </ChipList>
             <List>
               <Text>
-                Underwent a comprehensive and transformative learning experience
-                at Austin Coding Academy, focusing on coding and web
-                development.
+                Enhanced Learning with AI-Driven Support: Developed an advanced
+                AI-driven chatbot tailored to elevate student comprehension of
+                online textbooks. Utilization of natural language processing
+                ensures personalized engagement to accurately address specific
+                learning needs.
               </Text>
               <Text>
-                Gained proficiency in a wide range of programming languages and
-                frameworks, including HTML, CSS, JavaScript, React, and Node.js,
-                through engaging in hands-on projects and collaborative
-                exercises.
+                Strategic Oversight with Administrative Dashboard: Spearheaded
+                the development of an Administrative Dashboard to offer
+                real-time monitoring of the chatbots usage. This empowers
+                educational administrators to identify and promptly address
+                potential weaknesses within the curriculum.
               </Text>
               <Text>
-                Cultivated strong problem-solving abilities and self-assurance
-                to address real world coding challenges, fostering a solid
-                foundation for a successful career in the technology industry.
+                Integrated Educational Support Ecosystem: Implemented a cohesive
+                educational support system by seamlessly integrating the
+                AI-driven chatbot and the Administrative Dashboard. This
+                integrated solution enables data-driven decision-making,
+                facilitating ongoing curriculum refinement and optimization.
               </Text>
             </List>
           </Display>
@@ -74,14 +81,9 @@ const Content = styled.div`
 
 const ImgBox = styled.div`
   width: 740px;
-  height: 376.58px;
-  padding: 20px 0;
-  background-color: #034f8d;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  display: flex;
-  justify-content: center;
+  height: 433px;
   @media screen and (max-width: 1720px) {
-    height: 100px;
+    height: fit-content;
   }
   /* margin: 20px; */
   @media screen and (max-width: 1200px) {
@@ -102,11 +104,11 @@ const ImgBox = styled.div`
 
 const DisplayImg = styled.img`
   /* min-width: 600px; */
-  height: 100%;
-
+  width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   @media screen and (max-width: 1200px) {
     /* min-width: none; */
-    height: 100px;
+    width: 100%;
   }
 `;
 
@@ -147,7 +149,7 @@ const Title = styled.h1`
   } */
 `;
 
-const Link = styled.a`
+const Link = styled.div`
   color: black;
   text-decoration: none;
 `;
@@ -192,6 +194,7 @@ const List = styled.ul`
 const Text = styled.li`
   padding-top: 20px;
   font-size: 20px;
+  /* color: black; */
   /* @media screen and (max-width: 900px) {
     width: 100%;
     margin: 20px 0;

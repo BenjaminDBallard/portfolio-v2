@@ -12,8 +12,8 @@ export default function Job1() {
         </ImgBox>
         <DisplayBox>
           <Display>
-            <Link href="">
-              <Title>Job App Tracker @ Ripple Learning LLC</Title>
+            <Link>
+              <Title>Job App Tracker</Title>
             </Link>
             <ChipList>
               <FlatChip>React.js</FlatChip>
@@ -36,8 +36,8 @@ export default function Job1() {
                 AI-Powered Resume Review: An feature of this platform is the
                 AI-powered resume review, which leverages artificial
                 intelligence to cross-reference a user&apos;s resume with
-                specific job descriptions. This helps applicants identify
-                weaknesses in their application materials and make necessary
+                specific job descriptions. This helps applicants identify weak
+                points in their application materials and make necessary
                 improvements.
               </Text>
               <Text>
@@ -60,10 +60,11 @@ const Section = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #cfcfe7;
 `;
 const Content = styled.div`
   /* margin: 0 100px; */
-  color: white;
+  color: #cfcfe7;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -140,7 +141,7 @@ const Title = styled.h1`
   font-size: 30px;
   line-height: 1.1;
   margin: 0;
-  color: black;
+  color: rgb(119, 135, 249);
   /* @media screen and (min-width: 1921px) {
     font-size: 60px;
   }
@@ -149,7 +150,7 @@ const Title = styled.h1`
   } */
 `;
 
-const Link = styled.a`
+const Link = styled.div`
   color: black;
   text-decoration: none;
 `;
@@ -173,9 +174,9 @@ const FlatChip = styled.button`
   padding: 5px;
   background-color: transparent;
   border-radius: 999px;
-  border: 1px solid #fc4f00;
+  border: 1px solid rgb(162, 241, 249);
   font-size: 15px;
-  color: #fc4f00;
+  color: rgb(162, 241, 249);
   /* @media screen and (min-width: 1921px) {
     font-size: 30px;
     padding: 15px;
@@ -194,7 +195,7 @@ const List = styled.ul`
 const Text = styled.li`
   padding-top: 20px;
   font-size: 20px;
-  color: black;
+  /* color: black; */
   /* @media screen and (max-width: 900px) {
     width: 100%;
     margin: 20px 0;

@@ -28,6 +28,7 @@ export default function Job1() {
               <FlatChip>MySQL</FlatChip>
               <FlatChip>Express</FlatChip>
               <FlatChip>Rest API</FlatChip>
+              <FlatChip>OpenAI</FlatChip>
             </ChipList>
             <List>
               <Text>
@@ -37,19 +38,19 @@ export default function Job1() {
               </Text>
               <Text>
                 Developed an artificial intelligence-driven chatbot designed to
-                assist students in comprehending online textbooks. Additionally,
-                headed development for the implementation of an administrative
-                dashboard to monitor the chatbot&apos;s usage and identify
-                weaknesses within the curriculum.
+                assist students in comprehension of online textbooks.
+                Additionally, lead development for the implementation of an
+                administrative dashboard to monitor the chatbot&apos;s usage and
+                identify weaknesses within the curriculum.
               </Text>
               <Text>
-                Designed and implemented a comprehensive Job Application
-                Tracking Web Page to streamline the management of new and
-                ongoing job applications. This platform enables users to track
-                their progress through various stages of the hiring process and
-                offers an AI-powered resume review feature that cross references
-                that resume against specific job descriptions to identify
-                weakness.
+                Designed and implemented a comprehensive job application
+                tracking website to streamline the management of new and ongoing
+                job applications. This platform enables users to track their
+                progress through various stages of the hiring process and offers
+                an AI-powered resume review feature that cross-references that
+                resume against specific job descriptions to identify areas of
+                improvement.
               </Text>
             </List>
           </Display>
@@ -63,10 +64,11 @@ const Section = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #cfcfe7;
 `;
 const Content = styled.div`
   /* margin: 0 100px; */
-  color: white;
+  color: #cfcfe7;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -159,7 +161,7 @@ const Title = styled.h1`
   font-size: 30px;
   line-height: 1.1;
   margin: 0;
-  color: black;
+  color: rgb(119, 135, 249);
   /* @media screen and (min-width: 1921px) {
     font-size: 60px;
   }
@@ -192,9 +194,9 @@ const FlatChip = styled.button`
   padding: 5px;
   background-color: transparent;
   border-radius: 999px;
-  border: 1px solid #fc4f00;
+  border: 1px solid rgb(162, 241, 249);
   font-size: 15px;
-  color: #fc4f00;
+  color: rgb(162, 241, 249);
   /* @media screen and (min-width: 1921px) {
     font-size: 30px;
     padding: 15px;
@@ -213,7 +215,6 @@ const List = styled.ul`
 const Text = styled.li`
   padding-top: 20px;
   font-size: 20px;
-  color: black;
   /* @media screen and (max-width: 900px) {
     width: 100%;
     margin: 20px 0;

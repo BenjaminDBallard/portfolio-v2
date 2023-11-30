@@ -2,21 +2,36 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
-const TabsContainer = styled.div`
+const TabWrap = styled.div`
   display: flex;
   justify-content: center;
+  /* overflow-x: auto; */
+  width: 100%;
+  /* white-space: nowrap; */
+  /* margin-bottom: 20px; */
+`;
+
+const TabsContainer = styled.div`
+  display: flex;
+  /* justify-content: center; */
+  overflow-x: auto;
+  width: fit-content;
+  /* white-space: nowrap; */
   margin-bottom: 20px;
   @media screen and (max-width: 500px) {
-    justify-content: space-around;
+    /* justify-content: space-around; */
   }
 `;
 
 const TabItem = styled.div`
   padding: 12px 24px;
+  margin-bottom: 10px;
+  flex: 0 0 auto;
+  width: fit-content;
   cursor: pointer;
   font-size: 20px;
   text-align: center;
-  color: ${({ active, theme }) => (active ? theme.primaryColor : "black")};
+  color: ${({ active, theme }) => (active ? theme.primaryColor : "#cfcfe7")};
   border-bottom: ${({ active, theme }) =>
     active ? `2px solid ${theme.primaryColor}` : "none"};
 
@@ -45,17 +60,19 @@ const Tabs = ({ tabs, defaultTab, onTabChange }) => {
   };
 
   return (
-    <TabsContainer>
-      {tabs.map((tab, index) => (
-        <TabItem
-          key={index}
-          active={activeTab === index}
-          onClick={() => handleTabClick(index)}
-        >
-          {tab.label}
-        </TabItem>
-      ))}
-    </TabsContainer>
+    <TabWrap>
+      <TabsContainer>
+        {tabs.map((tab, index) => (
+          <TabItem
+            key={index}
+            active={activeTab === index}
+            onClick={() => handleTabClick(index)}
+          >
+            {tab.label}
+          </TabItem>
+        ))}
+      </TabsContainer>
+    </TabWrap>
   );
 };
 
