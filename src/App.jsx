@@ -7,6 +7,7 @@ import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import Work from "./components/Work";
 import table from "./assets/wood-table-background.jpg";
+import "./index.css";
 
 function App() {
   // const scrollRef = useRef(null);

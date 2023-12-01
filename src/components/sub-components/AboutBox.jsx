@@ -1,9 +1,8 @@
-import { forwardRef } from "react";
 import styled from "styled-components";
 
-const About = forwardRef((props, aboutRef) => {
+const AboutBox = (props) => {
   return (
-    <Section ref={aboutRef}>
+    <>
       <Content>
         <Title>About Me</Title>
         <Box>
@@ -31,60 +30,25 @@ const About = forwardRef((props, aboutRef) => {
           </div>
         </Box>
       </Content>
-    </Section>
+    </>
   );
-});
+};
 
-About.displayName = "About";
-
-export default About;
-
-const Section = styled.div`
-  background-color: transparent;
-  /* background-color: rgb(57, 65, 125); */
-  width: 1720px;
-  /* border-left: 10px solid rgb(119, 135, 249);
-  border-bottom: 10px solid rgb(119, 135, 249); */
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  @media screen and (max-width: 600px) {
-    justify-content: center;
-  }
-  @media screen and (max-width: 1720px) {
-    width: 100%;
-    border-radius: 0;
-    box-shadow: none;
-  }
-  @media screen and (max-width: 1037px) {
-    justify-content: center;
-  }
-`;
+export default AboutBox;
 
 const Content = styled.div`
-  margin: 0px 120px;
+  /* position: absolute; */
   padding: 100px 100px;
   width: 50%;
   border-radius: 10px;
-  box-shadow: 10px 10px rgba(0, 0, 0, 0.442), 140px -60px rgba(119, 134, 249),
-    -60px 30px rgb(162, 241, 249);
-  background-color: #1f1f2381;
+  background-color: #1a1a1e;
   color: #cfcfe7;
   display: flex;
   flex-direction: column;
+  box-shadow: 60px -16px teal, -60px -16px pink;
   @media screen and (max-width: 1200px) {
-    padding: 100px 50px;
-    margin: 0px 20px;
+    padding: 100px 0;
     width: 80%;
-    box-shadow: 10px 10px rgba(0, 0, 0, 0.442), 30px -60px rgba(119, 134, 249),
-      -60px 30px rgb(162, 241, 249);
-  }
-  @media screen and (max-width: 1037px) {
-    padding: 100px 50px;
-    margin: 0 20px;
-    width: 80%;
-    box-shadow: 10px 10px rgba(0, 0, 0, 0.442), 10px -60px rgba(119, 134, 249),
-      -10px 20px rgb(162, 241, 249);
   }
   @media screen and (min-width: 1921px) {
     /* margin-right: 20px; */
@@ -94,7 +58,29 @@ const Content = styled.div`
     /* font-size: 40px; */
   }
 `;
-const Subject = styled.div``;
+
+const SubContent = styled.div`
+  position: absolute;
+  padding: 100px 100px;
+  width: 50%;
+  border-radius: 10px;
+  background-color: rgb(162, 241, 249);
+  color: #cfcfe7;
+  display: flex;
+  flex-direction: column;
+  @media screen and (max-width: 1200px) {
+    padding: 100px 0;
+    width: 80%;
+  }
+  @media screen and (min-width: 1921px) {
+    /* margin-right: 20px; */
+    padding: 100px 100px;
+
+    max-width: 1720px;
+    /* font-size: 40px; */
+  }
+`;
+
 const Box = styled.div`
   display: flex;
 `;

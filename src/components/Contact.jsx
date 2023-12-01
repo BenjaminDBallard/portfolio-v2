@@ -90,28 +90,34 @@ const Section = styled.div`
   align-items: center;
   justify-content: center;
   width: 1720px;
+  height: 100vh;
+  min-height: 500px;
   /* border-radius: 10px 10px 0 0px; */
-  border-right: 10px solid rgb(162, 241, 249);
-  border-top: 10px solid rgb(162, 241, 249);
-  margin-bottom: 30px;
+  /* border-right: 10px solid rgb(162, 241, 249);
+  border-top: 10px solid rgb(162, 241, 249); */
+  margin-bottom: 50px;
 
   @media screen and (max-width: 1720px) {
-    width: calc(100% - 10px);
+    width: 100%;
     border-radius: 0;
     box-shadow: none;
   }
   @media screen and (max-width: 900px) {
-    height: calc(100vh - 70px);
-    margin-bottom: 0;
+    height: 100vh;
   }
 `;
 
 const Content = styled.div`
-  /* background-color: #371b58; */
+  background-color: #1f1f2381;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.442), 30px -30px rgb(162, 241, 249),
+    -40px -70px rgba(119, 134, 249);
+  padding: 50px;
+  border-radius: 10px;
   color: white;
   width: 675px;
-  margin: 100px;
-  /* padding: 40px; */
+  margin: 50px;
+  height: 500px;
+  min-height: 500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -120,8 +126,11 @@ const Content = styled.div`
     justify-content: flex-start;
     padding: 100px 0 0 0;
     margin: 0;
-    width: 100%;
-    height: calc(100% - 100px);
+    width: 90%;
+    /* height: calc(100% - 100px); */
+    /* height: 100vh; */
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.442), 10px -30px rgb(162, 241, 249),
+      -10px -70px rgba(119, 134, 249);
   }
   @media screen and (min-width: 1921px) {
     /* margin-right: 20px; */
@@ -193,6 +202,9 @@ const StyledInput = styled.input`
   border: none;
   border-bottom: 1px solid #cfcfe7;
   color: #cfcfe7;
+  &::placeholder {
+    color: #9797a9;
+  }
   background-color: transparent;
   font-size: 20px;
   font-family: Archivo;
@@ -221,6 +233,9 @@ const StyledTextArea = styled.textarea`
   border: none;
   border-bottom: 1px solid #cfcfe7;
   color: #cfcfe7;
+  &::placeholder {
+    color: #9797a9;
+  }
   background-color: transparent;
   @media screen and (max-width: 900px) {
     width: calc(80% - 20px);
@@ -244,9 +259,9 @@ const StyledButton = styled.button`
   padding: 10px;
   font-size: 20px;
   width: 675px;
-  background-color: rgb(119, 135, 249);
+  background-color: rgba(119, 134, 249);
   color: #fff;
-  border: 1px solid rgb(119, 135, 249);
+  border: 1px solid rgba(119, 134, 249);
   cursor: pointer;
 
   border-radius: 5px;
@@ -255,8 +270,8 @@ const StyledButton = styled.button`
   transition: 500ms;
   &:hover {
     background-color: transparent;
-    border: 1px solid rgb(119, 135, 249);
-    color: rgb(119, 135, 249);
+    border: 1px solid rgba(119, 134, 249);
+    color: rgba(119, 134, 249);
   }
   @media screen and (max-width: 900px) {
     width: 80%;

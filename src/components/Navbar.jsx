@@ -1,26 +1,34 @@
 import { styled } from "styled-components";
 // import NavButton from "./sub-components/NavButton";
 import bblogo from "../assets/bblogoWhite.svg";
+import HamburgerMenu from "./sub-components/Hamburger";
+import { useState } from "react";
 
-export default function Navbar(props) {
+import { Icon } from "@blueprintjs/core";
+
+export default function Navbar({ handleLinkClick }) {
+  const [open, setOpen] = useState(false);
   return (
     <Section>
       <Wrapper>
-        <img src={bblogo} />
-        <div>
-          <NavButton onClick={() => props.handleLinkClick("home")}>
-            Home
-          </NavButton>
-          <NavButton onClick={() => props.handleLinkClick("about")}>
-            About
-          </NavButton>
-          <NavButton onClick={() => props.handleLinkClick("work")}>
-            Work
-          </NavButton>
-          <Button onClick={() => props.handleLinkClick("contact")}>
-            Contact
-          </Button>
-        </div>
+        <DropWrap>
+          <img src={bblogo} />
+        </DropWrap>
+        <DropWrap>
+          {open && (
+            <HamburgerMenu
+              handleLinkClick={handleLinkClick}
+              open={open}
+              setOpen={setOpen}
+            />
+          )}
+          {!open && (
+            <MenuButton open={open} onClick={() => setOpen(!open)}>
+              {!open && <StyledIcon icon="menu" size={30} />}
+              {open && <StyledIcon icon="cross" size={30} />}
+            </MenuButton>
+          )}
+        </DropWrap>
       </Wrapper>
     </Section>
   );
@@ -29,11 +37,11 @@ export default function Navbar(props) {
 const Section = styled.div`
   position: fixed;
   width: 1720px;
-  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+  z-index: 5;
   display: flex;
   padding: 10px 0;
   height: 40px;
-  background-color: #333338;
+  background-color: transparent;
   align-items: center;
   justify-content: center;
 
@@ -42,11 +50,13 @@ const Section = styled.div`
   }
   @media screen and (max-width: 1720px) {
     width: 100%;
+    background-color: #333338;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   }
 `;
 
 const Wrapper = styled.div`
-  padding: 10px 20px;
+  padding: 10px 0px;
   width: 100%;
 
   display: flex;
@@ -76,32 +86,12 @@ const Wrapper = styled.div`
     /* font-size: 40px; */
   }
 `;
-const Button = styled.button`
-  color: rgb(119, 135, 249);
-  font-size: 18px;
-  background-color: transparent;
-  padding: 5px 10px;
-  border: 1px solid rgb(119, 135, 249);
-  border-radius: 5px;
-  /* border-bottom: 2px solid transparent; */
-  transition: 500ms;
-  &:hover {
-    color: white;
-    background-color: rgb(119, 135, 249);
-  }
-`;
-const NavButton = styled.button`
-  color: #cfcfe7;
-  font-size: 18px;
-  background-color: transparent;
-  padding: 5px 10px;
-  border: none;
-  border-bottom: 2px solid transparent;
-  transition: 500ms;
-  &:hover {
-    color: rgb(162, 241, 249);
-    border-bottom: 2px solid rgb(162, 241, 249);
-  }
+
+const DropWrap = styled.div`
+  display: flex;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #333338;
 `;
 
 /* @media screen and (min-width: 1921px) {
@@ -110,3 +100,22 @@ const NavButton = styled.button`
   @media screen and (min-width: 2921px) {
     font-size: 40px;
   } */
+const MenuButton = styled.button`
+  border: none;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+`;
+
+const StyledIcon = styled(Icon)`
+  fill: #fff;
+  display: flex;
+  align-items: center;
+  padding: 3px;
+  border-radius: 5px;
+  &:hover {
+    fill: rgb(119, 135, 249);
+    cursor: pointer;
+  }
+`;

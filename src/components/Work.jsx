@@ -5,9 +5,9 @@ import WorkTabs from "./sub-components/WorkTabs";
 const Work = forwardRef((props, workRef) => {
   return (
     <Section ref={workRef}>
-      <Content>
+      <Content className="content">
         <Title>Work</Title>
-        <WorkTabs />
+        <WorkTabs className="Tabs" />
       </Content>
     </Section>
   );
@@ -32,12 +32,13 @@ const Section = styled.div`
 `;
 
 const Content = styled.div`
+  /* margin: 200px 0; */
   padding: 100px 100px;
   color: white;
   width: 100%;
   @media screen and (max-width: 900px) {
     padding: 100px 0;
-    width: 80%;
+    width: 90%;
   }
   @media screen and (min-width: 1921px) {
     /* margin-right: 20px; */

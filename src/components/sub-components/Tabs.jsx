@@ -19,7 +19,7 @@ const TabsContainer = styled.div`
   /* white-space: nowrap; */
   margin-bottom: 20px;
   @media screen and (max-width: 500px) {
-    /* justify-content: space-around; */
+    display: block;
   }
 `;
 
