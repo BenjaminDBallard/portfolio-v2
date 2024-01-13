@@ -16,17 +16,18 @@ const About = forwardRef((props, aboutRef) => {
               React projects.
             </Text>
             <Text>
-              I currently work for Ripple Learning LLC where my primary focus is
-              front-end development, UI interface, accessibility, and design.
+              I currently work for MycoTex as a Full-Stack Developer.
+              establishing a monitoring dashboard and database for temps, co2,
+              and other environmental metrics for a mycology lab based in Austin
+              TX.
+            </Text>
+            <Text>
+              Previously I worked for Ripple Learning LLC where my primary focus
+              is front-end development, UI interface, accessibility, and design.
               While in this position I developed several applications to assist
               students in and out of school. These projects include an AI
               powered chatbot to aid student textbook comprehension and a job
               application tracking website.
-            </Text>
-            <Text>
-              Previously I worked in the electrical construction sector spanning
-              seven years. I have held roles in Quality Control and served as a
-              foreman before transitioning to Software Engineering.
             </Text>
           </div>
         </Box>
@@ -66,25 +67,29 @@ const Content = styled.div`
   padding: 100px 100px;
   width: 50%;
   border-radius: 10px;
-  box-shadow: 10px 10px rgba(0, 0, 0, 0.442), 140px -60px rgba(119, 134, 249),
-    -60px 30px rgb(162, 241, 249);
-  background-color: #1f1f2381;
-  color: #cfcfe7;
+  box-shadow: inset 0 0 0.5px 1px hsla(0, 0%, 100%, 0.1),
+    0 0 0 1px hsla(230, 13%, 9%, 0.075), 0 0.3px 0.4px hsla(230, 13%, 9%, 0.02),
+    0 0.9px 1.5px hsla(230, 13%, 9%, 0.045),
+    0 3.5px 6px hsla(230, 13%, 9%, 0.09);
+  /* box-shadow: 10px 10px rgba(0, 0, 0, 0.442), 140px -60px rgba(119, 134, 249),
+    -60px 30px rgb(162, 241, 249); */
+  background-color: #252932;
+  color: #a3a6ad;
   display: flex;
   flex-direction: column;
   @media screen and (max-width: 1200px) {
     padding: 100px 50px;
     margin: 0px 20px;
     width: 80%;
-    box-shadow: 10px 10px rgba(0, 0, 0, 0.442), 30px -60px rgba(119, 134, 249),
-      -60px 30px rgb(162, 241, 249);
+    /* box-shadow: 10px 10px rgba(0, 0, 0, 0.442), 30px -60px rgba(119, 134, 249),
+      -60px 30px rgb(162, 241, 249); */
   }
   @media screen and (max-width: 1037px) {
     padding: 100px 50px;
     margin: 0 20px;
     width: 80%;
-    box-shadow: 10px 10px rgba(0, 0, 0, 0.442), 10px -60px rgba(119, 134, 249),
-      -10px 20px rgb(162, 241, 249);
+    /* box-shadow: 10px 10px rgba(0, 0, 0, 0.442), 10px -60px rgba(119, 134, 249),
+      -10px 20px rgb(162, 241, 249); */
   }
   @media screen and (min-width: 1921px) {
     /* margin-right: 20px; */
@@ -94,7 +99,7 @@ const Content = styled.div`
     /* font-size: 40px; */
   }
 `;
-const Subject = styled.div``;
+
 const Box = styled.div`
   display: flex;
 `;
@@ -103,7 +108,7 @@ const Title = styled.h1`
   font-weight: 600;
   font-size: 40px;
   line-height: 1.1;
-  color: rgb(162, 241, 249);
+  color: #ccd0d9;
   /* @media screen and (min-width: 1921px) {
     font-size: 60px;
   }

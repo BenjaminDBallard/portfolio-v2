@@ -8,7 +8,7 @@ const Home = forwardRef((props, homeRef) => {
       <Content>
         <div>
           <Title>
-            Hi, Im Ben. <br /> Front-End Web Developer
+            Hi, Im Ben. <br /> Full-Stack Web Developer
           </Title>
         </div>
         <Text>
@@ -21,9 +21,7 @@ const Home = forwardRef((props, homeRef) => {
           Get In Touch
         </NavButton>
       </Content>
-      <ImageBox>
-        <img src={picture} />
-      </ImageBox>
+      <ImageBox>{/* <img src={picture} /> */}</ImageBox>
     </Section>
   );
 });
@@ -33,7 +31,7 @@ Home.displayName = "Home";
 export default Home;
 
 const Section = styled.div`
-  background-color: #333338;
+  /* background-color: #333338; */
   height: 100vh;
   min-height: 800px;
   width: 1720px;
@@ -53,7 +51,7 @@ const Section = styled.div`
 
 const Content = styled.div`
   /* padding-left: 100px; */
-  color: #cfcfe7;
+  color: #a3a6ad;
   width: 85%;
   margin-bottom: 132px;
   @media screen and (max-width: 900px) {
@@ -95,12 +93,12 @@ const Title = styled.h1`
   font-size: 60px;
   font-weight: 600;
   line-height: 1.1;
-  color: rgb(162, 241, 249);
+  color: #ccd0d9;
   margin: 0;
   z-index: 1;
-  text-shadow: -1px -1px 0px rgba(119, 134, 249, 0.505),
+  /* text-shadow: -1px -1px 0px rgba(119, 134, 249, 0.505),
     -2px -2px 3px rgba(119, 134, 249, 0.505),
-    -3px -3px 0px rgba(119, 134, 249, 0.505);
+    -3px -3px 0px rgba(119, 134, 249, 0.505); */
 
   @media screen and (max-width: 900px) {
     font-size: 50px;

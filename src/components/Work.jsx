@@ -34,7 +34,7 @@ const Section = styled.div`
 const Content = styled.div`
   /* margin: 200px 0; */
   padding: 100px 100px;
-  color: white;
+  color: #ccd0d9;
   width: 100%;
   @media screen and (max-width: 900px) {
     padding: 100px 0;
@@ -57,7 +57,7 @@ const Content = styled.div`
 
 const Title = styled.h1`
   text-align: center;
-  color: rgb(162, 241, 249);
+  color: #ccd0d9;
   margin-bottom: 20px;
   font-size: 40px;
   font-weight: 600;

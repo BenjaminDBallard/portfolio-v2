@@ -48,7 +48,8 @@ const Global = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #333338;
+  background-color: #1d2027;
+  /* background-color: #333338; */
   /* background-image: url(${table});
   background-attachment: fixed;
   background-size: cover;
@@ -63,7 +64,7 @@ const Webpage = styled.div`
   /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
   /* gap: 30px; */
   @media screen and (max-width: 1720px) {
-    background-color: #333338;
+    background-color: #1d2027;
   }
 `;
 

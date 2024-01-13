@@ -15,17 +15,22 @@ const AboutBox = (props) => {
               React projects.
             </Text>
             <Text>
-              I currently work for Ripple Learning LLC where my primary focus is
-              front-end development, UI interface, accessibility, and design.
-              While in this position I developed several applications to assist
-              students in and out of school. These projects include an AI
-              powered chatbot to aid student textbook comprehension and a job
-              application tracking website.
+              Currently Im employed as Full-Stack Developer focused on
+              establishing a monitoring dashboard and database for temperatures,
+              co2, and other environmental metrics for a mycology lab based in
+              Austin, TX. We are using raspberry pi and esp32 microcomputers as
+              our on site hardware, the raspberry pis were used as local
+              displays for lab technicians and esp32s were utilized for our
+              sensors. I developed the scripts for the microcomputers in Python
+              and the backend in Express and Node.
             </Text>
             <Text>
-              Previously I worked in the electrical construction sector spanning
-              seven years. I have held roles in Quality Control and served as a
-              foreman before transitioning to Software Engineering.
+              Previously I worked for Ripple Learning LLC where my primary focus
+              was front-end development, UI interface, accessibility, and
+              design. While in this position I developed several applications to
+              assist students in and out of school. These projects include an AI
+              powered chatbot to aid student textbook comprehension and a job
+              application tracking website.
             </Text>
           </div>
         </Box>

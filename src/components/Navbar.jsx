@@ -50,8 +50,14 @@ const Section = styled.div`
   }
   @media screen and (max-width: 1720px) {
     width: 100%;
-    background-color: #333338;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: #252932;
+    /* box-shadow: 0 2px 4px 0 #e5e5e710; */
+    box-shadow: inset 0 0 0.5px 1px hsla(0, 0%, 100%, 0.1),
+      0 0 0 1px hsla(230, 13%, 9%, 0.075),
+      0 0.3px 0.4px hsla(230, 13%, 9%, 0.02),
+      0 0.9px 1.5px hsla(230, 13%, 9%, 0.045),
+      0 3.5px 6px hsla(230, 13%, 9%, 0.09);
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
   }
 `;
 
@@ -91,7 +97,7 @@ const DropWrap = styled.div`
   display: flex;
   padding: 10px;
   border-radius: 10px;
-  background-color: #333338;
+  /* background-color: #333338; */
 `;
 
 /* @media screen and (min-width: 1921px) {

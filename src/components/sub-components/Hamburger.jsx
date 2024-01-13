@@ -67,8 +67,12 @@ const SubWrapper = styled.div`
 const Menu = styled.div`
   display: ${({ open }) => (open ? "flex" : "none")};
   justify-content: space-between;
-  background-color: rgb(119, 135, 249);
-  border: 1px solid #333338;
+  background-color: #252932;
+  /* box-shadow: 0 2px 4px 0 #e5e5e710; */
+  box-shadow: inset 0 0 0.5px 1px hsla(0, 0%, 100%, 0.1),
+    0 0 0 1px hsla(230, 13%, 9%, 0.075), 0 0.3px 0.4px hsla(230, 13%, 9%, 0.02),
+    0 0.9px 1.5px hsla(230, 13%, 9%, 0.045),
+    0 3.5px 6px hsla(230, 13%, 9%, 0.09);
   border-radius: 10px;
   z-index: 5;
   width: 300px;
@@ -131,7 +135,7 @@ const StyledIcon = styled(Icon)`
   padding: 3px;
   border-radius: 5px;
   &:hover {
-    fill: #333338;
+    fill: rgb(119, 135, 249);
     cursor: pointer;
   }
 `;

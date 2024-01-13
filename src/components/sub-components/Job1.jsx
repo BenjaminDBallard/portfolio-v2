@@ -8,14 +8,14 @@ export default function Job1() {
       <Content>
         <ImgBox>
           <Filter>
-            <Link href="">
+            <Link>
               <DisplayImg src={Image} />
             </Link>
           </Filter>
         </ImgBox>
         <DisplayBox>
           <Display>
-            <Link href="">
+            <Link>
               <Title>
                 Front-End Web Developer @ Ripple Learning LLC | React Engineer |
               </Title>
@@ -64,11 +64,11 @@ const Section = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #cfcfe7;
+  color: #a3a6ad;
 `;
 const Content = styled.div`
   /* margin: 0 100px; */
-  color: #cfcfe7;
+  color: #a3a6ad;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -161,7 +161,7 @@ const Title = styled.h1`
   font-size: 30px;
   line-height: 1.1;
   margin: 0;
-  color: rgb(119, 135, 249);
+  color: #ccd0d9;
   /* @media screen and (min-width: 1921px) {
     font-size: 60px;
   }
@@ -170,7 +170,7 @@ const Title = styled.h1`
   } */
 `;
 
-const Link = styled.a`
+const Link = styled.div`
   color: black;
   text-decoration: none;
 `;
@@ -194,9 +194,9 @@ const FlatChip = styled.button`
   padding: 5px;
   background-color: transparent;
   border-radius: 999px;
-  border: 1px solid rgb(162, 241, 249);
+  border: 1px solid #a3a6ad;
   font-size: 15px;
-  color: rgb(162, 241, 249);
+  color: #a3a6ad;
   /* @media screen and (min-width: 1921px) {
     font-size: 30px;
     padding: 15px;

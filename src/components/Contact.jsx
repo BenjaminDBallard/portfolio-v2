@@ -85,7 +85,7 @@ Contact.displayName = "Contact";
 export default Contact;
 
 const Section = styled.div`
-  background-color: #333338;
+  /* background-color: #333338; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -108,9 +108,13 @@ const Section = styled.div`
 `;
 
 const Content = styled.div`
-  background-color: #1f1f2381;
-  box-shadow: 10px 10px rgba(0, 0, 0, 0.442), 30px -30px rgb(162, 241, 249),
-    -40px -70px rgba(119, 134, 249);
+  background-color: #252932;
+  /* box-shadow: 10px 10px rgba(0, 0, 0, 0.442), 30px -30px rgb(162, 241, 249),
+    -40px -70px rgba(119, 134, 249); */
+  box-shadow: inset 0 0 0.5px 1px hsla(0, 0%, 100%, 0.1),
+    0 0 0 1px hsla(230, 13%, 9%, 0.075), 0 0.3px 0.4px hsla(230, 13%, 9%, 0.02),
+    0 0.9px 1.5px hsla(230, 13%, 9%, 0.045),
+    0 3.5px 6px hsla(230, 13%, 9%, 0.09);
   padding: 50px;
   border-radius: 10px;
   color: white;
@@ -129,9 +133,9 @@ const Content = styled.div`
     width: 90%;
     /* height: calc(100% - 100px); */
     /* height: 100vh; */
-    box-shadow: 10px 10px rgba(0, 0, 0, 0.442), 10px -30px rgb(162, 241, 249),
+    /* box-shadow: 10px 10px rgba(0, 0, 0, 0.442), 10px -30px rgb(162, 241, 249),
       -10px -70px rgba(119, 134, 249);
-  }
+  } */
   @media screen and (min-width: 1921px) {
     /* margin-right: 20px; */
     /* padding: 0 100px; */
@@ -152,7 +156,7 @@ const Content = styled.div`
 const Title = styled.h1`
   font-size: 40px;
   line-height: 1.1;
-  color: rgb(162, 241, 249);
+  color: #ccd0d9;
   /* @media screen and (min-width: 1921px) {
     font-size: 60px;
   }
@@ -200,12 +204,17 @@ const StyledInput = styled.input`
   width: 375px;
   padding: 10px;
   border: none;
-  border-bottom: 1px solid #cfcfe7;
+  box-shadow: inset 0 0 0.5px 1px hsla(0, 0%, 100%, 0.1),
+    0 0 0 1px hsla(230, 13%, 9%, 0.075), 0 0.3px 0.4px hsla(230, 13%, 9%, 0.02),
+    0 0.9px 1.5px hsla(230, 13%, 9%, 0.045),
+    0 3.5px 6px hsla(230, 13%, 9%, 0.09);
+  border-radius: 5px;
+  background-color: #2e323e;
   color: #cfcfe7;
   &::placeholder {
     color: #9797a9;
   }
-  background-color: transparent;
+  /* background-color: transparent; */
   font-size: 20px;
   font-family: Archivo;
   @media screen and (max-width: 900px) {
@@ -231,12 +240,17 @@ const StyledTextArea = styled.textarea`
   font-family: Archivo;
   resize: none;
   border: none;
-  border-bottom: 1px solid #cfcfe7;
+  box-shadow: inset 0 0 0.5px 1px hsla(0, 0%, 100%, 0.1),
+    0 0 0 1px hsla(230, 13%, 9%, 0.075), 0 0.3px 0.4px hsla(230, 13%, 9%, 0.02),
+    0 0.9px 1.5px hsla(230, 13%, 9%, 0.045),
+    0 3.5px 6px hsla(230, 13%, 9%, 0.09);
+  border-radius: 5px;
+  background-color: #2e323e;
   color: #cfcfe7;
   &::placeholder {
     color: #9797a9;
   }
-  background-color: transparent;
+  /* background-color: transparent; */
   @media screen and (max-width: 900px) {
     width: calc(80% - 20px);
   }
