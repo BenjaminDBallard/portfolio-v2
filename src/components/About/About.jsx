@@ -6,6 +6,7 @@ const About = forwardRef((props, aboutRef) => {
     <Section ref={aboutRef}>
       <Content>
         <Title>About Me</Title>
+        <SkewBg />
         <Box>
           <div>
             <Text>
@@ -51,7 +52,6 @@ const Section = styled.div`
 const Content = styled.div`
   width: 80%;
   color: ${(props) => props.theme.colors.text.body};
-  margin-top: 100px;
   display: flex;
   text-align: center;
   flex-direction: column;
@@ -60,7 +60,7 @@ const Content = styled.div`
 const Box = styled.div`
   text-align: left;
   display: flex;
-  background-color: ${(props) => props.theme.colors.secondbg};
+  background-color: ${(props) => props.theme.colors.mainbg};
   box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 10px;
   border-radius: 10px;
   padding: 40px 80px;
@@ -70,9 +70,31 @@ const Box = styled.div`
 const Title = styled.h1`
   font-weight: 800;
   font-size: calc(100% + 7px + 0.9vw * 0.42);
-  color: ${(props) => props.theme.colors.text.subtle};
+  color: ${(props) => props.theme.colors.text.subtitle};
+  z-index: 2;
+  margin: 50px 0 100px;
 `;
 
 const Text = styled.p`
   font-size: 16px;
+`;
+
+const SkewBg = styled.div`
+  position: absolute;
+  left: 0;
+  width: 100%;
+  min-height: 500px;
+  background-image: ${(props) => props.theme.colors.primarySash};
+  transform: skewY(-3deg) translateY(100px);
+  z-index: 0;
+  pointer-events: none;
+
+  /* @media screen and (max-width: 768px) {
+    width: unset;
+    height: 90%;
+    top: 100px;
+    left: -16px;
+    right: -16px;
+    bottom: 0;
+  } */
 `;

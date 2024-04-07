@@ -59,8 +59,8 @@ const Title = styled.h1`
   text-align: center;
   font-weight: 800;
   font-size: calc(100% + 7px + 0.9vw * 0.42);
-  color: ${(props) => props.theme.colors.text.subtle};
-  margin-bottom: 20px;
+  color: ${(props) => props.theme.colors.text.subtitle};
+  margin: 100px 0;
   /* @media screen and (min-width: 1921px) {
     font-size: 60px;
   }

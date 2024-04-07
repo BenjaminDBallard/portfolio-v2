@@ -45,6 +45,7 @@ const Contact = forwardRef((props, contactRef) => {
   return (
     <Section ref={contactRef}>
       <Title>Get In Touch</Title>
+      <SkewBg />
       <Content>
         <FormWrapper onSubmit={handleSubmit}>
           <InputWrapper>
@@ -73,7 +74,9 @@ const Contact = forwardRef((props, contactRef) => {
             rows="6"
             required
           />
-          <StyledButton type="submit">Submit</StyledButton>
+          <ButtonCont>
+            <StyledButton type="submit">Submit</StyledButton>
+          </ButtonCont>
         </FormWrapper>
       </Content>
     </Section>
@@ -95,13 +98,14 @@ const Section = styled.div`
 `;
 
 const Content = styled.div`
-  background-color: ${(props) => props.theme.colors.secondbg};
+  background-color: ${(props) => props.theme.colors.mainbg};
   box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  z-index: 1;
   padding: 50px;
   border-radius: 10px;
   color: white;
   width: 80%;
-  margin: 50px;
+  margin: 80px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -111,7 +115,7 @@ const Content = styled.div`
 const Title = styled.h1`
   font-weight: 800;
   font-size: calc(100% + 7px + 0.9vw * 0.42);
-  color: ${(props) => props.theme.colors.text.subtle};
+  color: ${(props) => props.theme.colors.text.subtitle};
 `;
 
 const FormWrapper = styled.form`
@@ -150,7 +154,7 @@ const StyledInput = styled.input`
   font-size: 16px;
   font-family: "Montserrat", sans-serif;
   @media screen and (max-width: 900px) {
-    width: 100%;
+    width: calc(100% - 20px);
   }
 `;
 
@@ -169,8 +173,14 @@ const StyledTextArea = styled.textarea`
     color: #757575;
   }
   @media screen and (max-width: 900px) {
-    width: 100%;
+    width: calc(100% - 20px);
   }
+`;
+
+const ButtonCont = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
 `;
 
 const StyledButton = styled.button`
@@ -187,4 +197,24 @@ const StyledButton = styled.button`
   &:hover {
     color: ${(props) => props.theme.colors.highlight};
   }
+`;
+
+const SkewBg = styled.div`
+  position: absolute;
+  left: 0;
+  width: 100%;
+  min-height: 500px;
+  background-image: ${(props) => props.theme.colors.primarySash};
+  transform: skewY(3deg) translateY(40px);
+  z-index: 0;
+  pointer-events: none;
+
+  /* @media screen and (max-width: 768px) {
+    width: unset;
+    height: 90%;
+    top: 100px;
+    left: -16px;
+    right: -16px;
+    bottom: 0;
+  } */
 `;
