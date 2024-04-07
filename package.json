@@ -21,6 +21,7 @@
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-ui": "^1.0.0-beta.32",
     "react-use-scroll-snap": "^0.0.4",
     "styled-components": "6.0.0-rc.6"
   },

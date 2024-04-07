@@ -1,44 +1,52 @@
 import { styled } from "styled-components";
-import Image from "../../assets/acalogo.webp";
+import Image from "../../../assets/JAT.png";
 
 export default function Job1() {
   return (
     <Section>
       <Content>
         <ImgBox>
-          <Link href="https://austincodingacademy.com/">
+          <Link href="">
             <DisplayImg src={Image} />
           </Link>
         </ImgBox>
         <DisplayBox>
           <Display>
-            <Link href="https://austincodingacademy.com/">
-              <Title>Austin Coding Academy</Title>
+            <Link>
+              <Title>Job App Tracker</Title>
             </Link>
             <ChipList>
-              <FlatChip>HTML5</FlatChip>
-              <FlatChip>CSS3</FlatChip>
-              <FlatChip>Javascript</FlatChip>
               <FlatChip>React.js</FlatChip>
+              <FlatChip>Styled-components</FlatChip>
+              <FlatChip>Figma</FlatChip>
               <FlatChip>Node.js</FlatChip>
               <FlatChip>MySQL</FlatChip>
+              <FlatChip>Express</FlatChip>
+              <FlatChip>Rest API</FlatChip>
+              <FlatChip>OpenAI</FlatChip>
             </ChipList>
             <List>
               <Text>
-                Underwent a comprehensive and transformative learning experience
-                at Austin Coding Academy, focusing on coding and web
-                development.
+                Comprehensive Job Application Tracking: The web page offers a
+                comprehensive solution for managing job applications, allowing
+                users to easily track their progress through different stages of
+                the hiring process.
               </Text>
               <Text>
-                Gained proficiency in a wide range of programming languages and
-                frameworks, including HTML, CSS, JavaScript, React, and Node.js,
-                through engaging in hands-on projects and collaborative
-                exercises.
+                AI-Powered Resume Review: An feature of this platform is the
+                AI-powered resume review, which leverages artificial
+                intelligence to cross-reference a user&apos;s resume with
+                specific job descriptions. This helps applicants identify weak
+                points in their application materials and make necessary
+                improvements.
               </Text>
               <Text>
-                Cultivated strong problem-solving abilities and self-assurance
-                to address real world coding challenges, fostering a solid
-                foundation for a successful career in the technology industry.
+                Efficiency and Productivity: The Job Application Tracking Web
+                Page enhances efficiency and productivity in the job application
+                process, reducing the chances of missing application deadlines
+                or opportunities. It provides a centralized platform to organize
+                and monitor job applications, empowering users to stay organized
+                and focused on their career goals.
               </Text>
             </List>
           </Display>
@@ -52,11 +60,10 @@ const Section = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #cfcfe7;
 `;
 const Content = styled.div`
   /* margin: 0 100px; */
-  color: #cfcfe7;
+  color: ${(props) => props.theme.colors.text.body};
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -74,14 +81,9 @@ const Content = styled.div`
 
 const ImgBox = styled.div`
   width: 740px;
-  height: 376.58px;
-  padding: 20px 0;
-  background-color: #034f8d;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  display: flex;
-  justify-content: center;
+  height: 433px;
   @media screen and (max-width: 1720px) {
-    height: 100px;
+    height: fit-content;
   }
   /* margin: 20px; */
   @media screen and (max-width: 1200px) {
@@ -102,11 +104,11 @@ const ImgBox = styled.div`
 
 const DisplayImg = styled.img`
   /* min-width: 600px; */
-  height: 100%;
-
+  width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   @media screen and (max-width: 1200px) {
     /* min-width: none; */
-    height: 100px;
+    width: 100%;
   }
 `;
 
@@ -138,7 +140,7 @@ const Title = styled.h1`
   font-size: 30px;
   line-height: 1.1;
   margin: 0;
-  color: rgb(119, 135, 249);
+  color: ${(props) => props.theme.colors.text.body};
   /* @media screen and (min-width: 1921px) {
     font-size: 60px;
   }
@@ -147,7 +149,7 @@ const Title = styled.h1`
   } */
 `;
 
-const Link = styled.a`
+const Link = styled.div`
   color: black;
   text-decoration: none;
 `;
@@ -171,17 +173,9 @@ const FlatChip = styled.button`
   padding: 5px;
   background-color: transparent;
   border-radius: 999px;
-  border: 1px solid rgb(162, 241, 249);
+  border: 1px solid ${(props) => props.theme.colors.subtle};
   font-size: 15px;
-  color: rgb(162, 241, 249);
-  /* @media screen and (min-width: 1921px) {
-    font-size: 30px;
-    padding: 15px;
-  }
-  @media screen and (min-width: 2921px) {
-    font-size: 40px;
-    padding: 20px;
-  } */
+  color: ${(props) => props.theme.colors.text.subtle};
 `;
 
 const List = styled.ul`
@@ -192,16 +186,4 @@ const List = styled.ul`
 const Text = styled.li`
   padding-top: 20px;
   font-size: 20px;
-  /* @media screen and (max-width: 900px) {
-    width: 100%;
-    margin: 20px 0;
-  } */
-  /* @media screen and (min-width: 1921px) {
-    padding-top: 30px;
-    font-size: 30px;
-  }
-  @media screen and (min-width: 2921px) {
-    padding-top: 40px;
-    font-size: 40px;
-  } */
 `;

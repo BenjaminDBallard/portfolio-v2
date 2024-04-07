@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const AboutBox = (props) => {
+const AboutBox = () => {
   return (
     <>
       <Content>
@@ -51,28 +51,6 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   box-shadow: 60px -16px teal, -60px -16px pink;
-  @media screen and (max-width: 1200px) {
-    padding: 100px 0;
-    width: 80%;
-  }
-  @media screen and (min-width: 1921px) {
-    /* margin-right: 20px; */
-    padding: 100px 100px;
-
-    max-width: 1720px;
-    /* font-size: 40px; */
-  }
-`;
-
-const SubContent = styled.div`
-  position: absolute;
-  padding: 100px 100px;
-  width: 50%;
-  border-radius: 10px;
-  background-color: rgb(162, 241, 249);
-  color: #cfcfe7;
-  display: flex;
-  flex-direction: column;
   @media screen and (max-width: 1200px) {
     padding: 100px 0;
     width: 80%;

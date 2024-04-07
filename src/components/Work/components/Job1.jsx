@@ -1,19 +1,24 @@
 import { styled } from "styled-components";
-import Image from "../../assets/JAT.png";
+import Image from "../../../assets/RLlogo.webp";
+import rain from "../../../assets/rain2.jpg";
 
 export default function Job1() {
   return (
     <Section>
       <Content>
         <ImgBox>
-          <Link href="">
-            <DisplayImg src={Image} />
-          </Link>
+          <Filter>
+            <Link>
+              <DisplayImg src={Image} />
+            </Link>
+          </Filter>
         </ImgBox>
         <DisplayBox>
           <Display>
             <Link>
-              <Title>Job App Tracker</Title>
+              <Title>
+                Front-End Web Developer @ Ripple Learning LLC | React Engineer |
+              </Title>
             </Link>
             <ChipList>
               <FlatChip>React.js</FlatChip>
@@ -27,26 +32,25 @@ export default function Job1() {
             </ChipList>
             <List>
               <Text>
-                Comprehensive Job Application Tracking: The web page offers a
-                comprehensive solution for managing job applications, allowing
-                users to easily track their progress through different stages of
-                the hiring process.
+                My primary responsibility lies in frontend development, with a
+                strong emphasis on enhancing the user interface, ensuring
+                accessibility, and optimizing overall design.
               </Text>
               <Text>
-                AI-Powered Resume Review: An feature of this platform is the
-                AI-powered resume review, which leverages artificial
-                intelligence to cross-reference a user&apos;s resume with
-                specific job descriptions. This helps applicants identify weak
-                points in their application materials and make necessary
-                improvements.
+                Developed an artificial intelligence-driven chatbot designed to
+                assist students in comprehension of online textbooks.
+                Additionally, lead development for the implementation of an
+                administrative dashboard to monitor the chatbot&apos;s usage and
+                identify weaknesses within the curriculum.
               </Text>
               <Text>
-                Efficiency and Productivity: The Job Application Tracking Web
-                Page enhances efficiency and productivity in the job application
-                process, reducing the chances of missing application deadlines
-                or opportunities. It provides a centralized platform to organize
-                and monitor job applications, empowering users to stay organized
-                and focused on their career goals.
+                Designed and implemented a comprehensive job application
+                tracking website to streamline the management of new and ongoing
+                job applications. This platform enables users to track their
+                progress through various stages of the hiring process and offers
+                an AI-powered resume review feature that cross-references that
+                resume against specific job descriptions to identify areas of
+                improvement.
               </Text>
             </List>
           </Display>
@@ -60,11 +64,10 @@ const Section = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #cfcfe7;
 `;
 const Content = styled.div`
   /* margin: 0 100px; */
-  color: #cfcfe7;
+  color: ${(props) => props.theme.colors.text.body};
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -83,8 +86,15 @@ const Content = styled.div`
 const ImgBox = styled.div`
   width: 740px;
   height: 433px;
+  background-image: url(${rain});
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   @media screen and (max-width: 1720px) {
-    height: fit-content;
+    height: 100px;
   }
   /* margin: 20px; */
   @media screen and (max-width: 1200px) {
@@ -103,10 +113,19 @@ const ImgBox = styled.div`
   } */
 `;
 
+const Filter = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00000070;
+  height: 100%;
+  width: 100%;
+`;
+
 const DisplayImg = styled.img`
   /* min-width: 600px; */
   width: 100%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
   @media screen and (max-width: 1200px) {
     /* min-width: none; */
     width: 100%;
@@ -141,13 +160,7 @@ const Title = styled.h1`
   font-size: 30px;
   line-height: 1.1;
   margin: 0;
-  color: rgb(119, 135, 249);
-  /* @media screen and (min-width: 1921px) {
-    font-size: 60px;
-  }
-  @media screen and (min-width: 2921px) {
-    font-size: 80px;
-  } */
+  color: ${(props) => props.theme.colors.text.body};
 `;
 
 const Link = styled.div`
@@ -160,31 +173,15 @@ const ChipList = styled.div`
   gap: 10px;
   padding: 10px 0;
   flex-wrap: wrap;
-  /* @media screen and (min-width: 1921px) {
-    gap: 15px;
-    padding: 15px 0;
-  }
-  @media screen and (min-width: 2921px) {
-    gap: 20px;
-    padding: 20px 0;
-  } */
 `;
 
 const FlatChip = styled.button`
   padding: 5px;
   background-color: transparent;
   border-radius: 999px;
-  border: 1px solid rgb(162, 241, 249);
+  border: 1px solid ${(props) => props.theme.colors.subtle};
   font-size: 15px;
-  color: rgb(162, 241, 249);
-  /* @media screen and (min-width: 1921px) {
-    font-size: 30px;
-    padding: 15px;
-  }
-  @media screen and (min-width: 2921px) {
-    font-size: 40px;
-    padding: 20px;
-  } */
+  color: ${(props) => props.theme.colors.text.subtle};
 `;
 
 const List = styled.ul`
@@ -195,7 +192,6 @@ const List = styled.ul`
 const Text = styled.li`
   padding-top: 20px;
   font-size: 20px;
-  /* color: black; */
   /* @media screen and (max-width: 900px) {
     width: 100%;
     margin: 20px 0;

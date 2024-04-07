@@ -5,7 +5,7 @@ import Job1 from "./Job1";
 import Job2 from "./Job2";
 import Job3 from "./Job3";
 import Job4 from "./Job4";
-import "../../App.css";
+import "../../../App.css";
 
 const theme = {
   primaryColor: "rgb(119, 135, 249)", // Replace 'blue' with your desired primary color

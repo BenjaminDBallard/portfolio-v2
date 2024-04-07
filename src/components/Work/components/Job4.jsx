@@ -1,24 +1,19 @@
 import { styled } from "styled-components";
-import Image from "../../assets/RLlogo.webp";
-import rain from "../../assets/rain2.jpg";
+import Image from "../../../assets/admin.png";
 
-export default function Job1() {
+export default function Job4() {
   return (
     <Section>
       <Content>
         <ImgBox>
-          <Filter>
-            <Link>
-              <DisplayImg src={Image} />
-            </Link>
-          </Filter>
+          <Link href="">
+            <DisplayImg src={Image} />
+          </Link>
         </ImgBox>
         <DisplayBox>
           <Display>
             <Link>
-              <Title>
-                Front-End Web Developer @ Ripple Learning LLC | React Engineer |
-              </Title>
+              <Title>ChatBot Tutuor</Title>
             </Link>
             <ChipList>
               <FlatChip>React.js</FlatChip>
@@ -32,25 +27,25 @@ export default function Job1() {
             </ChipList>
             <List>
               <Text>
-                My primary responsibility lies in frontend development, with a
-                strong emphasis on enhancing the user interface, ensuring
-                accessibility, and optimizing overall design.
+                Enhanced Learning with AI-Driven Support: Developed an advanced
+                AI-driven chatbot tailored to elevate student comprehension of
+                online textbooks. Utilization of natural language processing
+                ensures personalized engagement to accurately address specific
+                learning needs.
               </Text>
               <Text>
-                Developed an artificial intelligence-driven chatbot designed to
-                assist students in comprehension of online textbooks.
-                Additionally, lead development for the implementation of an
-                administrative dashboard to monitor the chatbot&apos;s usage and
-                identify weaknesses within the curriculum.
+                Strategic Oversight with Administrative Dashboard: Spearheaded
+                the development of an Administrative Dashboard to offer
+                real-time monitoring of the chatbots usage. This empowers
+                educational administrators to identify and promptly address
+                potential weaknesses within the curriculum.
               </Text>
               <Text>
-                Designed and implemented a comprehensive job application
-                tracking website to streamline the management of new and ongoing
-                job applications. This platform enables users to track their
-                progress through various stages of the hiring process and offers
-                an AI-powered resume review feature that cross-references that
-                resume against specific job descriptions to identify areas of
-                improvement.
+                Integrated Educational Support Ecosystem: Implemented a cohesive
+                educational support system by seamlessly integrating the
+                AI-driven chatbot and the Administrative Dashboard. This
+                integrated solution enables data-driven decision-making,
+                facilitating ongoing curriculum refinement and optimization.
               </Text>
             </List>
           </Display>
@@ -64,11 +59,10 @@ const Section = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #a3a6ad;
 `;
 const Content = styled.div`
   /* margin: 0 100px; */
-  color: #a3a6ad;
+  color: ${(props) => props.theme.colors.text.body};
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -87,15 +81,8 @@ const Content = styled.div`
 const ImgBox = styled.div`
   width: 740px;
   height: 433px;
-  background-image: url(${rain});
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   @media screen and (max-width: 1720px) {
-    height: 100px;
+    height: fit-content;
   }
   /* margin: 20px; */
   @media screen and (max-width: 1200px) {
@@ -114,19 +101,10 @@ const ImgBox = styled.div`
   } */
 `;
 
-const Filter = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #00000070;
-  height: 100%;
-  width: 100%;
-`;
-
 const DisplayImg = styled.img`
   /* min-width: 600px; */
   width: 100%;
-
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   @media screen and (max-width: 1200px) {
     /* min-width: none; */
     width: 100%;
@@ -161,7 +139,7 @@ const Title = styled.h1`
   font-size: 30px;
   line-height: 1.1;
   margin: 0;
-  color: #ccd0d9;
+  color: ${(props) => props.theme.colors.text.body};
   /* @media screen and (min-width: 1921px) {
     font-size: 60px;
   }
@@ -194,9 +172,9 @@ const FlatChip = styled.button`
   padding: 5px;
   background-color: transparent;
   border-radius: 999px;
-  border: 1px solid #a3a6ad;
+  border: 1px solid ${(props) => props.theme.colors.text.subtle};
   font-size: 15px;
-  color: #a3a6ad;
+  color: ${(props) => props.theme.colors.text.subtle};
   /* @media screen and (min-width: 1921px) {
     font-size: 30px;
     padding: 15px;
@@ -215,6 +193,7 @@ const List = styled.ul`
 const Text = styled.li`
   padding-top: 20px;
   font-size: 20px;
+  /* color: black; */
   /* @media screen and (max-width: 900px) {
     width: 100%;
     margin: 20px 0;

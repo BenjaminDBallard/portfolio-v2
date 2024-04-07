@@ -1,51 +1,44 @@
 import { styled } from "styled-components";
-import Image from "../../assets/admin.png";
+import Image from "../../../assets/acalogo.webp";
 
-export default function Job4() {
+export default function Job1() {
   return (
     <Section>
       <Content>
         <ImgBox>
-          <Link href="">
+          <Link href="https://austincodingacademy.com/">
             <DisplayImg src={Image} />
           </Link>
         </ImgBox>
         <DisplayBox>
           <Display>
-            <Link>
-              <Title>ChatBot Tutuor</Title>
+            <Link href="https://austincodingacademy.com/">
+              <Title>Austin Coding Academy</Title>
             </Link>
             <ChipList>
+              <FlatChip>HTML5</FlatChip>
+              <FlatChip>CSS3</FlatChip>
+              <FlatChip>Javascript</FlatChip>
               <FlatChip>React.js</FlatChip>
-              <FlatChip>Styled-components</FlatChip>
-              <FlatChip>Figma</FlatChip>
               <FlatChip>Node.js</FlatChip>
               <FlatChip>MySQL</FlatChip>
-              <FlatChip>Express</FlatChip>
-              <FlatChip>Rest API</FlatChip>
-              <FlatChip>OpenAI</FlatChip>
             </ChipList>
             <List>
               <Text>
-                Enhanced Learning with AI-Driven Support: Developed an advanced
-                AI-driven chatbot tailored to elevate student comprehension of
-                online textbooks. Utilization of natural language processing
-                ensures personalized engagement to accurately address specific
-                learning needs.
+                Underwent a comprehensive and transformative learning experience
+                at Austin Coding Academy, focusing on coding and web
+                development.
               </Text>
               <Text>
-                Strategic Oversight with Administrative Dashboard: Spearheaded
-                the development of an Administrative Dashboard to offer
-                real-time monitoring of the chatbots usage. This empowers
-                educational administrators to identify and promptly address
-                potential weaknesses within the curriculum.
+                Gained proficiency in a wide range of programming languages and
+                frameworks, including HTML, CSS, JavaScript, React, and Node.js,
+                through engaging in hands-on projects and collaborative
+                exercises.
               </Text>
               <Text>
-                Integrated Educational Support Ecosystem: Implemented a cohesive
-                educational support system by seamlessly integrating the
-                AI-driven chatbot and the Administrative Dashboard. This
-                integrated solution enables data-driven decision-making,
-                facilitating ongoing curriculum refinement and optimization.
+                Cultivated strong problem-solving abilities and self-assurance
+                to address real world coding challenges, fostering a solid
+                foundation for a successful career in the technology industry.
               </Text>
             </List>
           </Display>
@@ -59,11 +52,10 @@ const Section = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #cfcfe7;
 `;
 const Content = styled.div`
   /* margin: 0 100px; */
-  color: #cfcfe7;
+  color: ${(props) => props.theme.colors.text.body};
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -81,9 +73,14 @@ const Content = styled.div`
 
 const ImgBox = styled.div`
   width: 740px;
-  height: 433px;
+  height: 376.58px;
+  padding: 20px 0;
+  background-color: #034f8d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: flex;
+  justify-content: center;
   @media screen and (max-width: 1720px) {
-    height: fit-content;
+    height: 100px;
   }
   /* margin: 20px; */
   @media screen and (max-width: 1200px) {
@@ -104,11 +101,11 @@ const ImgBox = styled.div`
 
 const DisplayImg = styled.img`
   /* min-width: 600px; */
-  width: 100%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  height: 100%;
+
   @media screen and (max-width: 1200px) {
     /* min-width: none; */
-    width: 100%;
+    height: 100px;
   }
 `;
 
@@ -140,7 +137,7 @@ const Title = styled.h1`
   font-size: 30px;
   line-height: 1.1;
   margin: 0;
-  color: rgb(119, 135, 249);
+  color: ${(props) => props.theme.colors.text.body};
   /* @media screen and (min-width: 1921px) {
     font-size: 60px;
   }
@@ -149,7 +146,7 @@ const Title = styled.h1`
   } */
 `;
 
-const Link = styled.div`
+const Link = styled.a`
   color: black;
   text-decoration: none;
 `;
@@ -173,9 +170,9 @@ const FlatChip = styled.button`
   padding: 5px;
   background-color: transparent;
   border-radius: 999px;
-  border: 1px solid rgb(162, 241, 249);
+  border: 1px solid ${(props) => props.theme.colors.text.subtle};
   font-size: 15px;
-  color: rgb(162, 241, 249);
+  color: ${(props) => props.theme.colors.text.subtle};
   /* @media screen and (min-width: 1921px) {
     font-size: 30px;
     padding: 15px;
@@ -194,7 +191,6 @@ const List = styled.ul`
 const Text = styled.li`
   padding-top: 20px;
   font-size: 20px;
-  /* color: black; */
   /* @media screen and (max-width: 900px) {
     width: 100%;
     margin: 20px 0;

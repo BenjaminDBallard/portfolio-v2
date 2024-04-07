@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
 import { styled } from "styled-components";
-import WorkTabs from "./sub-components/WorkTabs";
+import WorkTabs from "./components/WorkTabs";
 
 const Work = forwardRef((props, workRef) => {
   return (
@@ -20,7 +20,7 @@ export default Work;
 const Section = styled.div`
   /* background-color: rgb(39, 87, 94); */
   background-color: transparent;
-  width: 1720px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,7 +35,7 @@ const Content = styled.div`
   /* margin: 200px 0; */
   padding: 100px 100px;
   color: #ccd0d9;
-  width: 100%;
+  width: 80%;
   @media screen and (max-width: 900px) {
     padding: 100px 0;
     width: 90%;
@@ -57,11 +57,10 @@ const Content = styled.div`
 
 const Title = styled.h1`
   text-align: center;
-  color: #ccd0d9;
+  font-weight: 800;
+  font-size: calc(100% + 7px + 0.9vw * 0.42);
+  color: ${(props) => props.theme.colors.text.subtle};
   margin-bottom: 20px;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 1.1;
   /* @media screen and (min-width: 1921px) {
     font-size: 60px;
   }
