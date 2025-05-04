@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
-import Image from "../../../assets/JAT.png";
+import Image from "../../../assets/Fallen_Oak_circle.png";
 
-export default function Job1() {
+export default function Job4() {
   return (
     <Section>
       <Content>
@@ -13,7 +13,7 @@ export default function Job1() {
         <DisplayBox>
           <Display>
             <Link>
-              <Title>Job App Tracker</Title>
+              <Title>MycoTex, LLC (Fallen Oak Mycology)</Title>
             </Link>
             <ChipList>
               <FlatChip>React.js</FlatChip>
@@ -23,30 +23,23 @@ export default function Job1() {
               <FlatChip>MySQL</FlatChip>
               <FlatChip>Express</FlatChip>
               <FlatChip>Rest API</FlatChip>
-              <FlatChip>OpenAI</FlatChip>
             </ChipList>
             <List>
               <Text>
-                Comprehensive Job Application Tracking: The web page offers a
-                comprehensive solution for managing job applications, allowing
-                users to easily track their progress through different stages of
-                the hiring process.
+                Designed and deployed a real-time environmental monitoring
+                dashboard tracking temperature, CO₂, and lab conditions,
+                enabling staff to optimize growing environments and diagnose
+                crop failures.
               </Text>
               <Text>
-                AI-Powered Resume Review: An feature of this platform is the
-                AI-powered resume review, which leverages artificial
-                intelligence to cross-reference a user&apos;s resume with
-                specific job descriptions. This helps applicants identify weak
-                points in their application materials and make necessary
-                improvements.
+                Deployed comprehensive visual data charts via Node.js and
+                Express for historical analysis, contributing to faster
+                identification and resolution of incubation disruptions.
               </Text>
               <Text>
-                Efficiency and Productivity: The Job Application Tracking Web
-                Page enhances efficiency and productivity in the job application
-                process, reducing the chances of missing application deadlines
-                or opportunities. It provides a centralized platform to organize
-                and monitor job applications, empowering users to stay organized
-                and focused on their career goals.
+                Optimized data handling system by designing a scalable database
+                in SQL, leveraging Node/Express API to process over 500 sensor
+                data requests per minute.
               </Text>
             </List>
           </Display>
@@ -82,10 +75,15 @@ const Content = styled.div`
 const ImgBox = styled.div`
   width: 740px;
   height: 433px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   @media screen and (max-width: 1720px) {
     height: fit-content;
   }
-  /* margin: 20px; */
+  padding-top: 20px;
+  padding-bottom: 20px;
   @media screen and (max-width: 1200px) {
     width: 100%;
     margin: 20px 0;
@@ -104,8 +102,8 @@ const ImgBox = styled.div`
 
 const DisplayImg = styled.img`
   /* min-width: 600px; */
-  width: 100%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 400px;
+  height: 400px;
   @media screen and (max-width: 1200px) {
     /* min-width: none; */
     width: 100%;
@@ -173,9 +171,17 @@ const FlatChip = styled.button`
   padding: 5px;
   background-color: transparent;
   border-radius: 999px;
-  border: 1px solid ${(props) => props.theme.colors.subtle};
+  border: 1px solid ${(props) => props.theme.colors.text.subtle};
   font-size: 16px;
   color: ${(props) => props.theme.colors.text.subtle};
+  /* @media screen and (min-width: 1921px) {
+    font-size: 30px;
+    padding: 15px;
+  }
+  @media screen and (min-width: 2921px) {
+    font-size: 40px;
+    padding: 20px;
+  } */
 `;
 
 const List = styled.ul`
@@ -186,4 +192,17 @@ const List = styled.ul`
 const Text = styled.li`
   padding-top: 20px;
   font-size: 16px;
+  /* color: black; */
+  /* @media screen and (max-width: 900px) {
+    width: 100%;
+    margin: 20px 0;
+  } */
+  /* @media screen and (min-width: 1921px) {
+    padding-top: 30px;
+    font-size: 30px;
+  }
+  @media screen and (min-width: 2921px) {
+    padding-top: 40px;
+    font-size: 40px;
+  } */
 `;

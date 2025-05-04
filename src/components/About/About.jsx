@@ -44,6 +44,7 @@ export default About;
 const Section = styled.div`
   background-color: transparent;
   width: 100%;
+  min-height: 600px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -51,20 +52,30 @@ const Section = styled.div`
 
 const Content = styled.div`
   width: 80%;
-  color: ${(props) => props.theme.colors.text.body};
   display: flex;
   text-align: center;
   flex-direction: column;
+  @media screen and (max-width: 768px) {
+    width: 95%;
+  }
 `;
 
 const Box = styled.div`
   text-align: left;
   display: flex;
-  background-color: ${(props) => props.theme.colors.mainbg};
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  background-color: transparent;
+  color: ${(props) => props.theme.colors.white};
   border-radius: 10px;
-  padding: 40px 80px;
+  padding: 14px 40px;
   z-index: 1;
+  /* @media screen and (max-width: 768px) {
+    flex-direction: column;
+    padding: 0 20px;
+    background-color: ${(props) => props.theme.colors.mainbg};
+    color: ${(props) => props.theme.colors.text.body};
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 10px;
+    transform: translateY(-40px);
+  } */
 `;
 
 const Title = styled.h1`
@@ -83,18 +94,18 @@ const SkewBg = styled.div`
   position: absolute;
   left: 0;
   width: 100%;
-  min-height: 500px;
+  min-height: 400px;
+  height: calc(1200px - 100vw);
   background-image: ${(props) => props.theme.colors.primarySash};
-  transform: skewY(-3deg) translateY(100px);
+  transform: skewY(-3deg) translateY(120px);
   z-index: 0;
   pointer-events: none;
 
-  /* @media screen and (max-width: 768px) {
-    width: unset;
-    height: 90%;
-    top: 100px;
+  @media screen and (max-width: 600px) {
+    /* height: calc(800px - 10vw); */
+    /* width: unset;
+    height: 50%;
     left: -16px;
-    right: -16px;
-    bottom: 0;
-  } */
+    right: -16px; */
+  }
 `;

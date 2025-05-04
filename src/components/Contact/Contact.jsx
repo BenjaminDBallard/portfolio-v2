@@ -101,7 +101,7 @@ const Content = styled.div`
   background-color: ${(props) => props.theme.colors.mainbg};
   box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 10px;
   z-index: 1;
-  padding: 50px;
+  padding: 35px;
   border-radius: 10px;
   color: white;
   width: 80%;

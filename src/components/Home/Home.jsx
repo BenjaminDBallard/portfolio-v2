@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Icon } from "@blueprintjs/core";
 import { forwardRef } from "react";
 import svgRect from "../../assets/home_rect.svg";
+import HeroCard from "./components/HeroCard";
 
 const Home = forwardRef((props, homeRef) => {
   return (
@@ -10,18 +11,22 @@ const Home = forwardRef((props, homeRef) => {
       <Wrapper>
         <Content>
           <div>
-            <Greeting>Hello, I&apos;m</Greeting>
-            <Title>BEN BALLARD</Title>
-            <SubTitle>FULL STACK WEB DEVELOPER</SubTitle>
+            <div>
+              <Greeting>Hello, I&apos;m</Greeting>
+              <Title>BEN BALLARD</Title>
+              <SubTitle>FULL STACK WEB DEVELOPER</SubTitle>
+            </div>
+            <NavButton onClick={() => props.handleLinkClick("contact")}>
+              Download Resume
+            </NavButton>
+            <IconWrapper>
+              <StyledIcon icon="code" size={24} />
+              <StyledIcon icon="crop" size={24} />
+            </IconWrapper>
           </div>
-          <NavButton onClick={() => props.handleLinkClick("contact")}>
-            Download Resume
-          </NavButton>
-          <IconWrapper>
-            <StyledIcon icon="clean" size={24} />
-            <StyledIcon icon="code" size={24} />
-            <StyledIcon icon="crop" size={24} />
-          </IconWrapper>
+          <HeroWrap>
+            <HeroCard />
+          </HeroWrap>
         </Content>
       </Wrapper>
     </Section>
@@ -68,8 +73,20 @@ const Wrapper = styled.div`
 `;
 
 const Content = styled.div`
-  width: fit-content;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
   z-index: 2;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+`;
+
+const HeroWrap = styled.div`
+  @media screen and (max-width: 768px) {
+    display: flex;
+    justify-content: center;
+  }
 `;
 
 const Title = styled.h1`

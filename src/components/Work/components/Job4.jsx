@@ -173,7 +173,7 @@ const FlatChip = styled.button`
   background-color: transparent;
   border-radius: 999px;
   border: 1px solid ${(props) => props.theme.colors.text.subtle};
-  font-size: 15px;
+  font-size: 16px;
   color: ${(props) => props.theme.colors.text.subtle};
   /* @media screen and (min-width: 1921px) {
     font-size: 30px;
@@ -192,7 +192,7 @@ const List = styled.ul`
 
 const Text = styled.li`
   padding-top: 20px;
-  font-size: 20px;
+  font-size: 16px;
   /* color: black; */
   /* @media screen and (max-width: 900px) {
     width: 100%;

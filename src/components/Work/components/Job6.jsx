@@ -1,52 +1,44 @@
 import { styled } from "styled-components";
-import Image from "../../../assets/JAT.png";
+import Image from "../../../assets/admin.png";
 
-export default function Job1() {
+export default function Job4() {
   return (
     <Section>
       <Content>
         <ImgBox>
           <Link href="">
-            <DisplayImg src={Image} />
+            <Logo>
+              <h1>Perenne LLC</h1>
+            </Logo>
           </Link>
         </ImgBox>
         <DisplayBox>
           <Display>
             <Link>
-              <Title>Job App Tracker</Title>
+              <Title>Perenne, LLC</Title>
             </Link>
             <ChipList>
-              <FlatChip>React.js</FlatChip>
-              <FlatChip>Styled-components</FlatChip>
-              <FlatChip>Figma</FlatChip>
+              <FlatChip>Vue2/3</FlatChip>
+              <FlatChip>Quasar</FlatChip>
+              <FlatChip>Typescript</FlatChip>
               <FlatChip>Node.js</FlatChip>
-              <FlatChip>MySQL</FlatChip>
               <FlatChip>Express</FlatChip>
               <FlatChip>Rest API</FlatChip>
-              <FlatChip>OpenAI</FlatChip>
             </ChipList>
             <List>
               <Text>
-                Comprehensive Job Application Tracking: The web page offers a
-                comprehensive solution for managing job applications, allowing
-                users to easily track their progress through different stages of
-                the hiring process.
+                Upgraded legacy Vue2 customer management application to Vue3
+                (Quasar), improving performance and maintainability.
               </Text>
               <Text>
-                AI-Powered Resume Review: An feature of this platform is the
-                AI-powered resume review, which leverages artificial
-                intelligence to cross-reference a user&apos;s resume with
-                specific job descriptions. This helps applicants identify weak
-                points in their application materials and make necessary
-                improvements.
+                Migrated single-tenant database to multi-tenant, developing a
+                middleware API to dynamically route requests to isolated tenant
+                databases.
               </Text>
               <Text>
-                Efficiency and Productivity: The Job Application Tracking Web
-                Page enhances efficiency and productivity in the job application
-                process, reducing the chances of missing application deadlines
-                or opportunities. It provides a centralized platform to organize
-                and monitor job applications, empowering users to stay organized
-                and focused on their career goals.
+                Built admin dashboard features to remotely control tenant
+                servers (start/stop scripts) and allocate memory/resources per
+                customer.
               </Text>
             </List>
           </Display>
@@ -82,6 +74,10 @@ const Content = styled.div`
 const ImgBox = styled.div`
   width: 740px;
   height: 433px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   @media screen and (max-width: 1720px) {
     height: fit-content;
   }
@@ -106,6 +102,15 @@ const DisplayImg = styled.img`
   /* min-width: 600px; */
   width: 100%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  @media screen and (max-width: 1200px) {
+    /* min-width: none; */
+    width: 100%;
+  }
+`;
+
+const Logo = styled.div`
+  /* min-width: 600px; */
+  width: 100%;
   @media screen and (max-width: 1200px) {
     /* min-width: none; */
     width: 100%;
@@ -173,9 +178,17 @@ const FlatChip = styled.button`
   padding: 5px;
   background-color: transparent;
   border-radius: 999px;
-  border: 1px solid ${(props) => props.theme.colors.subtle};
+  border: 1px solid ${(props) => props.theme.colors.text.subtle};
   font-size: 16px;
   color: ${(props) => props.theme.colors.text.subtle};
+  /* @media screen and (min-width: 1921px) {
+    font-size: 30px;
+    padding: 15px;
+  }
+  @media screen and (min-width: 2921px) {
+    font-size: 40px;
+    padding: 20px;
+  } */
 `;
 
 const List = styled.ul`
@@ -186,4 +199,17 @@ const List = styled.ul`
 const Text = styled.li`
   padding-top: 20px;
   font-size: 16px;
+  /* color: black; */
+  /* @media screen and (max-width: 900px) {
+    width: 100%;
+    margin: 20px 0;
+  } */
+  /* @media screen and (min-width: 1921px) {
+    padding-top: 30px;
+    font-size: 30px;
+  }
+  @media screen and (min-width: 2921px) {
+    padding-top: 40px;
+    font-size: 40px;
+  } */
 `;

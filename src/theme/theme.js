@@ -14,6 +14,7 @@ const light = {
   colors: {
     mainbg: "#F8F8F8",
     secondbg: "#F8F8F8",
+    white: "#F8F8F8",
     primary: "linear-gradient(134deg, #6A98F0 0%, #4961DC 99%)",
     primarySash: "linear-gradient(134deg, #6A98F0 0%, #4961DC 99%)",
     secondary: "#C7D0FF",
@@ -45,6 +46,7 @@ const dark = {
   colors: {
     mainbg: "#191919",
     secondbg: "#232323",
+    white: "#F8F8F8",
     primary: "linear-gradient(134deg, #6A98F0 0%, #4961DC 99%)",
     primarySash: "linear-gradient(134deg, #232323 0%, #232323 99%)",
     secondary: "#303030",

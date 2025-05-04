@@ -5,6 +5,8 @@ import Job1 from "./Job1";
 import Job2 from "./Job2";
 import Job3 from "./Job3";
 import Job4 from "./Job4";
+import Job5 from "./Job5";
+import Job6 from "./Job6";
 import "../../../App.css";
 
 const theme = {
@@ -24,10 +26,13 @@ const WorkTabs = () => {
   };
 
   const tabs = [
+    { label: "Perenne LLC" },
+    { label: "Mycotex LLC" },
     { label: "Ripple Learning LLC" },
     { label: "Job App Tracker" },
     { label: "ChatBot Tutor" },
     { label: "Austin Coding Academy" },
+
     // Add more tabs as needed
   ];
 
@@ -40,10 +45,13 @@ const WorkTabs = () => {
           onTabChange={handleTabChange}
         />
         {/* Your content for each tab goes here */}
-        {activeTab === 0 && <Job1 />}
-        {activeTab === 1 && <Job2 />}
-        {activeTab === 2 && <Job4 />}
-        {activeTab === 3 && <Job3 />}
+        {activeTab === 0 && <Job6 />}
+        {activeTab === 1 && <Job5 />}
+        {activeTab === 2 && <Job1 />}
+        {activeTab === 3 && <Job2 />}
+        {activeTab === 4 && <Job4 />}
+        {activeTab === 5 && <Job3 />}
+
         {/* Add more content for additional tabs */}
       </TabContainer>
     </ThemeProvider>
