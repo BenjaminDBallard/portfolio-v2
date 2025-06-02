@@ -71,6 +71,10 @@ const Content = styled.div`
     grid-template-columns: 1fr 170px 1fr;
     grid-template-rows: 1fr;
     align-items: center;
+    @media screen and (max-width: 768px) {
+        overflow: hidden;
+        padding: 0 20px 14px;
+    }
 `;
 const DisplayBox = styled.div`
     padding: 20px;
@@ -113,6 +117,9 @@ const Title = styled.h1`
   line-height: 1.1;
   margin: 15px 0 10px 30px;
     color: ${(props) => props.theme.colors.white};
+    @media screen and (max-width: 768px) {
+        font-size: 20px;
+    }
 `;
 
 const ShowcaseBox = styled.div`
@@ -147,6 +154,9 @@ const IconList = styled.div`
 `;
 const Icon = styled.img`
   height: 40px;
+    @media screen and (max-width: 768px) {
+        height: 30px;
+    }
 `
 
 const Wrap = styled.div`

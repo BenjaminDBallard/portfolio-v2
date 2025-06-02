@@ -89,6 +89,7 @@ Contact.displayName = "Contact";
 export default Contact;
 
 const Section = styled.div`
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;

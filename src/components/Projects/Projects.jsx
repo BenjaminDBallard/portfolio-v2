@@ -40,13 +40,14 @@ const Content = styled.div`
   color: #ccd0d9;
   width: 80%;
     @media screen and (max-width: 768px) {
-        width: 95%;
+        width: 100%;
     }
 `;
 
 const Title = styled.h1`
   text-align: center;
   font-weight: 800;
+  background-color: ${(props) => props.theme.colors.mainbg};
   font-size: calc(100% + 7px + 0.9vw * 0.42);
   color: ${(props) => props.theme.colors.text.subtitle};
 `;

@@ -112,12 +112,18 @@ const Title = styled.h1`
   line-height: 1.1;
   margin: 0;
     color: ${(props) => props.theme.colors.white};
+    @media screen and (max-width: 768px) {
+        font-size: 20px;
+    }
 `;
 const SubTitle = styled.h2`
     font-size: 20px;
     line-height: 1.1;
-    margin: 0;
+    margin: 5px 0;
     color: ${(props) => props.theme.colors.white};
+    @media screen and (max-width: 768px) {
+        font-size: 16px;
+    }
 `
 const ChipList = styled.div`
     display: flex;
@@ -146,9 +152,16 @@ const IconList = styled.div`
   margin-top: 20px;
     padding: 0 40px;
   flex-wrap: wrap;
+    @media screen and (max-width: 768px) {
+        gap: 15px;
+        justify-content: center;
+    }
 `;
 const Icon = styled.img`
   height: 40px;
+    @media screen and (max-width: 768px) {
+        height: 30px;
+    }
 `
 const List = styled.ul`
     padding: 0 40px 0 58px;

@@ -85,6 +85,7 @@ const TextContainer = styled.div`
   grid-auto-flow: dense;
   @media screen and (max-width: 768px) {
     width: 95%;
+    grid-template-columns: 1fr; /* stack cards vertically */
   }
 `;
 
@@ -104,6 +105,9 @@ const IconText = styled.p`
   font-size: 12px;
   padding: 0;
   margin: 0;
+  @media screen and (max-width: 768px) {
+    font-size: 10px;
+  }
 `;
 
 const Card = styled.div`
@@ -125,9 +129,13 @@ const Card = styled.div`
 `;
 
 const SubTitle = styled.p`
-  color: ${(props) => props.theme.colors.text.body};
+  color: ${(props) => props.theme.colors.text.subtle};
   font-size: 24px;
   margin: 0;
+  @media screen and (max-width: 768px) {
+    font-size: 20px;
+    text-align: center;
+  }
 `;
 
 const IconList = styled.div`
@@ -137,19 +145,30 @@ const IconList = styled.div`
   gap: 20px;
   margin-top: 0;
     padding: 0;
+  @media screen and (max-width: 768px) {
+    gap: 5px;
+  }
 `;
 const IconTile = styled.div`
 display: flex;
   height: 80px;
   width: 80px;
+  gap: 5px;
 flex-direction: column;
   align-items: center;
   justify-content: center;
   border-radius: 10px;
   background-color: ${(props) => props.theme.colors.secondbg};
-  box-shadow: ${(props) => props.theme.boxShadows.main};
+  //box-shadow: ${(props) => props.theme.boxShadows.main};
+  @media screen and (max-width: 768px) {
+    height: 60px;
+    width: 60px;
+  }
 `
 
 const Icon = styled.img`
   height: 40px;
+  @media screen and (max-width: 768px) {
+    height: 30px;
+  }
 `
