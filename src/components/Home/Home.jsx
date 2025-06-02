@@ -1,31 +1,45 @@
 import styled from "styled-components";
 import { Icon } from "@blueprintjs/core";
+import GitHubIcon from '@mui/icons-material/GitHub';
+import MailIcon from '@mui/icons-material/Mail';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { forwardRef } from "react";
-import svgRect from "../../assets/home_rect.svg";
-import HeroCard from "./components/HeroCard";
+import HomeCard from "./HomeCard.jsx";
+import resume from "../../data/resume.json"
+import {slideDownKeyframe} from "../css-animations.js";
 
 const Home = forwardRef((props, homeRef) => {
+  const data = resume
   return (
     <Section ref={homeRef}>
-      <img className="svg-rect" src={svgRect} alt=""></img>
+      <img className="svg-rect" src='/images/home_rect.svg' alt="decorative ractangle background"></img>
       <Wrapper>
         <Content>
           <div>
             <div>
-              <Greeting>Hello, I&apos;m</Greeting>
-              <Title>BEN BALLARD</Title>
-              <SubTitle>FULL STACK WEB DEVELOPER</SubTitle>
+              <Greeting>{data.greeting}</Greeting>
+              <Title>{data.firstName.toUpperCase()} {data.lastName.toUpperCase()}</Title>
+              <SubTitle>{data.jobTitle.toUpperCase()}</SubTitle>
             </div>
-            <NavButton onClick={() => props.handleLinkClick("contact")}>
-              Download Resume
-            </NavButton>
+            <a href="/files/BenBallard-Resume.pdf" download>
+              <NavButton>
+                Download Resume
+              </NavButton>
+            </a>
             <IconWrapper>
-              <StyledIcon icon="code" size={24} />
-              <StyledIcon icon="crop" size={24} />
+              <a href="https://github.com/BenjaminDBallard" target="_blank" rel="noopener noreferrer">
+              <GitHubIcon className='icon' />
+              </a>
+              <a href="https://www.linkedin.com/in/benjamin-d-ballard/" target="_blank" rel="noopener noreferrer">
+              <LinkedInIcon className='icon' />
+              </a>
+              <a href="mailto:benb971@gmail.com?subject=Hello,%20I'd%20like%20to%20connect." target="_blank" rel="noopener noreferrer">
+                <MailIcon className="icon" />
+              </a>
             </IconWrapper>
           </div>
           <HeroWrap>
-            <HeroCard />
+            <HomeCard />
           </HeroWrap>
         </Content>
       </Wrapper>
@@ -77,6 +91,8 @@ const Content = styled.div`
   width: 100%;
   justify-content: space-between;
   z-index: 2;
+  animation: ${slideDownKeyframe} 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s
+  forwards;
   @media screen and (max-width: 768px) {
     flex-direction: column;
   }
@@ -90,7 +106,6 @@ const HeroWrap = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 48px;
   font-size: calc(100% + 7px + 2.5vw * 0.55);
   font-weight: 800;
   line-height: 1.1;
@@ -137,20 +152,15 @@ const NavButton = styled.button`
 const IconWrapper = styled.div`
   display: flex;
   gap: 30px;
+  .icon {
+    fill: ${(props) => props.theme.colors.text.link};
+    transition: 250ms;
+    &:hover {
+      fill: ${(props) => props.theme.colors.text.subtle};
+      cursor: pointer;
+    }
+  }
   @media screen and (max-width: 768px) {
     justify-content: center;
-  }
-`;
-
-const StyledIcon = styled(Icon)`
-  fill: ${(props) => props.theme.colors.text.subtle};
-  display: flex;
-  align-items: center;
-  padding: 3px;
-  border-radius: 5px;
-  transition: 250ms;
-  &:hover {
-    fill: ${(props) => props.theme.colors.text.body};
-    cursor: pointer;
   }
 `;

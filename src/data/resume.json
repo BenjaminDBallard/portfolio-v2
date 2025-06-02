@@ -1,0 +1,136 @@
+{
+  "greeting": "Hello, I'm",
+  "firstName": "Ben",
+  "lastName" : "Ballard",
+  "jobTitle": "Full Stack Web Developer",
+  "email":"benb971@gmail.com",
+  "resume": "",
+  "links": {
+    "linkedIn": "https://www.linkedin.com/in/benjamin-d-ballard/",
+    "github": "https://github.com/BenjaminDBallard"
+  },
+  "about": {
+    "me": {
+      "title": "Who I am",
+      "description": "I'm a Full-Stack Developer who loves building intuitive, scalable web apps. I enjoy turning complex problems into clean, practical solutions, whether it's modernizing systems or visualizing real-time data. Coding is both my craft and my favorite way to solve real-world challenges."
+    },
+    "work" : {
+      "title": "Experience",
+      "description": "Currently, I work at Perenne as a Full-Stack Developer, modernizing a legacy app with Vue 3 and Quasar while building tools for a multi-tenant architecture and streamlined server management. It’s been a rewarding challenge blending performance, scalability, and thoughtful UX."
+    },
+    "stack": {
+      "title": "The Stack",
+      "icons": [
+        {
+          "img": "react.svg",
+          "dark": "react.svg",
+          "name": "React"
+        },
+        {
+          "img": "quasar.png",
+          "dark": "quasar.png",
+          "name": "Quasar"
+        },
+        {
+          "img": "vue.png",
+          "dark": "vue.png",
+          "name": "Vue"
+        },
+        {
+          "img": "typescript.png",
+          "dark": "typescript.png",
+          "name": "Typescript"
+        },
+        {
+          "img": "node.png",
+          "dark": "node.png",
+          "name": "Node"
+        },
+        {
+          "img": "express.png",
+          "dark": "express-white.png",
+          "name": "Express"
+        },
+        {
+          "img": "sql.png",
+          "dark": "sql.png",
+          "name": "SQL"
+        }
+      ]
+    }
+  },
+  "work": [
+    {
+      "company": "Perenne, LLC",
+      "jobTitle": "Full-Stack Developer",
+      "icons": ["quasar.png", "vue.png", "typescript.png", "node.png", "express.png"],
+      "dark": ["quasar.png", "vue.png", "typescript.png", "node.png", "express-white.png"],
+      "skills": ["Vue2/3", "Quasar", "Typescript", "Node.js", "Express", "RESTful API"],
+      "short": "Modernized a legacy Vue2 app to Vue3 with Quasar, boosting performance and maintainability. Migrated to a multi-tenant architecture with dynamic API routing and built an admin dashboard for managing tenant servers and resource allocation.",
+      "description": [
+        "Upgraded legacy Vue2 customer management application to Vue3 (Quasar), improving performance and maintainability.",
+        "Migrated single-tenant database to multi-tenant, developing a middleware API to dynamically route requests to isolated tenant databases.",
+        "Built admin dashboard features to remotely control tenant servers (start/stop scripts) and allocate memory/resources per customer."
+      ]
+    },
+    {
+      "company": "MycoTex, LLC",
+      "jobTitle": "Full-Stack Developer",
+      "icons": ["react.svg", "typescript.png", "node.png", "express.png", "sql.png"],
+      "dark": ["react.svg", "typescript.png", "node.png", "express-white.png", "sql.png"],
+      "skills": ["React", "TypeScript", "Chart.js/D3", "Node.js", "Express", "REST API", "SQL", "Digital Ocean"],
+      "short": "Developed and deployed a real-time environmental monitoring dashboard with historical data analysis, enabling optimized lab conditions and rapid issue diagnosis. Built a scalable Node.js/Express system handling 500+ sensor requests per minute with a robust SQL database.",
+      "description": [
+        "Designed and deployed a real-time environmental monitoring dashboard tracking temperature, CO₂, and lab conditions, enabling staff to optimize growing environments and diagnose crop failures.",
+        "Deployed comprehensive visual data charts via Node.js and Express for historical analysis, contributing to faster identification and resolution of incubation disruptions.",
+        "Optimized data handling system by designing a scalable database in SQL, leveraging Node/Express API to process over 500 sensor data requests per minute."
+      ]
+    },
+    {
+      "company": "Ripple Learning, LLC",
+      "jobTitle": "Full-Stack Developer",
+      "icons": ["react.svg", "javascript.png", "node.png", "express.png", "sql.png"],
+      "dark": ["react.svg", "javascript.png", "node.png", "express-white.png", "sql.png"],
+      "skills": ["React", "Javascript", "GPT-4 API", "Node.js", "Express", "REST API", "SQL", "Firebase", "Chart.js"],
+      "short": "Engineered full-stack applications leveraging AI-driven services, real-time analytics, and structured data workflows, with a focus on user experience and scalable architecture.",
+      "description": [
+        "Built and integrated GPT-based features to enhance user interactivity and automate content evaluation.",
+        "Designed and implemented RESTful APIs and backend services using Node.js and Express, ensuring robust and secure data flows.",
+        "Created interactive frontend interfaces with React and Javascript, emphasizing responsive design and modular architecture.",
+        "Developed real-time dashboards with dynamic charting and usage analytics to monitor application behavior and performance.",
+        "Architected systems to track multi-step processes, with emphasis on clean data modeling and user-centric workflows."
+      ]
+    }
+
+  ],
+  "projects": [
+    {
+      "title": "Job App Tracker",
+      "github": "https://github.com/theMVPshop/jobAppTracker",
+      "icons": ["react.svg", "typescript.png", "node.png", "express.png", "sql.png"],
+      "dark": ["react.svg", "typescript.png", "node.png", "express-white.png", "sql.png"],
+      "skills": ["React.js", "Styled-components", "Figma", "Node.js", "MySQL", "Express", "Rest API", "OpenAI"],
+      "image": "job_app_tracker.png",
+      "short": "The Job Application Tracking Web Page is a centralized platform designed to streamline the job search process. It helps users efficiently manage and track applications through various hiring stages, includes an AI-powered resume review tool for optimizing applications based on job descriptions, and boosts productivity by keeping users organized and on top of deadlines.",
+      "description": [
+        "Comprehensive Job Application Tracking: The web page offers a comprehensive solution for managing job applications, allowing users to easily track their progress through different stages of the hiring process.",
+        "AI-Powered Resume Review: An feature of this platform is the AI-powered resume review, which leverages artificial intelligence to cross-reference a user&apos;s resume with specific job descriptions. This helps applicants identify weak points in their application materials and make necessary improvements.",
+        "Efficiency and Productivity: The Job Application Tracking Web Page enhances efficiency and productivity in the job application process, reducing the chances of missing application deadlines or opportunities. It provides a centralized platform to organize and monitor job applications, empowering users to stay organized and focused on their career goals."
+      ]
+    },
+    {
+      "title": "ChatBot Tutor",
+      "github": "https://github.com/theMVPshop/chatbottutor",
+      "icons": ["react.svg", "typescript.png", "node.png", "express.png", "sql.png"],
+      "dark": ["react.svg", "typescript.png", "node.png", "express-white.png", "sql.png"],
+      "skills": ["React.js", "Styled-components", "Figma", "Node.js", "MySQL", "Express", "Rest API", "OpenAI"],
+      "image": "chatbot_tutor.png",
+      "short": "An AI-powered educational support system was developed to enhance student learning and curriculum oversight. It features a personalized chatbot that helps students engage with online textbooks, an administrative dashboard for real-time monitoring and curriculum analysis, and an integrated ecosystem that enables data-driven improvements in education.",
+      "description": [
+        "Enhanced Learning with AI-Driven Support: Developed an advanced AI-driven chatbot tailored to elevate student comprehension of online textbooks. Utilization of natural language processing ensures personalized engagement to accurately address specific learning needs.",
+        "Strategic Oversight with Administrative Dashboard: Spearheaded the development of an Administrative Dashboard to offer real-time monitoring of the chatbots usage. This empowers educational administrators to identify and promptly address potential weaknesses within the curriculum.",
+        "Integrated Educational Support Ecosystem: Implemented a cohesive educational support system by seamlessly integrating the AI-driven chatbot and the Administrative Dashboard. This integrated solution enables data-driven decision-making, facilitating ongoing curriculum refinement and optimization."
+      ]
+    }
+  ]
+}

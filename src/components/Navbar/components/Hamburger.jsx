@@ -2,7 +2,7 @@ import styled from "styled-components";
 import MobileThemeSwitch from "./MobileThemeSwitch";
 
 const HamburgerMenu = ({ handleLinkClick, handleThemeChange, open }) => {
-  const pages = ["home", "about", "work", "contact"];
+  const pages = ["home", "about", "projects", "work", "contact"];
 
   return (
     <Wrapper>

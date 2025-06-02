@@ -1,0 +1,218 @@
+import { useState, useRef, useLayoutEffect, useEffect } from "react";
+import { styled } from "styled-components";
+
+export default function WorkCard({ data, theme }) {
+    const { company, jobTitle, icons, dark, short, description, skills } = data;
+    const [showAll, setShowAll] = useState(false);
+    const listRef = useRef(null);
+    const [height, setHeight] = useState("0px");
+
+    // Set height when showAll toggles
+    useLayoutEffect(() => {
+        if (listRef.current) {
+            if (showAll) {
+                setHeight(`${listRef.current.scrollHeight}px`);
+            } else {
+                setHeight("0px");
+            }
+        }
+    }, [showAll]);
+
+    // Handle window resize only when expanded
+    useEffect(() => {
+        if (!showAll) return; // only run when expanded
+
+        function handleResize() {
+            if (listRef.current) {
+                setHeight(`${listRef.current.scrollHeight}px`);
+            }
+        }
+
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, [showAll]);
+
+    return (
+        <Section>
+            <Content>
+                <DisplayBox>
+                    <TopWrap>
+                        <TitleWrap>
+                            <Title>{company}</Title>
+                            <SubTitle>{jobTitle}</SubTitle>
+                        </TitleWrap>
+
+                        <IconList>
+                            {(theme ? dark : icons).map((icon, i) => (
+                                <Icon key={i} src={`icons/${icon}`} alt={icon} />
+                            ))}
+                        </IconList>
+
+                        <Short>{short}</Short>
+                    </TopWrap>
+                    <List ref={listRef} $showAll={showAll}>
+                        {description.map((desc, i) => (
+                            <ListItem key={i} $isVisible={showAll}>
+                                {desc}
+                            </ListItem>
+                        ))}
+                        <ListItemClean $isVisible={showAll}>
+                        <ChipList $isVisible={showAll}>
+                            {skills.map((skill, i) => (
+                                <FlatChip key={i}>{skill}</FlatChip>
+                            ))}
+                        </ChipList>
+                        </ListItemClean>
+                    </List>
+                <ButtonWrap>
+                    <ToggleButton onClick={() => setShowAll(!showAll)}>
+                        {showAll ? "Show Less" : "Show More"}
+                    </ToggleButton>
+                </ButtonWrap>
+                </DisplayBox>
+            </Content>
+        </Section>
+    );
+}
+
+const Section = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+margin: 10px;
+`;
+const Content = styled.div`
+  color: ${(props) => props.theme.colors.text.body};
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+`;
+const DisplayBox = styled.div`
+    width: 100%;
+  display: flex;
+    min-height: 410px;
+  flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    border-radius: 10px;
+    background-color: ${(props) => props.theme.colors.secondbg};
+    box-shadow: ${(props) => props.theme.boxShadows.main};
+    @media (max-width: 1389px){
+        min-height: fit-content;
+    }
+`;
+
+const TitleWrap = styled.div`
+    background-image: ${(props) => props.theme.colors.primarySash};
+    border-radius: 10px 10px 0 0;
+    padding: 20px 40px;
+`
+const Title = styled.h1`
+  font-size: 30px;
+  line-height: 1.1;
+  margin: 0;
+    color: ${(props) => props.theme.colors.white};
+`;
+const SubTitle = styled.h2`
+    font-size: 20px;
+    line-height: 1.1;
+    margin: 0;
+    color: ${(props) => props.theme.colors.white};
+`
+const ChipList = styled.div`
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 0;
+    flex-wrap: wrap;
+
+    opacity: ${props => (props.$isVisible ? 1 : 0)};
+    transform: translateY(${props => (props.$isVisible ? '0' : '-10px')});
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: ${props => (props.$isVisible ? 'auto' : 'none')};
+`;
+
+const FlatChip = styled.button`
+  padding: 5px;
+  background-color: transparent;
+  border-radius: 999px;
+  border: 1px solid ${(props) => props.theme.colors.subtle};
+  font-size: 16px;
+  color: ${(props) => props.theme.colors.text.subtle};
+`;
+const IconList = styled.div`
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+    padding: 0 40px;
+  flex-wrap: wrap;
+`;
+const Icon = styled.img`
+  height: 40px;
+`
+const List = styled.ul`
+    padding: 0 40px 0 58px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    max-height: ${props => props.$showAll ? '1000px' : '0'};
+`;
+
+const ListItem = styled.li`
+    font-size: 16px;
+    opacity: ${props => props.$isVisible ? 1 : 0};
+    transform: ${props => props.$isVisible ? 'translateY(0)' : 'translateY(-10px)'};
+    transition:
+            opacity 0.3s ease-in-out,
+            transform 0.3s ease-in-out;
+`;
+const ListItemClean = styled.li`
+    font-size: 16px;
+    list-style: none;
+    opacity: ${props => props.$isVisible ? 1 : 0};
+    transform: ${props => props.$isVisible ? 'translateY(0)' : 'translateY(-10px)'};
+    transition:
+            opacity 0.3s ease-in-out,
+            transform 0.3s ease-in-out;
+`;
+
+const Short = styled.div`
+    padding: 0 40px;
+    font-size: 16px;
+    margin-top: 15px;
+`;
+
+const TopWrap = styled.div`
+display: flex;
+flex-direction: column;
+`
+const ButtonWrap = styled.div`
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+`
+
+const ToggleButton = styled.button`
+    background-image: ${(props) => props.theme.colors.primary};
+    color: #f8f8f8;
+    margin: 0 40px 30px;
+    width: 138px;
+    font-size: 12px;
+    font-family: "Montserrat", sans-serif;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 400;
+    padding: 12px;
+    transition:
+            background-color 0.3s ease,
+            transform 0.2s ease,
+            box-shadow 0.3s ease;
+
+    &:hover {
+        color: ${(props) => props.theme.colors.highlight};
+    }
+`;

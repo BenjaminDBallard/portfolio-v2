@@ -45,7 +45,7 @@ const Contact = forwardRef((props, contactRef) => {
   return (
     <Section ref={contactRef}>
       <Title>Get In Touch</Title>
-      <SkewBg />
+      <Background>
       <Content>
         <FormWrapper onSubmit={handleSubmit}>
           <InputWrapper>
@@ -79,6 +79,7 @@ const Contact = forwardRef((props, contactRef) => {
           </ButtonCont>
         </FormWrapper>
       </Content>
+      </Background>
     </Section>
   );
 });
@@ -93,26 +94,29 @@ const Section = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100vh;
-  margin-bottom: 50px;
+  margin: 0;
+  padding: 100px 0 0;
 `;
 
 const Content = styled.div`
-  background-color: ${(props) => props.theme.colors.mainbg};
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 10px;
-  z-index: 1;
-  padding: 35px;
+  background-color: ${(props) => props.theme.colors.secondbg};
+  box-shadow: rgba(0, 0, 0, 0.05) 0 5px 10px;
+  padding: 50px;
   border-radius: 10px;
   color: white;
-  width: 80%;
-  margin: 80px;
+  width: calc(80% - 100px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media screen and (max-width: 768px) {
+    width: calc(95% - 100px);
+  }
 `;
 
 const Title = styled.h1`
+  text-align: center;
+  width: 100%;
   font-weight: 800;
   font-size: calc(100% + 7px + 0.9vw * 0.42);
   color: ${(props) => props.theme.colors.text.subtitle};
@@ -124,6 +128,7 @@ const FormWrapper = styled.form`
   width: 100%;
   gap: 10px;
   align-items: center;
+  z-index: 5;
   @media screen and (max-width: 900px) {
     gap: 15px;
   }
@@ -146,8 +151,8 @@ const StyledInput = styled.input`
   padding: 10px;
   border: none;
   border-radius: 5px;
-  background-color: #eaeaea;
-  color: #383838;
+  background-color: ${(props) => props.theme.colors.form};
+  color: ${(props) => props.theme.colors.text.body};
   &::placeholder {
     color: #757575;
   }
@@ -167,8 +172,8 @@ const StyledTextArea = styled.textarea`
   resize: none;
   border: none;
   border-radius: 5px;
-  background-color: #eaeaea;
-  color: #383838;
+  background-color: ${(props) => props.theme.colors.form};
+  color: ${(props) => props.theme.colors.text.body};
   &::placeholder {
     color: #757575;
   }
@@ -189,6 +194,7 @@ const StyledButton = styled.button`
   font-size: 12px;
   font-family: "Montserrat", sans-serif;
   border: none;
+  width: 138px;
   border-radius: 5px;
   cursor: pointer;
   font-weight: 400;
@@ -199,22 +205,11 @@ const StyledButton = styled.button`
   }
 `;
 
-const SkewBg = styled.div`
-  position: absolute;
-  left: 0;
+const Background = styled.div`
   width: 100%;
-  min-height: 500px;
+  padding: 50px 0;
+  display: flex;
+  justify-content: center;
   background-image: ${(props) => props.theme.colors.primarySash};
-  transform: skewY(3deg) translateY(40px);
   z-index: 0;
-  pointer-events: none;
-
-  /* @media screen and (max-width: 768px) {
-    width: unset;
-    height: 90%;
-    top: 100px;
-    left: -16px;
-    right: -16px;
-    bottom: 0;
-  } */
 `;

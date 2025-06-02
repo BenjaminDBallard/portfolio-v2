@@ -1,21 +1,20 @@
 import { styled } from "styled-components";
 import { useState } from "react";
 import { Icon } from "@blueprintjs/core";
-import bblogo from "../../assets/bblogo.svg";
 import HamburgerMenu from "./components/Hamburger";
 import ThemeSwitch from "./components/ThemeSwitch";
 
 export default function Navbar({ handleLinkClick, handleThemeChange }) {
   const [open, setOpen] = useState(false);
-  const pages = ["home", "about", "work", "contact"];
+  const pages = ["Home", "About", "Projects", "Work", "Contact"];
   return (
     <Section>
       <Wrapper>
-        <img src={bblogo} onClick={() => handleLinkClick("home")} />
+        <img src='/images/logo.svg' alt='Ben Ballards Logo' onClick={() => handleLinkClick("home")} />
         <div>
           <ul>
             {pages.map((page) => (
-              <li key={page} onClick={() => handleLinkClick(page)}>
+              <li key={page} onClick={() => handleLinkClick(page.toLowerCase())}>
                 {page}
               </li>
             ))}
@@ -49,7 +48,7 @@ const Section = styled.div`
   display: flex;
   height: 60px;
   background-color: ${(props) => props.theme.colors.secondbg};
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  box-shadow: ${(props) => props.theme.boxShadows.main};
   align-items: center;
   justify-content: center;
   @media screen and (max-width: 768px) {

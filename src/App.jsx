@@ -8,12 +8,14 @@ import Navbar from "./components/Navbar/Navbar";
 import MobileNavbar from "./components/Navbar/MobileNavbar";
 import Work from "./components/Work/Work";
 import "./index.css";
+import Projects from "./components/Projects/Projects.jsx";
 
 function App() {
   // const scrollRef = useRef(null);
   // useScrollSnap({ ref: scrollRef, duration: 100, delay: 50 });
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
+  const projectsRef = useRef(null);
   const workRef = useRef(null);
   const contactRef = useRef(null);
   const [theme, setTheme] = useState(light);
@@ -22,6 +24,7 @@ function App() {
     const refMapping = {
       home: homeRef,
       about: aboutRef,
+      projects: projectsRef,
       work: workRef,
       contact: contactRef,
     };
@@ -48,8 +51,9 @@ function App() {
           handleThemeChange={handleThemeChange}
         />
         <Home ref={homeRef} handleLinkClick={handleLinkClick} />
-        <About ref={aboutRef} />
-        <Work ref={workRef} />
+        <About ref={aboutRef} theme={theme === dark}/>
+        <Projects ref={projectsRef} theme={theme === dark}/>
+        <Work ref={workRef} theme={theme === dark}/>
         <Contact ref={contactRef} />
       </Webpage>
     </ThemeProvider>
