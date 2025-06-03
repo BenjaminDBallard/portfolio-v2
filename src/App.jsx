@@ -1,6 +1,8 @@
 import { useRef, useState } from "react";
 import { styled, ThemeProvider } from "styled-components";
+import { createTheme } from "./theme/utils.js"
 import { light, dark } from "./theme/theme";
+import { one } from "./theme/accent"
 import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
 import Home from "./components/Home/Home";
@@ -16,16 +18,17 @@ function App() {
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
   const projectsRef = useRef(null);
-  const workRef = useRef(null);
+  const experienceRef = useRef(null);
   const contactRef = useRef(null);
   const [theme, setTheme] = useState(light);
+  const [accent, setAccent] = useState(one);
 
   const handleLinkClick = (refType) => {
     const refMapping = {
       home: homeRef,
       about: aboutRef,
       projects: projectsRef,
-      work: workRef,
+      experience: experienceRef,
       contact: contactRef,
     };
     refMapping[refType].current?.scrollIntoView({ behavior: "smooth" });
@@ -39,8 +42,17 @@ function App() {
     }
   };
 
+  const handleAccentChange = (accentTheme) => {
+    console.log(accentTheme);
+    setAccent(accentTheme);
+  };
+
+  const composedTheme = createTheme(theme, accent);
+
+  console.log(composedTheme);
+
   return (
-    <ThemeProvider theme={theme}>
+      <ThemeProvider theme={ composedTheme }>
       <Webpage>
         <Navbar
           handleLinkClick={handleLinkClick}
@@ -50,10 +62,10 @@ function App() {
           handleLinkClick={handleLinkClick}
           handleThemeChange={handleThemeChange}
         />
-        <Home ref={homeRef} handleLinkClick={handleLinkClick} />
+        <Home ref={homeRef} handleLinkClick={handleLinkClick} handleAccentChange={handleAccentChange} />
         <About ref={aboutRef} theme={theme === dark}/>
         <Projects ref={projectsRef} theme={theme === dark}/>
-        <Work ref={workRef} theme={theme === dark}/>
+        <Work ref={experienceRef} theme={theme === dark}/>
         <Contact ref={contactRef} />
       </Webpage>
     </ThemeProvider>

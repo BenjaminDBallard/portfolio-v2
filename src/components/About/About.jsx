@@ -1,6 +1,7 @@
 import { forwardRef } from "react";
 import styled from "styled-components";
 import resume from "../../data/resume.json"
+import {CommonBackground, CommonTitle} from "../Common/common.js";
 
 const About = forwardRef((props, aboutRef) => {
   const data = resume.about
@@ -11,13 +12,14 @@ const About = forwardRef((props, aboutRef) => {
     <Section ref={aboutRef}>
 
       <Content>
-        <Title>About Me</Title>
-        <Background>
+        <CommonTitle>ABOUT ME</CommonTitle>
+        <BackgroundSpacer>
+        <CommonBackground>
           <TextContainer>
 
             {keys.map((item, i) => (
                 <Card key={i}>
-                  <SubTitle>{data[item].title}</SubTitle>
+                  <SubTitle>{data[item].title.toUpperCase()}</SubTitle>
                   {data[item].description ? (
                       <Text>{data[item].description}</Text>
                   ) : (
@@ -33,7 +35,8 @@ const About = forwardRef((props, aboutRef) => {
                 </Card>
             ))}
           </TextContainer>
-        </Background>
+        </CommonBackground>
+        </BackgroundSpacer>
       </Content>
     </Section>
   );
@@ -44,7 +47,6 @@ About.displayName = "About";
 export default About;
 
 const Section = styled.div`
-  background-color: transparent;
   width: 100%;
   display: flex;
   align-items: center;
@@ -55,21 +57,16 @@ const Section = styled.div`
 `;
 
 const Content = styled.div`
+  background-color: ${(props) => props.theme.colors.secondbg};
+  box-shadow: ${(props) => props.theme.boxShadows.top};
   width: 100%;
   display: flex;
   text-align: center;
   flex-direction: column;
-  
-  
 `;
 
-const Background = styled.div`
-  width: 100%;
-  padding: 50px 0;
-  display: flex;
-  justify-content: center;
-  background-image: ${(props) => props.theme.colors.primarySash};
-  z-index: 0;
+const BackgroundSpacer = styled.div`
+background-color: ${(props) => props.theme.colors.mainbg};
 `
 
 const TextContainer = styled.div`
@@ -87,13 +84,6 @@ const TextContainer = styled.div`
     width: 95%;
     grid-template-columns: 1fr; /* stack cards vertically */
   }
-`;
-
-const Title = styled.h1`
-  font-weight: 800;
-  font-size: calc(100% + 7px + 0.9vw * 0.42);
-  color: ${(props) => props.theme.colors.text.subtitle};
-  z-index: 2;
 `;
 
 const Text = styled.p`
@@ -118,7 +108,7 @@ const Card = styled.div`
   flex-direction: column;
   padding: 30px 40px;
   border-radius: 10px;
-  background-color: ${(props) => props.theme.colors.mainbg};
+  background-color: ${(props) => props.theme.colors.secondbg};
 
   box-shadow: ${(props) => props.theme.boxShadows.main};
   &:nth-child(odd):last-child {
@@ -129,12 +119,13 @@ const Card = styled.div`
 `;
 
 const SubTitle = styled.p`
-  color: ${(props) => props.theme.colors.text.subtle};
+  text-align: center;
   font-size: 24px;
-  margin: 0;
+  line-height: 1.1;
+  margin: 5px 0;
+  color: ${(props) => props.theme.accent.accentText};
   @media screen and (max-width: 768px) {
-    font-size: 20px;
-    text-align: center;
+    font-size: 16px;
   }
 `;
 
@@ -142,7 +133,7 @@ const IconList = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 0;
   margin-top: 0;
     padding: 0;
   @media screen and (max-width: 768px) {
@@ -159,7 +150,6 @@ flex-direction: column;
   justify-content: center;
   border-radius: 10px;
   background-color: ${(props) => props.theme.colors.secondbg};
-  //box-shadow: ${(props) => props.theme.boxShadows.main};
   @media screen and (max-width: 768px) {
     height: 60px;
     width: 60px;

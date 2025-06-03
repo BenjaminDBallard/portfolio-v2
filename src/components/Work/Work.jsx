@@ -6,6 +6,7 @@ import resume from "../../data/resume.json";
 import Slider from "react-slick";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import {CommonTitle} from "../Common/common.js";
 
 const Work = forwardRef((props, workRef) => {
     const {theme} = props;
@@ -26,7 +27,7 @@ const Work = forwardRef((props, workRef) => {
         accessibility: false,
         responsive: [
             {
-                breakpoint: 1024,
+                breakpoint: 1600,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
@@ -34,7 +35,7 @@ const Work = forwardRef((props, workRef) => {
                 },
             },
             {
-                breakpoint: 600,
+                breakpoint: 1000,
                 settings: {
                     speed: 500,
                     slidesToShow: 1,
@@ -48,7 +49,7 @@ const Work = forwardRef((props, workRef) => {
     return (
         <Section ref={workRef}>
             <Content>
-                <Title>Work</Title>
+                <CommonTitle>EXPERIENCE</CommonTitle>
 
                 <Slider {...settings}>
                     {resume.work.map((item, index) => (
@@ -62,7 +63,7 @@ const Work = forwardRef((props, workRef) => {
     );
 });
 
-Work.displayName = "Work";
+Work.displayName = "Experience";
 export default Work;
 
 
@@ -72,23 +73,19 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     width: 100%;
+    background-color: ${(props) => props.theme.colors.mainbg};
+    z-index: 1;
 `;
 
 const Content = styled.div`
-    padding-top: 100px;
+    padding: 100px 0 50px;
     width: 100%;
     color: #ccd0d9;
+    box-shadow: ${(props) => props.theme.boxShadows.bottom};
 
     @media screen and (max-width: 768px) {
         width: 95%;
     }
-`;
-
-const Title = styled.h1`
-    text-align: center;
-    font-weight: 800;
-    font-size: calc(100% + 7px + 0.9vw * 0.42);
-    color: ${(props) => props.theme.colors.text.subtitle};
 `;
 
 

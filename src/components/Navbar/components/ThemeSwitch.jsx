@@ -41,7 +41,7 @@ const Background = styled.div`
   padding: 5px;
   border-radius: 999px;
   transition: 250ms;
-  background-color: ${(props) => props.theme.colors.secondary};
+  background-color: ${(props) => props.theme.accent.accentHighlight};
 `;
 const Toggle = styled.div`
   display: flex;
@@ -50,7 +50,8 @@ const Toggle = styled.div`
   height: 20px;
   width: 35px;
   border-radius: 999px;
-  background-color: ${(props) => props.theme.colors.text.subtle};
+    transition: 250ms;
+  background-color: ${(props) => props.theme.accent.accentIcon};
   p {
     font-size: 8px;
     user-select: none;

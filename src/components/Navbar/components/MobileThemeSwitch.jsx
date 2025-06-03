@@ -47,9 +47,15 @@ const MenuButton = styled.button`
   margin: 0px;
   padding: 15px;
   border-radius: 999px;
-  background-image: ${(props) => props.theme.colors.primary};
+    background-image: ${(props) => props.theme.accent.accentButton};
   cursor: pointer;
-  &:hover ${StyledIcon} {
-    fill: ${(props) => props.theme.colors.highlight};
-  }
+    transition: 250ms;
+    &:hover {
+        transform: scale(1.1);
+        transition: 0.2s;
+    }
+    &:active {
+        transform: scale(0.7);
+        transition: 0.1s;
+    }
 `;

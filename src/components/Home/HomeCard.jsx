@@ -2,6 +2,7 @@
 import { useRef, useEffect, useState } from "react";
 import { withTheme } from "styled-components";
 import styled from "styled-components";
+import { one, two, three, four, five } from "../../theme/accent";
 
 function repeatString(str, count) {
   let maxCount = str.length * count;
@@ -12,17 +13,6 @@ function repeatString(str, count) {
   }
   str += str.substring(0, maxCount - str.length);
   return str;
-}
-
-function copyToClipboard(str) {
-  var el = document.createElement("textarea");
-  el.value = str;
-  el.setAttribute("readonly", "");
-  el.style = { position: "absolute", left: "-9999px" };
-  document.body.appendChild(el);
-  el.select();
-  document.execCommand("copy");
-  document.body.removeChild(el);
 }
 
 export const CodeCard = () => {
@@ -56,54 +46,36 @@ export const CodeCard = () => {
   );
 };
 
-const ColorBox = ({ color }) => {
-  const tooltipRef = useRef();
-  useEffect(() => {
-    return tooltipRef.current.addEventListener("animationend", () => {
-      tooltipRef.current.classList.remove("tooltip-animate");
-    });
-  });
-  const copy = () => {
-    copyToClipboard(color);
-    tooltipRef.current.classList.add("tooltip-animate");
-  };
+const AccentPalette = ({ onAccentSelect }) => {
+    const accents = [one, two, three, four, five];
 
-  return (
-    <ColorBoxWrapper
-      ref={tooltipRef}
-      onClick={copy}
-      style={{ background: color }}
-    />
-  );
+    return (
+        <ColorPaletteWrapper>
+            {accents.map((accentObj, index) => (
+                <ColorBoxWrapper
+                    key={index}
+                    onClick={() => onAccentSelect(accentObj)}
+                    style={{ background: accentObj.accentButton }}
+                    title={`Accent ${index + 1}`}
+                />
+            ))}
+        </ColorPaletteWrapper>
+    );
 };
 
-export const ColorPalette = withTheme(({ theme }) => {
-  return (
-    <ColorPaletteWrapper>
-      <ColorBox color={theme.colors.primary} />
-      <ColorBox color={theme.colors.highlight} />
-      <ColorBox color="#6A98F0" />
-      <ColorBox color={theme.colors.text.body} />
-      <ColorBox color={theme.colors.text.subtle} />
-    </ColorPaletteWrapper>
-  );
-});
-
-export default function HomeCard() {
-  return (
-    <HeroCardWrapper>
-      <CodeCard />
-      <ColorPalette />
-    </HeroCardWrapper>
-  );
+export default function HomeCard({ handleAccentChange }) {
+    return (
+        <HeroCardWrapper>
+            <CodeCard />
+            <AccentPalette onAccentSelect={handleAccentChange} />
+        </HeroCardWrapper>
+    );
 }
 
 export const HeroCardWrapper = styled.div`
   position: relative;
-  /* z-index: 2; */
 
   @media screen and (max-width: 768px) {
-    /* releated to "things i love" section bug */
     margin-top: 25px;
     width: 360px;
   }
@@ -117,12 +89,11 @@ export const CodeCardWrapper = styled.div`
   pre {
     text-align: left;
     font-size: calc(100% + -9px + 0.9vw * 0.42);
-    color: ${(p) => p.theme.colors.text.body};
+    color: ${(p) => p.theme.colors.text.header};
   }
 `;
 
 export const ColorPaletteWrapper = styled.div`
-  /* z-index: 2; */
   position: absolute;
   bottom: -40px;
   left: -90px;
@@ -142,7 +113,6 @@ export const ColorPaletteWrapper = styled.div`
 `;
 
 export const ColorBoxWrapper = styled.div`
-  /* z-index: 2; */
   width: 40px;
   height: 40px;
   margin: 3px;

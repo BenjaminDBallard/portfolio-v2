@@ -2,6 +2,7 @@ import { forwardRef } from "react";
 import { styled } from "styled-components";
 import resume from "../../data/resume.json"
 import ProjectsCard from "./ProjectsCard.jsx";
+import {CommonTitle} from "../Common/common.js";
 
 const Projects = forwardRef((props, projectsRef) => {
     const data = resume.projects
@@ -9,7 +10,7 @@ const Projects = forwardRef((props, projectsRef) => {
     return (
         <Section ref={projectsRef}>
             <Content className="content">
-                <Title>Projects</Title>
+                <CommonTitle>PROJECTS</CommonTitle>
                 <List>
                     {data.map((item, index) => (
                         <CardItem key={index}>
@@ -44,13 +45,6 @@ const Content = styled.div`
     }
 `;
 
-const Title = styled.h1`
-  text-align: center;
-  font-weight: 800;
-  background-color: ${(props) => props.theme.colors.mainbg};
-  font-size: calc(100% + 7px + 0.9vw * 0.42);
-  color: ${(props) => props.theme.colors.text.subtitle};
-`;
 const List = styled.ul`
 list-style: none;
     display: flex;

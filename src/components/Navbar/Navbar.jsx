@@ -3,14 +3,15 @@ import { useState } from "react";
 import { Icon } from "@blueprintjs/core";
 import HamburgerMenu from "./components/Hamburger";
 import ThemeSwitch from "./components/ThemeSwitch";
+import Logo from "../../../public/images/logo.svg?react"
 
 export default function Navbar({ handleLinkClick, handleThemeChange }) {
   const [open, setOpen] = useState(false);
-  const pages = ["Home", "About", "Projects", "Work", "Contact"];
+  const pages = ["Home", "About", "Projects", "Experience", "Contact"];
   return (
     <Section>
       <Wrapper>
-        <img src='/images/logo.svg' alt='Ben Ballards Logo' onClick={() => handleLinkClick("home")} />
+        <StyledLogo onClick={() => handleLinkClick("home")} />
         <div>
           <ul>
             {pages.map((page) => (
@@ -47,7 +48,7 @@ const Section = styled.div`
   z-index: 5;
   display: flex;
   height: 60px;
-  background-color: ${(props) => props.theme.colors.secondbg};
+  background-color: ${(props) => props.theme.colors.mainbg};
   box-shadow: ${(props) => props.theme.boxShadows.main};
   align-items: center;
   justify-content: center;
@@ -56,16 +57,19 @@ const Section = styled.div`
   }
 `;
 
+const StyledLogo = styled(Logo)`
+  height: 35px;
+  width: 35px;
+  cursor: pointer;
+  color: ${(props) => props.theme.accent.accentIcon};
+`
+
 const Wrapper = styled.div`
   width: 80%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  img {
-    height: 35px;
-    cursor: pointer;
-  }
   div {
     display: flex;
     align-items: center;
@@ -76,14 +80,14 @@ const Wrapper = styled.div`
     display: flex;
     margin: 0;
     gap: 30px;
-    color: ${(props) => props.theme.colors.text.link};
+    color: ${(props) => props.theme.accent.accentText};
     font-size: 14px;
   }
   li {
     transition: 250ms;
     cursor: pointer;
     &:hover {
-      color: ${(props) => props.theme.colors.text.linkHover};
+      color: ${(props) => props.theme.accent.accentHover};
     }
   }
 `;

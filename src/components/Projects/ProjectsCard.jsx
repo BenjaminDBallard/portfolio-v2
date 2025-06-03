@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 import {slideDownKeyframe, slideOutKeyframe} from "../css-animations.js";
 import {useEffect, useRef, useState} from "react";
+import {CommonButton} from "../Common/common.js";
 
 export default function ProjectsCard({data, theme}) {
 
@@ -34,8 +35,10 @@ export default function ProjectsCard({data, theme}) {
         <Section>
             <Content>
                 <DisplayBox ref={ref} animate={isVisible}>
-
-                    <Title>{data.title}</Title>
+                    <TitleWrap>
+                        <Title>{data.title.toUpperCase()}</Title>
+                        <SubTitle>{data.category.toUpperCase()}</SubTitle>
+                    </TitleWrap>
                     <Wrap>
                         <TopWrap>
                             <IconList>
@@ -47,7 +50,7 @@ export default function ProjectsCard({data, theme}) {
                         </TopWrap>
                     <ButtonWrap>
                         <a href={data.github} target="_blank" rel="noopener noreferrer">
-                            <Button>View on GitHub</Button>
+                            <CommonButton>GITHUB</CommonButton>
                         </a>
                     </ButtonWrap>
                     </Wrap>
@@ -78,7 +81,7 @@ const Content = styled.div`
 `;
 const DisplayBox = styled.div`
     padding: 20px;
-    background-image: ${(props) => props.theme.colors.primarySash};
+    background-image: ${(props) => props.theme.accent.accentBackground};
     color: ${(props) => props.theme.colors.text.body};
     border-radius: 10px;
     min-height: 350px;
@@ -100,7 +103,7 @@ const DisplayBox = styled.div`
         min-height: unset;
         grid-column: 1 / 4;
         grid-row: unset;
-        border-radius: 0 0 10px 10px;
+        border-radius: 10px;
 
         opacity: 0;
         transform: translateY(75%);
@@ -112,13 +115,27 @@ const DisplayBox = styled.div`
     `};
     }
 `;
+const TitleWrap = styled.div`
+    border-radius: 10px 10px 0 0;
+    padding: 20px 40px;
+`
 const Title = styled.h1`
-  font-size: 30px;
+  font-size: 24px;
+  font-weight: 800;
   line-height: 1.1;
-  margin: 15px 0 10px 30px;
+  margin: 0;
     color: ${(props) => props.theme.colors.white};
     @media screen and (max-width: 768px) {
         font-size: 20px;
+    }
+`;
+const SubTitle = styled.p`
+    font-size: 16px;
+    line-height: 1.1;
+    margin: 5px 0;
+    color: ${(props) => props.theme.colors.white};
+    @media screen and (max-width: 768px) {
+        font-size: 16px;
     }
 `;
 
@@ -130,19 +147,19 @@ const ShowcaseBox = styled.div`
     @media screen and (max-width: 1400px)  {
         right: 0;
         grid-column: 1 / 4;
-        margin-bottom: 0;
+        margin-bottom: 10px;
     }
 `
 
 const ImgBox = styled.img`
     width: 100%;
     border-radius: 10px;
-    display: block;           
+    display: block;
     margin: 0;
     box-shadow: ${(props) => props.theme.boxShadows.main};
     @media screen and (max-width: 1400px) {
         width: 100%;
-        border-radius: 10px 10px 0 0;
+        border-radius: 10px;
     }
   `
 const IconList = styled.div`
@@ -161,6 +178,7 @@ const Icon = styled.img`
 
 const Wrap = styled.div`
 display: flex;
+    box-shadow: ${(props) => props.theme.boxShadows.main};
 flex-direction: column;
     background-color: ${(props) => props.theme.colors.secondbg};
     border-radius: 10px;
@@ -180,27 +198,6 @@ const ButtonWrap = styled.div`
     justify-content: flex-start;
 `
 
-const Button = styled.button`
-    background-image: ${(props) => props.theme.colors.primary};
-    color: ${(props) => props.theme.colors.white};
-    margin: 0;
-    width: 138px;
-    font-size: 12px;
-    font-family: "Montserrat", sans-serif;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: 400;
-    padding: 12px;
-    transition:
-            background-color 0.3s ease,
-            transform 0.2s ease,
-            box-shadow 0.3s ease;
-
-    &:hover {
-        color: ${(props) => props.theme.colors.highlight};
-    }
-`;
 const Short = styled.div`
     width: 75%;
     padding: 20px 0;

@@ -1,6 +1,7 @@
 import { forwardRef, useState } from "react";
 import { styled } from "styled-components";
 import emailjs from "emailjs-com";
+import {CommonBackground, CommonButton, CommonTitle} from "../Common/common.js";
 
 const Contact = forwardRef((props, contactRef) => {
   const [formData, setFormData] = useState({
@@ -44,8 +45,8 @@ const Contact = forwardRef((props, contactRef) => {
   };
   return (
     <Section ref={contactRef}>
-      <Title>Get In Touch</Title>
-      <Background>
+      <CommonTitle>GET IN TOUCH</CommonTitle>
+      <CommonBackground>
       <Content>
         <FormWrapper onSubmit={handleSubmit}>
           <InputWrapper>
@@ -75,11 +76,11 @@ const Contact = forwardRef((props, contactRef) => {
             required
           />
           <ButtonCont>
-            <StyledButton type="submit">Submit</StyledButton>
+            <CommonButton type="submit">SUBMIT</CommonButton>
           </ButtonCont>
         </FormWrapper>
       </Content>
-      </Background>
+      </CommonBackground>
     </Section>
   );
 });
@@ -96,12 +97,14 @@ const Section = styled.div`
   justify-content: center;
   width: 100%;
   margin: 0;
-  padding: 100px 0 0;
+  padding: 0;
+  background-color: ${(props) => props.theme.colors.mainbg};
+  z-index: 1;
 `;
 
 const Content = styled.div`
   background-color: ${(props) => props.theme.colors.secondbg};
-  box-shadow: rgba(0, 0, 0, 0.05) 0 5px 10px;
+  box-shadow: ${(props) => props.theme.boxShadows.main};
   padding: 50px;
   border-radius: 10px;
   color: white;
@@ -113,14 +116,6 @@ const Content = styled.div`
   @media screen and (max-width: 768px) {
     width: calc(95% - 100px);
   }
-`;
-
-const Title = styled.h1`
-  text-align: center;
-  width: 100%;
-  font-weight: 800;
-  font-size: calc(100% + 7px + 0.9vw * 0.42);
-  color: ${(props) => props.theme.colors.text.subtitle};
 `;
 
 const FormWrapper = styled.form`
@@ -187,30 +182,4 @@ const ButtonCont = styled.div`
   width: 100%;
   display: flex;
   justify-content: flex-end;
-`;
-
-const StyledButton = styled.button`
-  background-image: ${(props) => props.theme.colors.primary};
-  color: #f8f8f8;
-  font-size: 12px;
-  font-family: "Montserrat", sans-serif;
-  border: none;
-  width: 138px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: 400;
-  padding: 12px;
-  transition: 250ms;
-  &:hover {
-    color: ${(props) => props.theme.colors.highlight};
-  }
-`;
-
-const Background = styled.div`
-  width: 100%;
-  padding: 50px 0;
-  display: flex;
-  justify-content: center;
-  background-image: ${(props) => props.theme.colors.primarySash};
-  z-index: 0;
 `;

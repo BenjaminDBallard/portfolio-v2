@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Icon } from "@blueprintjs/core";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import MailIcon from '@mui/icons-material/Mail';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -7,24 +6,29 @@ import { forwardRef } from "react";
 import HomeCard from "./HomeCard.jsx";
 import resume from "../../data/resume.json"
 import {slideDownKeyframe} from "../css-animations.js";
+import {CommonButton} from "../Common/common.js";
+// import HomeRect from '../../../public/images/home_rect.svg?react';
+import { slowSpin } from "../css-animations.js";
 
 const Home = forwardRef((props, homeRef) => {
   const data = resume
   return (
     <Section ref={homeRef}>
-      <img className="svg-rect" src='/images/home_rect.svg' alt="decorative ractangle background"></img>
+      {/*<StyledHomeRect />*/}
+      <BackgroundSpinnerOne />
+      <BackgroundSpinnerTwo />
       <Wrapper>
         <Content>
-          <div>
+          <TitleWrap>
             <div>
               <Greeting>{data.greeting}</Greeting>
               <Title>{data.firstName.toUpperCase()} {data.lastName.toUpperCase()}</Title>
               <SubTitle>{data.jobTitle.toUpperCase()}</SubTitle>
             </div>
             <a href="/files/BenBallard-Resume.pdf" download>
-              <NavButton>
-                Download Resume
-              </NavButton>
+              <CommonButton>
+                DOWNLOAD RESUME
+              </CommonButton>
             </a>
             <IconWrapper>
               <a href="https://github.com/BenjaminDBallard" target="_blank" rel="noopener noreferrer">
@@ -37,9 +41,9 @@ const Home = forwardRef((props, homeRef) => {
                 <MailIcon className="icon" />
               </a>
             </IconWrapper>
-          </div>
+          </TitleWrap>
           <HeroWrap>
-            <HomeCard />
+            <HomeCard handleAccentChange={props.handleAccentChange} />
           </HeroWrap>
         </Content>
       </Wrapper>
@@ -51,6 +55,40 @@ Home.displayName = "Home";
 
 export default Home;
 
+const BackgroundSpinnerOne = styled.div`
+  position: fixed;
+  top: 550px;
+  left: -100px;
+  width: 40vw;
+  min-width: 400px;
+  height: 40vw;
+  min-height: 400px;
+  border-radius: 20px;
+  background: ${(props) => props.theme.accent.accentButton};
+  opacity: 0.2;
+  filter: blur(30px);
+  animation: ${slowSpin} 360s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+`;
+
+const BackgroundSpinnerTwo = styled.div`
+  position: fixed;
+  bottom: 350px;
+  right: -200px;
+  width: 60vw;
+  min-width: 400px;
+  height: 60vw;
+  min-height: 400px;
+  border-radius: 20px;
+  background: ${(props) => props.theme.accent.accentButton};
+  opacity: 0.4;
+  filter: blur(30px);
+  animation: ${slowSpin} 500s linear infinite reverse;
+  z-index: 0;
+  pointer-events: none;
+`;
+
 const Section = styled.div`
   height: 100vh;
   min-height: 800px;
@@ -58,18 +96,21 @@ const Section = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
-  .svg-rect {
-    width: 40%;
-    position: absolute;
-    top: 50px;
-    right: 0;
-    z-index: 1;
-    @media screen and (max-width: 768px) {
-      top: 0;
-    }
-  }
 `;
+
+// const StyledHomeRect = styled(HomeRect)`
+//   width: 40%;
+//   height: fit-content;
+//   position: absolute;
+//   top: 50px;
+//   right: 0;
+//   z-index: 1;
+//   color: ${(props) => props.theme.accent.accentIcon}; // this controls the fill!
+//
+//   @media screen and (max-width: 768px) {
+//     top: 0;
+//   }
+// `;
 
 const Wrapper = styled.div`
   display: flex;
@@ -105,11 +146,17 @@ const HeroWrap = styled.div`
   }
 `;
 
+const TitleWrap = styled.div`
+display: flex;
+  flex-direction: column;
+  gap: 20px;
+`
+
 const Title = styled.h1`
   font-size: calc(100% + 7px + 2.5vw * 0.55);
   font-weight: 800;
   line-height: 1.1;
-  color: ${(props) => props.theme.colors.text.body};
+  color: ${(props) => props.theme.colors.text.header};
   margin: 5px 0;
   z-index: 1;
   @media screen and (max-width: 768px) {
@@ -118,13 +165,13 @@ const Title = styled.h1`
 `;
 
 const Greeting = styled.p`
-  color: ${(props) => props.theme.colors.text.body};
+  color: ${(props) => props.theme.colors.text.header};
   font-size: 16px;
   margin: 0;
 `;
 
 const SubTitle = styled.p`
-  color: ${(props) => props.theme.colors.text.body};
+  color: ${(props) => props.theme.colors.text.header};
   font-size: calc(100% + -7px + 1vw * 0.55);
   margin: 0;
   @media screen and (max-width: 768px) {
@@ -132,31 +179,14 @@ const SubTitle = styled.p`
   }
 `;
 
-const NavButton = styled.button`
-  background-image: ${(props) => props.theme.colors.primary};
-  color: #f8f8f8;
-  margin: 30px 0;
-  font-size: 12px;
-  font-family: "Montserrat", sans-serif;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: 400;
-  padding: 12px;
-  transition: 250ms;
-  &:hover {
-    color: ${(props) => props.theme.colors.highlight};
-  }
-`;
-
 const IconWrapper = styled.div`
   display: flex;
   gap: 30px;
   .icon {
-    fill: ${(props) => props.theme.colors.text.link};
+    fill: ${(props) => props.theme.accent.accentText};
     transition: 250ms;
     &:hover {
-      fill: ${(props) => props.theme.colors.text.subtle};
+      fill: ${(props) => props.theme.accent.accentHover};
       cursor: pointer;
     }
   }

@@ -65,7 +65,7 @@ const Menu = styled.div`
 `;
 
 const NavButton = styled.button`
-  background-image: ${(props) => props.theme.colors.primary};
+  background-image: ${(props) => props.theme.accent.accentButton};
   color: #f8f8f8;
   margin: 0px 0;
   width: 80px;
@@ -78,6 +78,11 @@ const NavButton = styled.button`
   padding: 12px;
   transition: 250ms;
   &:hover {
-    color: ${(props) => props.theme.colors.highlight};
+    transform: scale(1.1);
+    transition: 0.2s;
+  }
+  &:active {
+    transform: scale(0.7);
+    transition: 0.1s;
   }
 `;

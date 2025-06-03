@@ -16,7 +16,7 @@
     },
     "work" : {
       "title": "Experience",
-      "description": "Currently, I work at Perenne as a Full-Stack Developer, modernizing a legacy app with Vue 3 and Quasar while building tools for a multi-tenant architecture and streamlined server management. It’s been a rewarding challenge blending performance, scalability, and thoughtful UX."
+      "description": "Currently, I work at Perenne as a Full Stack Developer, modernizing a legacy app with Vue 3 and Quasar while building tools for a multi-tenant architecture and streamlined server management. It’s been a rewarding challenge blending performance, scalability, and thoughtful UX."
     },
     "stack": {
       "title": "The Stack",
@@ -35,6 +35,11 @@
           "img": "vue.png",
           "dark": "vue.png",
           "name": "Vue"
+        },
+        {
+          "img": "javascript.png",
+          "dark": "javascript.png",
+          "name": "Javascript"
         },
         {
           "img": "typescript.png",
@@ -62,7 +67,7 @@
   "work": [
     {
       "company": "Perenne, LLC",
-      "jobTitle": "Full-Stack Developer",
+      "jobTitle": "Full Stack Developer",
       "icons": ["quasar.png", "vue.png", "typescript.png", "node.png", "express.png"],
       "dark": ["quasar.png", "vue.png", "typescript.png", "node.png", "express-white.png"],
       "skills": ["Vue2/3", "Quasar", "Typescript", "Node.js", "Express", "RESTful API"],
@@ -75,7 +80,7 @@
     },
     {
       "company": "MycoTex, LLC",
-      "jobTitle": "Full-Stack Developer",
+      "jobTitle": "Full Stack Developer",
       "icons": ["react.svg", "typescript.png", "node.png", "express.png", "sql.png"],
       "dark": ["react.svg", "typescript.png", "node.png", "express-white.png", "sql.png"],
       "skills": ["React", "TypeScript", "Chart.js/D3", "Node.js", "Express", "REST API", "SQL", "Digital Ocean"],
@@ -88,7 +93,7 @@
     },
     {
       "company": "Ripple Learning, LLC",
-      "jobTitle": "Full-Stack Developer",
+      "jobTitle": "Full Stack Developer",
       "icons": ["react.svg", "javascript.png", "node.png", "express.png", "sql.png"],
       "dark": ["react.svg", "javascript.png", "node.png", "express-white.png", "sql.png"],
       "skills": ["React", "Javascript", "GPT-4 API", "Node.js", "Express", "REST API", "SQL", "Firebase", "Chart.js"],
@@ -106,6 +111,7 @@
   "projects": [
     {
       "title": "Job App Tracker",
+      "category": "Full Stack Application",
       "github": "https://github.com/theMVPshop/jobAppTracker",
       "icons": ["react.svg", "typescript.png", "node.png", "express.png", "sql.png"],
       "dark": ["react.svg", "typescript.png", "node.png", "express-white.png", "sql.png"],
@@ -120,6 +126,7 @@
     },
     {
       "title": "ChatBot Tutor",
+      "category": "Full Stack Application",
       "github": "https://github.com/theMVPshop/chatbottutor",
       "icons": ["react.svg", "typescript.png", "node.png", "express.png", "sql.png"],
       "dark": ["react.svg", "typescript.png", "node.png", "express-white.png", "sql.png"],

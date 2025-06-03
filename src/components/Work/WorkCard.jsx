@@ -1,5 +1,6 @@
 import { useState, useRef, useLayoutEffect, useEffect } from "react";
 import { styled } from "styled-components";
+import {CommonButton} from "../Common/common.js";
 
 export default function WorkCard({ data, theme }) {
     const { company, jobTitle, icons, dark, short, description, skills } = data;
@@ -38,8 +39,8 @@ export default function WorkCard({ data, theme }) {
                 <DisplayBox>
                     <TopWrap>
                         <TitleWrap>
-                            <Title>{company}</Title>
-                            <SubTitle>{jobTitle}</SubTitle>
+                            <Title>{company.toUpperCase()}</Title>
+                            <SubTitle>{jobTitle.toUpperCase()}</SubTitle>
                         </TitleWrap>
 
                         <IconList>
@@ -65,9 +66,9 @@ export default function WorkCard({ data, theme }) {
                         </ListItemClean>
                     </List>
                 <ButtonWrap>
-                    <ToggleButton onClick={() => setShowAll(!showAll)}>
-                        {showAll ? "Show Less" : "Show More"}
-                    </ToggleButton>
+                    <CommonButton onClick={() => setShowAll(!showAll)}>
+                        {showAll ? "SHOW LESS" : "SHOW MORE"}
+                    </CommonButton>
                 </ButtonWrap>
                 </DisplayBox>
             </Content>
@@ -90,25 +91,27 @@ const Content = styled.div`
 const DisplayBox = styled.div`
     width: 100%;
   display: flex;
-    min-height: 410px;
+    min-height: 440px;
   flex-direction: column;
     justify-content: space-between;
     padding: 0;
     border-radius: 10px;
     background-color: ${(props) => props.theme.colors.secondbg};
     box-shadow: ${(props) => props.theme.boxShadows.main};
-    @media (max-width: 1389px){
-        min-height: fit-content;
+    @media (min-width: 1600px){
+        min-height: 410px;
     }
 `;
 
 const TitleWrap = styled.div`
-    background-image: ${(props) => props.theme.colors.primarySash};
+    background-image: ${(props) => props.theme.accent.accentBackground};
     border-radius: 10px 10px 0 0;
     padding: 20px 40px;
+    box-shadow: ${(props) => props.theme.boxShadows.main};
 `
 const Title = styled.h1`
-  font-size: 30px;
+  font-size: 24px;
+  font-weight: 800;
   line-height: 1.1;
   margin: 0;
     color: ${(props) => props.theme.colors.white};
@@ -116,8 +119,8 @@ const Title = styled.h1`
         font-size: 20px;
     }
 `;
-const SubTitle = styled.h2`
-    font-size: 20px;
+const SubTitle = styled.p`
+    font-size: 16px;
     line-height: 1.1;
     margin: 5px 0;
     color: ${(props) => props.theme.colors.white};
@@ -139,12 +142,14 @@ const ChipList = styled.div`
 `;
 
 const FlatChip = styled.button`
-  padding: 5px;
-  background-color: transparent;
+  padding: 8px 12px;
   border-radius: 999px;
-  border: 1px solid ${(props) => props.theme.colors.subtle};
+  border: none;
+  background-image: ${(props) => props.theme.accent.accentButton};
   font-size: 16px;
-  color: ${(props) => props.theme.colors.text.subtle};
+  color: ${(props) => props.theme.colors.white};
+    box-shadow: ${(props) => props.theme.boxShadows.main};
+    ;
 `;
 const IconList = styled.div`
   display: flex;
@@ -204,28 +209,7 @@ flex-direction: column;
 `
 const ButtonWrap = styled.div`
     display: flex;
-    width: 100%;
+    //width: 100%;
     justify-content: flex-end;
+    padding: 0 40px 30px;
 `
-
-const ToggleButton = styled.button`
-    background-image: ${(props) => props.theme.colors.primary};
-    color: #f8f8f8;
-    margin: 0 40px 30px;
-    width: 138px;
-    font-size: 12px;
-    font-family: "Montserrat", sans-serif;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: 400;
-    padding: 12px;
-    transition:
-            background-color 0.3s ease,
-            transform 0.2s ease,
-            box-shadow 0.3s ease;
-
-    &:hover {
-        color: ${(props) => props.theme.colors.highlight};
-    }
-`;
