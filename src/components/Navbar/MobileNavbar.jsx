@@ -59,7 +59,7 @@ const MenuButton = styled.button`
   z-index: 5;
   border: none;
   display: flex;
-  margin: 1px;
+  margin: 1px 5px;
   padding: 15px;
   border-radius: 999px;
   background-image: ${(props) => props.theme.accent.accentButton};

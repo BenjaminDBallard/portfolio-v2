@@ -2,7 +2,7 @@ import styled from "styled-components";
 import MobileThemeSwitch from "./MobileThemeSwitch";
 
 const HamburgerMenu = ({ handleLinkClick, handleThemeChange, open }) => {
-  const pages = ["home", "about", "projects", "work", "contact"];
+  const pages = ["home", "about", "projects", "experience", "contact"];
 
   return (
     <Wrapper>
@@ -68,7 +68,7 @@ const NavButton = styled.button`
   background-image: ${(props) => props.theme.accent.accentButton};
   color: #f8f8f8;
   margin: 0px 0;
-  width: 80px;
+  width: 90px;
   font-size: 12px;
   font-family: "Montserrat", sans-serif;
   border: none;

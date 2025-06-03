@@ -13,8 +13,6 @@ import "./index.css";
 import Projects from "./components/Projects/Projects.jsx";
 
 function App() {
-  // const scrollRef = useRef(null);
-  // useScrollSnap({ ref: scrollRef, duration: 100, delay: 50 });
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
   const projectsRef = useRef(null);
@@ -43,32 +41,30 @@ function App() {
   };
 
   const handleAccentChange = (accentTheme) => {
-    console.log(accentTheme);
     setAccent(accentTheme);
   };
 
   const composedTheme = createTheme(theme, accent);
 
-  console.log(composedTheme);
-
   return (
-      <ThemeProvider theme={ composedTheme }>
-      <Webpage>
-        <Navbar
-          handleLinkClick={handleLinkClick}
-          handleThemeChange={handleThemeChange}
-        />
-        <MobileNavbar
-          handleLinkClick={handleLinkClick}
-          handleThemeChange={handleThemeChange}
-        />
-        <Home ref={homeRef} handleLinkClick={handleLinkClick} handleAccentChange={handleAccentChange} />
-        <About ref={aboutRef} theme={theme === dark}/>
-        <Projects ref={projectsRef} theme={theme === dark}/>
-        <Work ref={experienceRef} theme={theme === dark}/>
-        <Contact ref={contactRef} />
-      </Webpage>
-    </ThemeProvider>
+
+        <ThemeProvider theme={composedTheme}>
+          <Webpage>
+            <Navbar
+                handleLinkClick={handleLinkClick}
+                handleThemeChange={handleThemeChange}
+            />
+            <MobileNavbar
+                handleLinkClick={handleLinkClick}
+                handleThemeChange={handleThemeChange}
+            />
+            <Home ref={homeRef} handleLinkClick={handleLinkClick} handleAccentChange={handleAccentChange} />
+            <About ref={aboutRef} $isDark={theme === dark} />
+            <Projects ref={projectsRef} $isDark={theme === dark} />
+            <Work ref={experienceRef} $isDark={theme === dark} />
+            <Contact ref={contactRef} />
+          </Webpage>
+        </ThemeProvider>
   );
 }
 
@@ -77,6 +73,7 @@ export default App;
 const Webpage = styled.div`
   background-color: ${(props) => props.theme.colors.mainbg};
   font-family: Montserrat;
+  width: 100%;
   display: flex;
   flex-direction: column;
 `;

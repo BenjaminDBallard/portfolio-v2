@@ -1,12 +1,9 @@
 import { styled } from "styled-components";
-import { useState } from "react";
-import { Icon } from "@blueprintjs/core";
-import HamburgerMenu from "./components/Hamburger";
 import ThemeSwitch from "./components/ThemeSwitch";
-import Logo from "../../../public/images/logo.svg?react"
+import Logo from "../../assets/logo.svg?react"
+import {IoMdClose, IoMdMenu} from "react-icons/io";
 
 export default function Navbar({ handleLinkClick, handleThemeChange }) {
-  const [open, setOpen] = useState(false);
   const pages = ["Home", "About", "Projects", "Experience", "Contact"];
   return (
     <Section>
@@ -20,21 +17,6 @@ export default function Navbar({ handleLinkClick, handleThemeChange }) {
               </li>
             ))}
           </ul>
-          {open && (
-            <HamburgerMenu
-              handleLinkClick={handleLinkClick}
-              open={open}
-              setOpen={setOpen}
-            />
-          )}
-          {!open && (
-            <div>
-              <MenuButton open={open} onClick={() => setOpen(!open)}>
-                {!open && <StyledIcon icon="menu" size={30} />}
-                {open && <StyledIcon icon="cross" size={30} />}
-              </MenuButton>
-            </div>
-          )}
           <ThemeSwitch handleThemeChange={handleThemeChange} />
         </div>
       </Wrapper>
@@ -70,10 +52,12 @@ const Wrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  height: 100%;
   div {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 30px;
+    height: 100%;
   }
   ul {
     list-style: none;
@@ -89,26 +73,5 @@ const Wrapper = styled.div`
     &:hover {
       color: ${(props) => props.theme.accent.accentHover};
     }
-  }
-`;
-
-const MenuButton = styled.button`
-  border: none;
-  display: none;
-  margin: 0;
-  padding: 0;
-  background-color: transparent;
-  cursor: pointer;
-`;
-
-const StyledIcon = styled(Icon)`
-  fill: ${(props) => props.theme.colors.text.subtle};
-  display: flex;
-  align-items: center;
-  padding: 3px;
-  border-radius: 5px;
-  &:hover {
-    fill: ${(props) => props.theme.colors.text.body};
-    cursor: pointer;
   }
 `;

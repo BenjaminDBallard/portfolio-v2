@@ -9,7 +9,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import {CommonTitle} from "../Common/common.js";
 
 const Work = forwardRef((props, workRef) => {
-    const {theme} = props;
+    const {$isDark} = props;
 
     const settings = {
         dots: true,
@@ -54,7 +54,7 @@ const Work = forwardRef((props, workRef) => {
                 <Slider {...settings}>
                     {resume.work.map((item, index) => (
                         <div key={index}>
-                            <WorkCard data={item} theme={theme}/>
+                            <WorkCard data={item} $isDark={$isDark}/>
                         </div>
                     ))}
                 </Slider>
@@ -82,10 +82,6 @@ const Content = styled.div`
     width: 100%;
     color: #ccd0d9;
     box-shadow: ${(props) => props.theme.boxShadows.bottom};
-
-    @media screen and (max-width: 768px) {
-        width: 95%;
-    }
 `;
 
 

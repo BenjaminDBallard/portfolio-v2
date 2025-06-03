@@ -6,8 +6,7 @@ import {CommonBackground, CommonTitle} from "../Common/common.js";
 const About = forwardRef((props, aboutRef) => {
   const data = resume.about
   const keys = Object.keys(data)
-  const { theme } = props
-  console.log(theme ? data.stack.icons[5].dark : data.stack.icons[5].img);
+  const { $isDark } = props
   return (
     <Section ref={aboutRef}>
 
@@ -26,7 +25,7 @@ const About = forwardRef((props, aboutRef) => {
                       <IconList>
                         {data[item].icons.map((icon, i) => (
                             <IconTile key={i}>
-                            <Icon src={theme ? `/icons/${icon.dark}` : `/icons/${icon.img}`} alt={icon.img}/>
+                            <Icon src={$isDark ? `/icons/${icon.dark}` : `/icons/${icon.img}`} alt={icon.img}/>
                             <IconText>{icon.name}</IconText>
                             </IconTile>
                         ))}
@@ -51,14 +50,14 @@ const Section = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 100px 0 0;
-  
+  padding: 0;
+    
   z-index: 1;
 `;
 
 const Content = styled.div`
-  background-color: ${(props) => props.theme.colors.secondbg};
-  box-shadow: ${(props) => props.theme.boxShadows.top};
+  //background-color: ${(props) => props.theme.colors.secondbg};
+  //box-shadow: ${(props) => props.theme.boxShadows.top};
   width: 100%;
   display: flex;
   text-align: center;
@@ -70,18 +69,18 @@ background-color: ${(props) => props.theme.colors.mainbg};
 `
 
 const TextContainer = styled.div`
-  width: 80%;
+  width: calc(80% + 20px);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   gap: 20px;
-  padding: 14px 20px;
+  padding: 14px 10px;
   text-align: left;
   color: ${(props) => props.theme.colors.text.body};
   border-radius: 10px;
   z-index: 1;
   grid-auto-flow: dense;
   @media screen and (max-width: 768px) {
-    width: 95%;
+    width: calc(95% + 20px);
     grid-template-columns: 1fr; /* stack cards vertically */
   }
 `;

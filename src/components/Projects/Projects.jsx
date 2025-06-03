@@ -6,7 +6,7 @@ import {CommonTitle} from "../Common/common.js";
 
 const Projects = forwardRef((props, projectsRef) => {
     const data = resume.projects
-    const {theme} = props
+    const {$isDark} = props
     return (
         <Section ref={projectsRef}>
             <Content className="content">
@@ -14,7 +14,7 @@ const Projects = forwardRef((props, projectsRef) => {
                 <List>
                     {data.map((item, index) => (
                         <CardItem key={index}>
-                            <ProjectsCard data={item} theme={theme} />
+                            <ProjectsCard data={item} $isDark={$isDark} />
                         </CardItem>
                     ))}
                 </List>
@@ -37,11 +37,11 @@ const Section = styled.div`
 `;
 
 const Content = styled.div`
-  padding-top: 100px;
+  padding: 100px 0 10px;
   color: #ccd0d9;
   width: 80%;
     @media screen and (max-width: 768px) {
-        width: 100%;
+        width: calc(95% + 10px);
     }
 `;
 

@@ -14,9 +14,10 @@ const Home = forwardRef((props, homeRef) => {
   const data = resume
   return (
     <Section ref={homeRef}>
-      {/*<StyledHomeRect />*/}
-      <BackgroundSpinnerOne />
-      <BackgroundSpinnerTwo />
+      <BackgroundWrapper>
+        <BackgroundSpinnerOne />
+        <BackgroundSpinnerTwo />
+      </BackgroundWrapper>
       <Wrapper>
         <Content>
           <TitleWrap>
@@ -55,9 +56,20 @@ Home.displayName = "Home";
 
 export default Home;
 
+const BackgroundWrapper = styled.div`
+  position: absolute;  /* so it layers behind content */
+  top: 0;
+  right: 0;
+  bottom: -500px;
+  left: 0;
+  overflow: hidden;    /* hides anything outside the container */
+  pointer-events: none; /* keep clicks going through */
+  z-index: 0;
+`;
+
 const BackgroundSpinnerOne = styled.div`
-  position: fixed;
-  top: 550px;
+  position: absolute;
+  top: 300px;
   left: -100px;
   width: 40vw;
   min-width: 400px;
@@ -68,13 +80,12 @@ const BackgroundSpinnerOne = styled.div`
   opacity: 0.2;
   filter: blur(30px);
   animation: ${slowSpin} 360s linear infinite;
-  z-index: 0;
   pointer-events: none;
 `;
 
 const BackgroundSpinnerTwo = styled.div`
-  position: fixed;
-  bottom: 350px;
+  position: absolute;
+  bottom: 1000px;
   right: -200px;
   width: 60vw;
   min-width: 400px;
@@ -90,36 +101,24 @@ const BackgroundSpinnerTwo = styled.div`
 `;
 
 const Section = styled.div`
-  height: 100vh;
-  min-height: 800px;
+  height: 700px;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  @media screen and (max-width: 768px) {
+    //height: calc(100% + 600px);
+  }
 `;
-
-// const StyledHomeRect = styled(HomeRect)`
-//   width: 40%;
-//   height: fit-content;
-//   position: absolute;
-//   top: 50px;
-//   right: 0;
-//   z-index: 1;
-//   color: ${(props) => props.theme.accent.accentIcon}; // this controls the fill!
-//
-//   @media screen and (max-width: 768px) {
-//     top: 0;
-//   }
-// `;
 
 const Wrapper = styled.div`
   display: flex;
   position: relative;
-  top: 30px;
+  top: 0;
   justify-content: left;
   align-items: center;
   width: 80%;
-  height: calc(100vh - 60px);
+height: 100%;
   @media screen and (max-width: 768px) {
     align-items: flex-start;
     justify-content: center;
@@ -129,12 +128,15 @@ const Wrapper = styled.div`
 
 const Content = styled.div`
   display: flex;
+  padding: 30px 0;
   width: 100%;
+  height: fit-content;
   justify-content: space-between;
   z-index: 2;
   animation: ${slideDownKeyframe} 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s
   forwards;
   @media screen and (max-width: 768px) {
+    justify-content: center;
     flex-direction: column;
   }
 `;

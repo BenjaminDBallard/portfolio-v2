@@ -1,5 +1,6 @@
 import { styled } from "styled-components";
 import { useState } from "react";
+import {Icon} from "@blueprintjs/core";
 
 export default function ThemeSwitch({ handleThemeChange }) {
   const [checked, setChecked] = useState(false);
@@ -16,7 +17,7 @@ export default function ThemeSwitch({ handleThemeChange }) {
         className={checked ? "checked" : "unchecked"}
       >
         <Toggle>
-          <p>{checked ? "LIGHT" : "DARK"}</p>
+            <StyledIcon icon={checked ? "flash" : "moon"} size={18} />
         </Toggle>
       </Background>
     </Wrapper>
@@ -36,9 +37,9 @@ const Background = styled.div`
   display: flex;
   cursor: pointer;
   align-items: center;
-  height: 20px;
-  width: 65px;
-  padding: 5px;
+  height: 32px !important;
+  width: 70px;
+  padding: 4px;
   border-radius: 999px;
   transition: 250ms;
   background-color: ${(props) => props.theme.accent.accentHighlight};
@@ -47,8 +48,8 @@ const Toggle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 20px;
-  width: 35px;
+  height: 24px;
+  width: 24px;
   border-radius: 999px;
     transition: 250ms;
   background-color: ${(props) => props.theme.accent.accentIcon};
@@ -58,4 +59,14 @@ const Toggle = styled.div`
     margin: 0;
     color: #f8f8f8;
   }
+`;
+
+const StyledIcon = styled(Icon)`
+  fill: #f8f8f8;
+  display: flex;
+  align-items: center;
+  padding: 3px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 250ms;
 `;

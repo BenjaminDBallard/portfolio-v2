@@ -1,9 +1,9 @@
 import styled, { css } from "styled-components";
-import {slideDownKeyframe, slideOutKeyframe} from "../css-animations.js";
+import {slideOutKeyframe} from "../css-animations.js";
 import {useEffect, useRef, useState} from "react";
 import {CommonButton} from "../Common/common.js";
 
-export default function ProjectsCard({data, theme}) {
+export default function ProjectsCard({data, $isDark}) {
 
     const [isVisible, setIsVisible] = useState(false);
     const ref = useRef();
@@ -34,7 +34,7 @@ export default function ProjectsCard({data, theme}) {
     return(
         <Section>
             <Content>
-                <DisplayBox ref={ref} animate={isVisible}>
+                <DisplayBox ref={ref} $animate={isVisible}>
                     <TitleWrap>
                         <Title>{data.title.toUpperCase()}</Title>
                         <SubTitle>{data.category.toUpperCase()}</SubTitle>
@@ -42,7 +42,7 @@ export default function ProjectsCard({data, theme}) {
                     <Wrap>
                         <TopWrap>
                             <IconList>
-                                {(theme ? data.dark : data.icons).map((icon, i) => (
+                                {($isDark ? data.dark : data.icons).map((icon, i) => (
                                     <Icon key={i} src={`icons/${icon}`} alt={icon} />
                                 ))}
                             </IconList>
@@ -76,7 +76,7 @@ const Content = styled.div`
     align-items: center;
     @media screen and (max-width: 768px) {
         overflow: hidden;
-        padding: 0 20px 14px;
+        padding: 0 5px 14px;
     }
 `;
 const DisplayBox = styled.div`
@@ -93,8 +93,8 @@ const DisplayBox = styled.div`
     opacity: 0;
     transform: translateX(75%);
 
-    ${({ animate }) =>
-            animate &&
+    ${({ $animate }) =>
+            $animate &&
             css`
       animation: ${slideOutKeyframe} 0.6s ease forwards;
     `};
@@ -105,14 +105,9 @@ const DisplayBox = styled.div`
         grid-row: unset;
         border-radius: 10px;
 
-        opacity: 0;
-        transform: translateY(75%);
-
-        ${({ animate }) =>
-                animate &&
-                css`
-      animation: ${slideDownKeyframe} 0.6s ease forwards;
-    `};
+        opacity: 1;
+        transform: none;
+        animation: none;
     }
 `;
 const TitleWrap = styled.div`

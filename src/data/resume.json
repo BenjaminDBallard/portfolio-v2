@@ -81,9 +81,9 @@
     {
       "company": "MycoTex, LLC",
       "jobTitle": "Full Stack Developer",
-      "icons": ["react.svg", "typescript.png", "node.png", "express.png", "sql.png"],
-      "dark": ["react.svg", "typescript.png", "node.png", "express-white.png", "sql.png"],
-      "skills": ["React", "TypeScript", "Chart.js/D3", "Node.js", "Express", "REST API", "SQL", "Digital Ocean"],
+      "icons": ["typescript.png", "node.png", "express.png", "sql.png"],
+      "dark": ["typescript.png", "node.png", "express-white.png", "sql.png"],
+      "skills": ["TypeScript", "Node.js", "Express", "REST API", "SQL", "Digital Ocean"],
       "short": "Developed and deployed a real-time environmental monitoring dashboard with historical data analysis, enabling optimized lab conditions and rapid issue diagnosis. Built a scalable Node.js/Express system handling 500+ sensor requests per minute with a robust SQL database.",
       "description": [
         "Designed and deployed a real-time environmental monitoring dashboard tracking temperature, CO₂, and lab conditions, enabling staff to optimize growing environments and diagnose crop failures.",
@@ -110,6 +110,19 @@
   ],
   "projects": [
     {
+      "title": "Mycotex Backend",
+      "category": "Backend",
+      "github": "https://github.com/BenjaminDBallard/myco-tex-backend",
+      "icons": ["typescript.png", "node.png", "express.png", "sql.png"],
+      "dark": ["typescript.png", "node.png", "express-white.png", "sql.png"],
+      "skills": ["Node.js", "MySQL", "Express", "Rest API"],
+      "image": "mycotex.png",
+      "short": "Led backend development of a high-throughput Node.js/Express system supporting 500+ IoT sensor updates per minute. Engineered robust REST APIs and SQL data pipelines to enable real-time monitoring, fault tolerance, and scalable historical data analysis.",
+      "description": [
+      ""
+      ]
+    },
+    {
       "title": "Job App Tracker",
       "category": "Full Stack Application",
       "github": "https://github.com/theMVPshop/jobAppTracker",
@@ -131,7 +144,7 @@
       "icons": ["react.svg", "typescript.png", "node.png", "express.png", "sql.png"],
       "dark": ["react.svg", "typescript.png", "node.png", "express-white.png", "sql.png"],
       "skills": ["React.js", "Styled-components", "Figma", "Node.js", "MySQL", "Express", "Rest API", "OpenAI"],
-      "image": "chatbot_tutor.png",
+      "image": "chatbot_tutors.png",
       "short": "An AI-powered educational support system was developed to enhance student learning and curriculum oversight. It features a personalized chatbot that helps students engage with online textbooks, an administrative dashboard for real-time monitoring and curriculum analysis, and an integrated ecosystem that enables data-driven improvements in education.",
       "description": [
         "Enhanced Learning with AI-Driven Support: Developed an advanced AI-driven chatbot tailored to elevate student comprehension of online textbooks. Utilization of natural language processing ensures personalized engagement to accurately address specific learning needs.",

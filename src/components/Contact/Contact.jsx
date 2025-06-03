@@ -91,6 +91,7 @@ export default Contact;
 
 const Section = styled.div`
   height: 100vh;
+  min-height: 800px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -108,13 +109,14 @@ const Content = styled.div`
   padding: 50px;
   border-radius: 10px;
   color: white;
-  width: calc(80% - 100px);
+  width: calc(80%);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   @media screen and (max-width: 768px) {
-    width: calc(95% - 100px);
+    width: 95%;
+    padding: 50px 20px;
   }
 `;
 
@@ -155,12 +157,12 @@ const StyledInput = styled.input`
   font-size: 16px;
   font-family: "Montserrat", sans-serif;
   @media screen and (max-width: 900px) {
-    width: calc(100% - 20px);
+    width: 100%;
   }
 `;
 
 const StyledTextArea = styled.textarea`
-  width: calc(100% - 20px);
+  width: calc(100%);
   padding: 10px;
   margin: 0;
   font-size: 16px;
@@ -174,7 +176,7 @@ const StyledTextArea = styled.textarea`
     color: #757575;
   }
   @media screen and (max-width: 900px) {
-    width: calc(100% - 20px);
+    width: 100%;
   }
 `;
 

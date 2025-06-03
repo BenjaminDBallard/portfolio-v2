@@ -1,8 +1,8 @@
 import { useState, useRef, useLayoutEffect, useEffect } from "react";
-import { styled } from "styled-components";
+import styled from "styled-components";
 import {CommonButton} from "../Common/common.js";
 
-export default function WorkCard({ data, theme }) {
+export default function WorkCard({ data, $isDark }) {
     const { company, jobTitle, icons, dark, short, description, skills } = data;
     const [showAll, setShowAll] = useState(false);
     const listRef = useRef(null);
@@ -44,7 +44,7 @@ export default function WorkCard({ data, theme }) {
                         </TitleWrap>
 
                         <IconList>
-                            {(theme ? dark : icons).map((icon, i) => (
+                            {($isDark ? dark : icons).map((icon, i) => (
                                 <Icon key={i} src={`icons/${icon}`} alt={icon} />
                             ))}
                         </IconList>
@@ -91,7 +91,7 @@ const Content = styled.div`
 const DisplayBox = styled.div`
     width: 100%;
   display: flex;
-    min-height: 440px;
+    min-height: 544px;
   flex-direction: column;
     justify-content: space-between;
     padding: 0;
