@@ -90,15 +90,14 @@ Contact.displayName = "Contact";
 export default Contact;
 
 const Section = styled.div`
-  height: 100vh;
-  min-height: 800px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
   margin: 0;
-  padding: 0;
+  padding: 60px 0 50px;
   background-color: ${(props) => props.theme.colors.mainbg};
   z-index: 1;
 `;
