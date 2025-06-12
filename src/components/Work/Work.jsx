@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import {forwardRef, useRef, useState} from "react";
 import styled from "styled-components";
 import WorkCard from "./WorkCard.jsx";
 import resume from "../../data/resume.json";
@@ -11,7 +11,11 @@ import {CommonTitle} from "../Common/common.js";
 const Work = forwardRef((props, workRef) => {
     const {$isDark} = props;
 
+    let sliderRef = useRef();
+    const [currentSlide, setCurrentSlide] = useState(1);
+
     const settings = {
+        className: "center",
         dots: true,
         infinite: true,
         speed: 1000,
@@ -24,18 +28,10 @@ const Work = forwardRef((props, workRef) => {
         centerPadding: '40px',
         swipeToSlide: true,
         arrows: false,
-        accessibility: false,
+        afterChange: (index) => setCurrentSlide(index + 1),
         responsive: [
             {
-                breakpoint: 1600,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    centerMode: true,
-                },
-            },
-            {
-                breakpoint: 1000,
+                breakpoint: 1247,
                 settings: {
                     speed: 500,
                     slidesToShow: 1,
@@ -46,14 +42,23 @@ const Work = forwardRef((props, workRef) => {
         ],
     };
 
+    function handleOnClick(index) {
+        if(index !== currentSlide){
+            sliderRef.slickGoTo(index - 1)
+        }
+    }
+
     return (
         <Section ref={workRef}>
             <Content>
                 <CommonTitle>EXPERIENCE</CommonTitle>
 
-                <Slider {...settings}>
+                <Slider ref={slider => {
+                    sliderRef = slider;
+                }}
+                        {...settings}>
                     {resume.work.map((item, index) => (
-                        <div key={index}>
+                        <div key={index} onClick={() => handleOnClick(index)}>
                             <WorkCard data={item} $isDark={$isDark}/>
                         </div>
                     ))}

@@ -101,7 +101,7 @@ const BackgroundSpinnerTwo = styled.div`
 `;
 
 const Section = styled.div`
-  height: 700px;
+  height: 800px;
   width: 100%;
   display: flex;
   align-items: center;

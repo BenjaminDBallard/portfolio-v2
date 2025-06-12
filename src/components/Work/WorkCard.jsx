@@ -91,15 +91,15 @@ const Content = styled.div`
 const DisplayBox = styled.div`
     width: 100%;
   display: flex;
-    min-height: 544px;
+    min-height: 430px;
   flex-direction: column;
     justify-content: space-between;
     padding: 0;
     border-radius: 10px;
     background-color: ${(props) => props.theme.colors.secondbg};
     box-shadow: ${(props) => props.theme.boxShadows.main};
-    @media (min-width: 1600px){
-        min-height: 410px;
+    @media (max-width: 1247px) {
+        min-height: fit-content;
     }
 `;
 
